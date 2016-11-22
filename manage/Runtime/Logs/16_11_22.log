@@ -742,3 +742,355 @@
 [ 2016-11-22T15:11:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
 [ 2016-11-22T15:11:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
 [ 2016-11-22T15:11:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.270606s ]
+[ 2016-11-22T15:12:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:12:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:12:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:12:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:12:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:12:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:12:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:12:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:13:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:13:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:13:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:13:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:13:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:13:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:13:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:13:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:14:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:14:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:14:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:14:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:14:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:14:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:14:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:14:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:15:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:15:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:15:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:15:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:15:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:15:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:15:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:15:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:16:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:16:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:16:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:16:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:16:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:16:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:16:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:16:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:17:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:17:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:17:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:17:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:17:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:17:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:17:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:17:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:18:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:18:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:18:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:18:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:18:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:18:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:18:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:18:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265403s ]
+[ 2016-11-22T15:19:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:19:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:19:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:19:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:19:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:19:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:19:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:19:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:20:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:20:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:20:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:20:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:20:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:20:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:20:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:20:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:21:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:21:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:21:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:21:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:21:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:21:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004000s ]
+[ 2016-11-22T15:21:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:21:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.266015s ]
+[ 2016-11-22T15:22:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:22:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:22:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:22:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:22:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:22:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:22:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:22:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:23:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:23:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:23:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.015600s ]
+[ 2016-11-22T15:23:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.015600s ]
+[ 2016-11-22T15:23:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:23:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004001s ]
+[ 2016-11-22T15:23:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:23:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.260402s ]
+[ 2016-11-22T15:24:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:24:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:24:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:24:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:24:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:24:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:24:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:24:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:25:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:25:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:25:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:25:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:25:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:25:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.005000s ]
+[ 2016-11-22T15:25:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:25:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.303018s ]
+[ 2016-11-22T15:26:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:26:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:26:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:26:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:26:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:26:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004000s ]
+[ 2016-11-22T15:26:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:26:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.267015s ]
+[ 2016-11-22T15:27:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:27:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:27:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:27:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:27:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:27:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:27:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:27:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:28:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:28:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:28:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:28:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:28:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:28:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:28:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:28:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:29:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:29:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:29:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:29:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:29:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:29:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:29:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:29:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:30:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:30:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:30:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:30:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:30:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:30:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004000s ]
+[ 2016-11-22T15:30:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:30:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.260407s ]
+[ 2016-11-22T15:31:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:31:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:31:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:31:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:31:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:31:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:31:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:31:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.276615s ]
+[ 2016-11-22T15:32:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:32:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:32:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:32:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:32:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:32:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004000s ]
+[ 2016-11-22T15:32:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:32:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.266016s ]
+[ 2016-11-22T15:33:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:33:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:33:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:33:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:33:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:33:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:33:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:33:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:34:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:34:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:34:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:34:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:34:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:34:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:34:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:34:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:35:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:35:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:35:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:35:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:35:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:35:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:35:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:35:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:36:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:36:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:36:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:36:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:36:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:36:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:36:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:36:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.267201s ]
+[ 2016-11-22T15:37:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:37:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:37:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:37:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:37:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:37:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:37:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:37:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:38:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:38:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:38:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:38:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:38:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:38:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:38:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:38:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:39:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:39:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:39:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:39:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:39:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:39:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:39:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:39:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:40:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:40:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:40:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:40:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:40:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:40:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:40:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:40:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:41:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:41:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:41:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:41:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:41:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:41:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:41:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:41:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:42:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:42:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:42:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:42:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:42:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:42:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:42:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:42:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:43:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:43:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:43:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:43:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:43:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:43:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004000s ]
+[ 2016-11-22T15:43:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:43:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.267015s ]
+[ 2016-11-22T15:44:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:44:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:44:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:44:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:44:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:44:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:44:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:44:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:45:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:45:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:45:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.015600s ]
+[ 2016-11-22T15:45:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.015600s ]
+[ 2016-11-22T15:45:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:45:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:45:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:45:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:46:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:46:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:46:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:46:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:46:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:46:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:46:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:46:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:47:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:47:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:47:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:47:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:47:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:47:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:47:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:47:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:48:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:48:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:48:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:48:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:48:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:48:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:48:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:48:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265201s ]
+[ 2016-11-22T15:49:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:49:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:49:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:49:01+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:49:01+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:49:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:49:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:49:02+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:50:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:50:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:50:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:50:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:50:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:50:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004001s ]
+[ 2016-11-22T15:50:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:50:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.267015s ]
+[ 2016-11-22T15:51:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:51:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:51:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:51:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:51:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:51:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004000s ]
+[ 2016-11-22T15:51:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:51:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.268015s ]
+[ 2016-11-22T15:52:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:52:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:52:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+[ 2016-11-22T15:52:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001000s ]
+[ 2016-11-22T15:52:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:52:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.004000s ]
+[ 2016-11-22T15:52:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:52:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.271016s ]
+[ 2016-11-22T15:53:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:53:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:53:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:53:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:53:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:53:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:53:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:53:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:54:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:54:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:54:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:54:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:54:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:54:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:54:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:54:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]
+[ 2016-11-22T15:55:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead common.php 第 66 行.
+[ 2016-11-22T15:55:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --START--
+[ 2016-11-22T15:55:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+[ 2016-11-22T15:55:02+08:00 ] /manage.php?a=getTxMessage&m=users | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000000s ]
+[ 2016-11-22T15:55:02+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead DbMysql.class.php 第 67 行.
+[ 2016-11-22T15:55:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SHOW COLUMNS FROM `djzj_user_golds_record` [ RunTime:0.000000s ]
+[ 2016-11-22T15:55:03+08:00 ] /manage.php?a=getTxMessage&m=users | NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead Db.class.php 第 660 行.
+[ 2016-11-22T15:55:03+08:00 ] /manage.php?a=getTxMessage&m=users | SQL: SELECT * FROM `djzj_user_golds_record` WHERE txstate = 1  [ RunTime:0.265200s ]

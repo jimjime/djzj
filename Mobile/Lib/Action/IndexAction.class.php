@@ -1490,7 +1490,7 @@ class IndexAction extends AllAction{
 				foreach($kaijiang as $k=>$v){
 					$old_rlog[$k]=M("roulette_log")->where("day=".$v['day']." and gid=".$gid." and qi='".$v['qi']."'")->find();
 
-					if(empty($old_rlog[$k])){//如果没有旧的开奖记录，则存储
+					if(empty($old_rlog[$k])){//如果没有旧的开奖记录，
 						$new_log['ctime']=time();
 						$new_log['num']=$v['num'];
 						$new_log['day']=$v['day'];
