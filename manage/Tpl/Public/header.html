@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="keywords" content="admin, dashboard, bootstrap, template, flat, modern, theme, responsive, fluid, retina, backend, html5, css, css3">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>电竞之家后台管理系统</title>
+
+  <!--pickers css-->
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap-datepicker/css/datepicker-custom.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap-timepicker/css/timepicker.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap-colorpicker/css/colorpicker.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
+
+  <!--data table-->
+  <link rel="stylesheet" href="__PUBLIC__/js/data-tables/DT_bootstrap.css" />
+
+  <!--dashboard calendar-->
+  <link href="__PUBLIC__/css/clndr.css" rel="stylesheet">
+
+
+  <!--common-->
+  <link href="__PUBLIC__/css/style.css" rel="stylesheet">
+  <link href="__PUBLIC__/css/style-responsive.css" rel="stylesheet">
+
+
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="__PUBLIC__/js/html5shiv.js"></script>
+  <script src="__PUBLIC__/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="{:U('Index/shouye')}">电竞之家</a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="{:U('Index/shouye')}">电竞之家</a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="__PUBLIC__/images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="javascript:;">{$admin_info.manage_name}</a></h4>
+                    </div>
+                </div>
+
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                  <li><a href="javascript:;" onClick="cleancache()"><i class="fa fa-cog"></i> <span>清理缓存</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Games'> nav-active </eq> ">
+                    <a href="javascript:;"><i class="fa fa-bullhorn"></i> <span>开盘</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='_GET.gid' value='1'> active </eq> "><a href="{:U('Games/games',array(gid=>1,fid=>1))}">LOL</a></li>
+                        <li class=" <eq name='_GET.gid' value='2'> active </eq> "><a href="{:U('Games/games',array(gid=>2,fid=>1))}">Dota2</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='game_fenlei'> active </eq> "><a href="{:U('Games/game_fenlei')}">分类列表</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='game_cstate'> active </eq> "><a href="{:U('Games/game_cstate')}">竞猜状态</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Pan'> nav-active </eq> ">
+                    <a href="javascript:;"><i class="fa fa-tasks"></i> <span>盘管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='_GET.gid' value='1'> active </eq> "><a href="{:U('Pan/pan',array(gid=>1,showid=>1))}">LOL</a></li>
+                        <li class=" <eq name='_GET.gid' value='2'> active </eq> "><a href="{:U('Pan/pan',array(gid=>2,showid=>1))}">Dota2</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Saishi'> nav-active </eq> ">
+                    <a href="javascript:;"><i class="fa fa-tasks"></i> <span>赛事系统</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='bs_saicheng'> active </eq> "><a href="{:U('Saishi/bs_saicheng')}">赛程管理</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='bs_day'> active </eq> "><a href="{:U('Saishi/bs_day')}">赛程日期</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='bs_xuexiao'> active </eq> "><a href="{:U('Saishi/bs_xuexiao')}">赛区管理</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='bs_team'> active </eq> "><a href="{:U('Saishi/bs_team')}">战队管理</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Index'> nav-active </eq> ">
+                    <a href="javascript:;"><i class="fa fa-laptop"></i> <span>后台首页</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='shouye'> active </eq> "><a href="{:U('Index/shouye')}"> 后台首页</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='index'> active </eq> "><a href="{:U('Index/index')}"> 运营数据</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='User'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-laptop"></i> <span>管理员管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='admins'> active </eq> "><a href="{:U('User/admins')}"> 管理员列表</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='admin_group'> active </eq> "><a href="{:U('User/admin_group')}"> 管理员分组</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='admin_quan'> active </eq> "><a href="{:U('User/admin_quan')}"> 权限列表</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Users'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-book"></i> <span>用户管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='users'> active </eq> "><a href="{:U('Users/users')}"> 用户列表</a></li>
+                    </ul>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='allusers'> active </eq> "><a href="{:U('Users/allusers')}">all用户列表</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Tupian'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-cogs"></i> <span>图片管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='game_type'> active </eq> "><a href="{:U('Tupian/game_type')}"> 分类列表</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='tupian'> active </eq> "><a href="{:U('Tupian/tupian')}"> 图片列表</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='ptlogo'> active </eq> "><a href="{:U('Tupian/ptlogo')}"> 平台LOGO</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Inchannel'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-bar-chart-o"></i> <span>渠道管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='invite_channel'> active </eq>  "><a href="{:U('Inchannel/invite_channel')}">渠道列表</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Art'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-file-text"></i> <span>规则管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='sys_art'> active </eq>  <eq name='Think.ACTION_NAME' value='sys_art_edit'> active </eq> "><a href="{:U('Art/sys_art')}"> 规则列表</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='sys_art_fenlei'> active </eq>  <eq name='Think.ACTION_NAME' value='sys_art_fenlei_edit'> active </eq> "><a href="{:U('Art/sys_art_fenlei')}"> 规则分类</a></li>
+                    </ul>
+				</li>
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='News'> nav-active </eq> ">
+                    <a href="javascript:;"><i class="fa fa-file-text"></i> <span>资讯管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='Think.ACTION_NAME' value='getarticles'> active </eq>  <eq name='Think.ACTION_NAME' value='getarticles_edit'> active </eq> "><a href="{:U('News/getArticles')}"> 资讯列表</a></li>
+                        <li class=" <eq name='Think.ACTION_NAME' value='getarticleclasses'> active </eq>  <eq name='Think.ACTION_NAME' value='getarticleclasses_edit'> active </eq> "><a href="{:U('News/getArticleClasses')}"> 资讯分类</a></li>
+                    </ul>
+                </li>
+				<li class="<eq name='Think.MODULE_NAME' value='Exchange'> active </eq> ">
+					<a href="{:U('Exchange/exchange',array(txstate=>1))}"><i class="fa fa-th-list"></i> <span>兑换信息</span></a>
+				</li>
+				<li class="<eq name='Think.MODULE_NAME' value='Pay'> active </eq> ">
+					<a href="{:U('Pay/pay')}"><i class="fa fa-th-list"></i> <span>充值记录</span></a>
+				</li>
+				<li class="menu-list <eq name='Think.MODULE_NAME' value='Hero'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-file-text"></i> <span>英雄猜管理</span></a>
+					<ul class="sub-menu-list">
+						<li class=" <eq name='_GET.gid' value='1'> active </eq> "><a href="{:U('Hero/peilv',array(gid=>1))}">LOL赔率</a></li>
+						<li class=" <eq name='_GET.gid' value='2'> active </eq> "><a href="{:U('Hero/peilv',array(gid=>2))}">Dota2赔率</a></li>
+					</ul>
+                </li>
+                <li class="menu-list <eq name='Think.MODULE_NAME' value='Hero'> nav-active </eq> ">
+                    <a href="javascript:;"><i class="fa fa-file-text"></i> <span>召唤英雄管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li class=" <eq name='_GET.gid' value='1'> active </eq> "><a href="{:U('Summonhero/optionlist',array(gid=>1))}">LOL赔率</a></li>
+                        <li class=" <eq name='_GET.gid' value='2'> active </eq> "><a href="{:U('Summonhero/optionlist',array(gid=>2))}">Dota2赔率</a></li>
+                    </ul>
+                </li>
+				<li class="menu-list <eq name='Think.MODULE_NAME' value='Chouj'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-file-text"></i> <span>LOL抽奖管理</span></a>
+					<ul class="sub-menu-list">
+						<li class=" <eq name='Think.ACTION_NAME' value='cjjl'> active </eq> "><a href="{:U('Chouj/cjjl')}">抽奖记录</a></li>
+						<li class=" <eq name='Think.ACTION_NAME' value='dhjl'> active </eq> "><a href="{:U('Chouj/dhjl',array(isuse=>1))}">兑换记录</a></li>
+					</ul>
+                </li>
+				<li class="menu-list <eq name='Think.MODULE_NAME' value='Roll'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-file-text"></i> <span>ROLL活动</span></a>
+					<ul class="sub-menu-list">
+						<li class=" <eq name='Think.ACTION_NAME' value='active_roll_term'> active </eq> "><a href="{:U('Roll/active_roll_term')}">活动期</a></li>
+						<!--<li class=" <eq name='Think.ACTION_NAME' value='active_roll_record'> active </eq> "><a href="{:U('Roll/active_roll_record')}">用户参加记录</a></li>-->
+					</ul>
+                </li>
+				<li class="menu-list <eq name='Think.MODULE_NAME' value='Bigmess'> nav-active </eq> ">
+					<a href="javascript:;"><i class="fa fa-file-text"></i> <span>通告</span></a>
+					<ul class="sub-menu-list">
+						<li class=" <eq name='Think.ACTION_NAME' value='bigmess'> active </eq> "><a href="{:U('Bigmess/bigmess')}">紧急通告</a></li>
+					</ul>
+                </li>
+               <li><a href="{:U('User/logout')}"><i class="fa fa-sign-in"></i> <span>退出</span></a></li>
+
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+  
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                   <!-- <li>
+                        <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge">8</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">You have 8 pending task</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Database update</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                <span class="">40%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Dashboard done</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success">
+                                                <span class="">90%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Web Development</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-info">
+                                                <span class="">66% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Mobile App</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="33" role="progressbar" class="progress-bar progress-bar-danger">
+                                                <span class="">33% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Issues fixed</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
+                                                <span class="">80% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="__PUBLIC__/">See All Pending Task</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge">5</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">You have 5 Mails </h5>
+                            <ul class="dropdown-list normal-list">
+                                <li class="new">
+                                    <a href="__PUBLIC__/">
+                                        <span class="thumb"><img src="__PUBLIC__/images/photos/user1.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">John Doe <span class="badge badge-success">new</span></span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="__PUBLIC__/">
+                                        <span class="thumb"><img src="__PUBLIC__/images/photos/user2.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jonathan Smith</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="__PUBLIC__/">
+                                        <span class="thumb"><img src="__PUBLIC__/images/photos/user3.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jane Doe</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="__PUBLIC__/">
+                                        <span class="thumb"><img src="__PUBLIC__/images/photos/user4.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Mark Henry</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="__PUBLIC__/">
+                                        <span class="thumb"><img src="__PUBLIC__/images/photos/user5.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jim Doe</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="__PUBLIC__/">Read All Mails</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">Notifications</h5>
+                            <ul class="dropdown-list normal-list">
+                                <li class="new">
+                                    <a href="__PUBLIC__/">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #1 overloaded.  </span>
+                                        <em class="small">34 mins</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="__PUBLIC__/">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #3 overloaded.  </span>
+                                        <em class="small">1 hrs</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="__PUBLIC__/">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #5 overloaded.  </span>
+                                        <em class="small">4 hrs</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="__PUBLIC__/">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #31 overloaded.  </span>
+                                        <em class="small">4 hrs</em>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="__PUBLIC__/">See All Notifications</a></li>
+                            </ul>
+                        </div>
+                    </li>-->
+                    <li>
+                        <a href="javascript:;" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="__PUBLIC__/images/photos/user-avatar.png" alt="" />
+                            {$admin_info.manage_name}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <!--<li><a href="#"><i class="fa fa-user"></i>  我的权限</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i>  设置</a></li>-->
+                            <li><a href="javascript:;" onClick="cleancache()"><i class="fa fa-cog"></i>  清理缓存</a></li>
+                            <li><a href="{:U('User/logout')}"><i class="fa fa-sign-out"></i> 退出</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+  

@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'user_golds_recordId', 1 => 'fromid', 2 => 'ddid', 3 => 'amount', 4 => 'changeAmount', 5 => 'detail', 6 => 'ctime', 7 => 'userId', 8 => 'adminid', 9 => 'panid', 10 => 'fid', 11 => 'gid', 12 => 'recordid', 13 => 'checkx', 14 => 'jieortou', 15 => 'nowin', 16 => 'liupan', 17 => 'notixian', 18 => 'txstate', 19 => 'recomid', 20 => 'herocheck', 21 => 'herodayqi', 22 => 'alipay', 23 => 'dldid', '_autoinc' => true, '_pk' => 'user_golds_recordId', ); ?>

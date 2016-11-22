@@ -1,0 +1,152 @@
+    
+
+</section>
+<style type="text/css">
+.clear{clear:both;}
+.zhaomuzhanyou{width:100%;clear:both;}
+.zhaomuzhanyou_li{width:100%;text-align:center;line-height:30px;height:30px;float:left;}
+.zhaomuzhanyou_1{width:8%;float:left;border:1px solid #ccc;}
+.zhaomuzhanyou_2{width:38%;float:left;border:1px solid #ccc;}
+.zhaomuzhanyou_3{width:8%;float:left;border:1px solid #ccc;}
+.zhaomuzhanyou_3 img{height:20px;}
+.zhaomuzhanyou_4{width:38%;float:left;border:1px solid #ccc;}
+.jinbiliushui{width:100%; display:table;}
+.jinbiliushui_li{width:100%;text-align:center;line-height:20px;height:auto;float:left;}
+.jinbiliushui_1{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;}
+.jinbiliushui_2{width:38%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;}
+.jinbiliushui_3{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.jinbiliushui_4{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.jinbixx{width:100%; display:table;}
+.jinbixx_li{width:100%;text-align:center;line-height:20px;height:auto;float:left;}
+.jinbixx_1{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.jinbixx_2{width:38%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.jinbixx_3{width:38%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.touzhuxx{width:100%; display:table;}
+.touzhuxx_li{width:100%;text-align:center;line-height:20px;height:auto;float:left;}
+.touzhuxx_1{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.touzhuxx_2{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.touzhuxx_3{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.touzhuxx_4{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+.touzhuxx_5{width:18%;float:left;height:40px;border:1px solid #ccc;overflow:hidden;word-break:break-all;}
+/* 翻页样式 */
+.page {padding:10px 0;text-align:center;}
+.page a{display:inline-block;padding:5px 8px 4px 8px;border:#E4E4E4 1px solid;margin:2px 4px;color:#666;text-decoration:none;cursor:pointer;}
+.page a:hover{border:#CF5D02 1px solid;color:#fff;background:#FF7101;}
+.page span.current{display:inline-block;padding:5px 8px 4px 8px;color:#fff;background:#FF7101;border:#CF5D02 1px solid;margin:2px 4px;}
+.page span.no{border:1px #CF5D02 solid;margin:2px;color:#fff;background:#FF7101;text-decoration:none;}
+
+</style>
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script src="__PUBLIC__/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="__PUBLIC__/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/modernizr.min.js"></script>
+<script src="__PUBLIC__/js/jquery.nicescroll.js"></script>
+
+<!--common scripts for all pages-->
+<script src="__PUBLIC__/js/scripts.js"></script>
+
+<!--Dashboard Charts-->
+<script src="__PUBLIC__/js/dashboard-chart-init.js"></script>
+
+<!--data table-->
+<script type="text/javascript" src="__PUBLIC__/js/data-tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/data-tables/DT_bootstrap.js"></script>
+
+<!--pickers plugins-->
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+<!--pickers initialization-->
+<script src="__PUBLIC__/js/pickers-init.js"></script>
+
+<!--script for editable table-->
+<script src="__PUBLIC__/js/editable-table.js"></script>
+
+<!-- END JAVASCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        EditableTable.init();
+        setInterval('message()',60000);
+    });
+</script>
+
+<script type="text/javascript">
+function message() {
+	$.post("{:U('Users/getTxMessage')}", {}, function(v){
+		if(v=='1'){
+			// alert("       有用户需要兑换                                                  〜(￣▽￣〜)");
+		}else{
+			if(v=='2'){
+			}	
+		}
+	});
+}
+
+function del_admin(id,sql_m,obj,idname){
+	$.post("{:U('User/admin_del')}", {id:id,sql_m:sql_m,idname:idname}, function(v){
+		if(v=='cg'){
+			$(obj).text("恢复");
+			$(obj).attr("onclick","");
+			$(obj).attr("onclick","hui_admin("+id+",'"+sql_m+"',this,'"+idname+"')");
+		}else{
+			
+		}
+	});
+
+}
+function cddel_admin(id,sql_m,obj,idname){
+	$.post("{:U('User/admin_cddel')}", {id:id,sql_m:sql_m,idname:idname}, function(v){
+		if(v=='cg'){
+			$(obj).parent().parent().remove();
+		}else{
+			if(v=='wqx'){
+				alert("没有权限");
+			}	
+		}
+	});
+
+}
+function hui_admin(id,sql_m,obj,idname){
+	$.post("{:U('User/admin_hui')}", {id:id,sql_m:sql_m,idname:idname}, function(v){
+		if(v=='cg'){
+			$(obj).text("删除");
+			$(obj).attr("onclick","");
+			$(obj).attr("onclick","del_admin("+id+",'"+sql_m+"',this,'"+idname+"')");
+			$(obj).parent().find(".cddel_admin_btn").remove();
+		}else{
+			
+		}
+	});
+
+}
+function cleancache(){
+	$.post("./cleancache.php", {}, function(v){
+		alert(v);
+	});
+
+}
+
+</script>
+
+<!--编辑器 js-->
+<script src="./Public/js/kindeditor/kindeditor.js"></script>
+<script language="javascript">
+var k1;
+KindEditor.ready(function(K) {
+	k1 = K.create('.content_edit', {
+		allowFileManager : true
+	});
+});
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<include file="Public:header" />
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/Normalize.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/gamenav.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/device.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/lolteams.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/teamlist.css?201610121659">
+    <include file="Public:gheader" />
+    <div class="teamlist">
+        <!-- 战队导航栏 -->
+        <div class="team-h" style="display: none;">
+            <ul>
+                <li><a <eq name='Think.ACTION_NAME' value='teamsindex'> class="active" </eq> href="{:U('Index/teamsindex')}">我的战队</a></li>
+                <li><a <eq name='Think.ACTION_NAME' value='teamlist'> class="active" </eq> href="{:U('Index/teamlist')}">战队列表</a></li>
+                <li><a <eq name='Think.ACTION_NAME' value='sologames'> class="active" </eq> href="{:U('Index/soloindex')}">我的SOLO</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        $(".team-h").fadeIn(300);
+    })
+    </script>
+        <!-- 赛程导航栏 -->
+    <div class="team-hh">
+        <ul>
+            <li class="l-event"><a>比赛项目</a>
+                <div class="h-icon"><img src="Public/Mobile/new/images/games/jiantou.png"></div>
+            </li>
+            <li class="l-area"><a>战队赛区</a>
+                <div class="h-icon"><img src="Public/Mobile/new/images/games/jiantou.png"></div>
+            </li>
+        </ul>
+    </div>
+        <!-- 赛程子导航栏 -->
+    <div class="sub-h sub-h1" style="display: none;">
+        <volist name="bs_xiangmu" id="l">
+            <a href="{:U('Index/cflist1',array(mid=>$l[id],xid=>$_GET[xid]))}"><div class="lol-event">{$l.name}</div></a>
+        </volist>
+    </div>
+    <div class="sub-h sub-h2" style="display: none;">
+        <volist name="bs_xuexiao" id="l">
+            <a href="{:U('Index/cflist1',array(xid=>$l[id],mid=>$_GET[mid]))}"><div class="lol-event">{$l.name}</div></a>
+        </volist>
+    </div>
+    <script type="text/javascript">
+    var cl = 0;
+    $(".l-event").click(function() {
+        $(".sub-h2").hide();
+        $(".sub-h1").slideToggle(200);
+        $('.l-area').find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou1.png');
+        } else if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou1.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        }
+    })
+    $(".l-area").click(function() {
+        $(".sub-h1").hide();
+        $(".sub-h2").slideToggle(200);
+        $('.l-event').find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou1.png');
+        } else if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou1.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        }
+    })
+    $(".lol-event").click(function() {
+        $(".lol-event").removeClass("lol-event-active");
+        $(this).addClass("lol-event-active");
+        $(".sub-h").slideUp(200);
+    })
+    </script>
+    <!-- 战队搜索框 -->
+    <input type="text" name="tn" id="teamnamesh" placeholder="请输入战队名字" />
+    <!-- 战队列表 -->
+    <div class="team-list-content" style="height: auto;margin-bottom:70px;">
+        <volist name="teams" id="l">
+            <div class="t-list">
+                <!-- 战队logo -->
+                <a href="{:U('Index/teamsindex',array(id=>$l[id]))}">
+                    <div class="t-l-logo">
+                        <img src="{$l.logo}">
+                    </div>
+                    <div class="t-l-content">
+                        <p class="teamname">{$l.name}</p>
+                        <p><span class="dark-gray">{$l.xiangmuname}</span>/<span class="dark-gray">{$l.rennum}人</span></p>
+                        <p><span class="light-blue">众筹奖金：</span><span class="light-blue">{$l.jiangjin}</span></p>
+                    </div>
+                    <div class="t-l-enter">进入</div>
+                </a>
+            </div>
+        </volist>
+
+
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            //键盘按键弹起时执行
+            $('#teamnamesh').keyup(function(){
+                var teamname = $.trim($('#teamnamesh').val().toString());//去掉两头空格
+                if(teamname == ''){
+                    $('.t-list').show();return false;
+                }
+                $('.t-list').hide();
+                $(".t-list .t-l-content .teamname:contains('" + teamname + "')").parent().parent().parent().show();
+            });
+        })
+    $(".t-l-enter").click(function() {
+        $(".team-list-content").animate({
+            left: "-100%"
+        }, 300, function() {
+            window.location.href = "{:U('Index/teamsindex')}";
+        })
+    })
+    </script>
+
+    <include file="Public:footer" />

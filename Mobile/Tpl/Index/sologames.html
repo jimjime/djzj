@@ -1,0 +1,511 @@
+<include file="Public:header" />
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/Normalize.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/gamenav.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/device.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/lolteams.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css//sologames.css">
+    <!--赛事初始主页 -->
+    <include file="Public:gheader" />
+    <div class="teams-index" style="left: 0">
+        <php>
+            if($zd['soloname']!="" || $zd['soloname']!=" " ){
+        </php>
+        <style type="text/css">
+            .screen{display:none;}
+        </style>
+        <php>
+            }
+        </php>
+        <div class="screen">
+            <a href="#">赛事规则</a>
+        </div>
+        <!-- 赛事规则弹出框 -->
+        <div class="game-rules" style="display: none;">
+            <div class="rules-title">
+                <p>赛事规则</p>
+                <div class="rules-close">
+                    <img src="Public/Mobile/new/images/games/guanbi.png">
+                </div>
+            </div>
+            <!-- 赛事规则内容 -->
+            <div class="rule-content">
+                <p>没有人的青春是在红地毯上走过，既然梦想成为那个别人无法企及的自我，就应该选择一条属于自己的道路，为了到达终点，付出别人无法企及的努力。 　 　　我的一个堂弟大学毕业一年了，工作换了四份，最近又离职了。而在这一年中间，他还休息了两个月！ 　　 　　总之，离职的原因不是因为老板苛刻，就是老板有眼无珠，对自己的创意不欣赏，或者同事之间钩心斗角，工作环境不好。 　　 　　我问，你想要的工作是什么样的？他想想了说，至少不太累，每天出入高档写字楼，可以经常旅游，老板给的薪水很可观…… 　　 　　当你看了《杜拉拉升职记》，便觉得外企真好，可以出入高档写字楼，操一口流利的英文，拿着让人眼红的薪水； 　　 　　当你看了《亲密敌人》，就觉得投行男好帅，开着凯迪拉克，漫步澳大利亚的海滩，随手签着几百万的合同； 　　 　　当你看到一条精妙的广告赞不绝口，就觉得做营销好潮，可以把握市场脉搏，纵情挥洒自己的创意； 　　 　　当你看到一位做房地产的朋友，每天和有钱人出入各种高档场所，发着各种挥霍的微博，就觉得做房地产好赚钱； 　　 　　当你看到一位快速消费品人员满世界出差，在各种地方住五星级酒店，就觉得做快速消费品好风光。 　　 　　我想说的是，当你疯狂地爱上了那种洋洋得意的状态，却不曾想到你日思夜想称之为梦想的状态，其实并不是你看到的那样简单。 　　表面风光的背后，你看不到他们付出的努力，你看不到他们所吃的苦。他们之所以能取得让人望尘莫及的荣耀，只因为他们是付出了常人难以企及的努力。他辛勤工作的身影，他时刻洋溢的才华，他的一切经得起岁月的推敲。 　　 　　我的朋友名叫朵朵，在她还是某科技学院艺术设计专业大四学生的时候，她就很积极地努力找工作，最后，毕业之际，她被一家玻璃制品贸易公司录用了。 　　 　　入职几天后，一家澳大利亚公司的贸易代表来公司考察。两家公司事先有一笔数百万元的玻璃水杯出口订单，但没有最后拍板，因为水杯上没有任何装饰色彩和图案，于是老板尝试性地把设计任务交给了朵朵。 　　 　　但朵朵有股犟劲儿，什么事都不愿落在人后。为了证明自己，她的犟劲又上来了。她说：“如果一件事值得你去做，就一定把它做好，无论付出多少努力。” 　　 　　大二时，朵朵的美术天赋开始显现。那时她给人做装饰画，一幅画能挣三十块钱。半年后她在书画市场看到自己的作品，标价已经超过了三千元。她直埋怨雇主“黑心”，但她也看到了自己的价值，还悟出了一条职场经验，就是关键你要有把“刷子”，是一个“金刚钻”。 　　 　　如今，虽然任务很艰巨，但朵朵决心挑战自己。开始做准备工作吧，朵朵决定先从外围入手。她先到公司资料室，看公司创立时的历史，了解企业的发展历程，她似乎悟到了公司发展的原因，公司的企业文化就这样流进了她的血液里。 　　 　　累了，朵朵就下车间看每一道生产工序，看工人是如何生产的；又到营销部，找销售员了解什么样的杯子好销，这个单是如何签到的；最后到开发部看师傅们如何设计。
+                </p>
+            </div>
+            <a class="agree" href="#">同意</a>
+        </div>
+        <script type="text/javascript">
+        $(".screen a").click(function() {
+            $(".game-rules").show();
+        });
+        $(".rules-close").click(function() {
+            $(".game-rules").hide();
+        });
+        $(".agree").click(function() {
+            $(".game-rules").hide();
+            $(".screen").hide();
+            $(".screen a").hide();
+        });
+        </script>
+        <!-- 战队导航栏 -->
+        <!--         <div class="team-h" style="display: none">
+            <ul>
+                <li><a <eq name='Think.ACTION_NAME' value='lolteams'> class="active" </eq> href="{:U('Index/lolteams')}">参赛</a></li>
+                <li><a href="{:U('Index/index')}">列表</a></li>
+            </ul>
+        </div> -->
+        <!-- 参赛页面主内容 -->
+        <div class="games-content">
+            <!-- 底部图案 -->
+            <div class="bac-pic">
+                <img src="Public/Mobile/new/images/games/dibutuan.png">
+            </div>
+            <php>
+                if($zd['soloname']!="" || $zd['soloname']!=" " ){
+            </php>
+                <!-- 选择模块 -->
+                <div class="start-select solo-start-select">
+                    <a href="#" class="c-t">修改SOLO赛信息</a>
+                </div>
+            <php>
+                }else{
+            </php>
+                <!-- 底部文字 -->
+                <div class="bac-words">
+                    <p>你还没有报名SOLO赛，快来吧！</p>
+                </div>
+                <!-- 选择模块 -->
+                <div class="start-select solo-start-select">
+                    <a href="#" class="c-t">报名SOLO赛</a>
+                </div>
+            <php>
+                }
+            </php>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(".c-t").click(function() {
+        $(".creat-teams").css("display", "block");
+        $(".teams-index,.footerbox").animate({
+                "left": "-100%"
+            },
+            300,
+            function() {
+                $(".teams-index").css("display", "none");
+            });
+        $(".creat-teams").animate({
+            "left": "0"
+        }, 300)
+    });
+    </script>
+    <!-- 创建页面模块 -->
+    <div class="creat-teams" style="left: 100%;display: none;">
+        <div class="c-t-h">
+            <span class="return return-btn"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>报名SOLO赛</span>
+        </div>
+        <!-- 战队注册 -->
+        <div class="register">
+            <div class="t-logo" style="position:relative;">
+                <span>SOLO标志</span>
+                <div>
+                    <span class="logo-pic" id="showimg_fengmian">
+                        <img src="{$zd.solologo}" style="width:75px;height:75px;border-radius:50%;">
+                    </span>
+                    <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+                </div>
+                <div id="main_fengmian" class="logo_btn" style="position: absolute;width:100%;height:100%;z-index:2;left:0;top:0;">
+                    <form id='upload_fengmian' action='./Public/Mobile/js/upload/action.php' method='post' enctype='multipart/form-data' style="width:100%;height:100%;">
+                        <input id="fileupload_fengmian" type="file" name="mypic" value="{$zd.solologo}" style="display:block;width:100%;height:100%;margin:0;filter:alpha(opacity:0); opacity:0;  -moz-opacity:0;-khtml-opacity: 0" />
+                    </form>
+                    <input id="zd_logo" type="hidden" name="zd_logo" value="{$zd.solologo}" />
+                </div>
+            </div>
+            <div class="register1">
+                <div class="t-name">
+                    <span>SOLO名称</span>
+                    <div>
+                        <empty name="zd.soloname">
+                            <span>未填写</span>
+                        <else/>
+                            <span>{$zd.soloname}</span>
+                        </empty>
+                        <input type="hidden" id="zd_soloname" value="{$zd.soloname}">
+                        <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+                    </div>
+                </div>
+                <div class="t-word">
+                    <span>我的宣言</span>
+                    <div>
+                        <empty name="zd.xuanyan">
+                            <span>未填写</span>
+                            <else/>
+                            <span>{$zd.xuanyan}</span>
+                        </empty>
+                        <input type="hidden" id="zd_xuanyan" value="{$zd.xuanyan}">
+                        <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+                    </div>
+                </div>
+                <div class="t-boss">
+                    <span>我的姓名</span>
+                    <div>
+                        <empty name="zd.name">
+                            <span>未填写</span>
+                        <else/>
+                            <span>{$zd.name}</span>
+                        </empty>
+                        <input type="hidden" id="zd_name" value="{$zd.name}">
+                        <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+                    </div>
+                </div>
+                <div class="t-tel">
+                    <span>手机号码</span>
+                    <div>
+                        <empty name="zd.phone">
+                            <span>未填写</span>
+                        <else/>
+                            <span>{$zd.phone}</span>
+                        </empty>
+                        <input type="hidden" id="zd_phone" value="{$zd.phone}">
+                        <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+                    </div>
+                </div>
+                <div class="t-school">
+                    <span>学校</span>
+                    <div>
+                        <empty name="zd.xuexiao">
+                            <span>未填写</span>
+                            <else/>
+                            <span>{$zd.xuexiaoname}</span>
+                        </empty>
+                        <input type="hidden" id="zd_xuexiao" value="{$zd.xuexiao}">
+                        <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+                    </div>
+                </div>
+                <div class="t-class">
+                    <span>专业班级</span>
+                    <div>
+                        <empty name="zd.banji">
+                            <span>未填写</span>
+                            <else/>
+                            <span>{$zd.banji}</span>
+                        </empty>
+                        <input type="hidden" id="zd_banji" value="{$zd.banji}">
+                        <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 完成弹出按钮 -->
+        <div class="screen" style="display: none"></div>
+        <div class="popup-s" style="display: none;">
+            <p>温馨提示</p>
+            <p>恭喜您，红牛SOLO赛报名成功</p>
+            <div>确定</div>
+        </div>
+        <div class="complete">
+            <a>完成</a>
+            <script type="text/javascript">
+            $('.popup-s div').click(function() {
+                $(".creat-teams,.popup-s").animate({
+                    left: "-100%"
+                }, 300, function() {
+                    window.location.href = "{:U('Index/soloindex')}";
+                })
+            })
+            $('.complete a').click(function() {
+                var zd_solologo=$("#zd_logo").val();
+                var zd_soloname=$("#zd_soloname").val();
+                var zd_xuanyan=$("#zd_xuanyan").val();
+                var zd_name=$("#zd_name").val();
+                var zd_phone=$("#zd_phone").val();
+                var zd_xuexiao=$("#zd_xuexiao").val();
+                var zd_banji=$("#zd_banji").val();
+
+                $.post("{:U('Index/dosolo')}", {zd_solologo:zd_solologo,zd_soloname:zd_soloname,zd_xuanyan:zd_xuanyan,zd_name:zd_name,zd_phone:zd_phone,zd_xuexiao:zd_xuexiao,zd_banji:zd_banji}, function(v){
+
+                    if(v.jieguo=='cg'){
+                        $(".screen").show();
+                        $(".popup-s").fadeIn(300);
+                    }else if(v.jieguo=='nosolologo'){
+                        alert("请上传SOLO标志");
+                    }else if(v.jieguo=='nosoloname'){
+                        alert("请输入SOLO名称");
+                    }else if(v.jieguo=='noxuanyan'){
+                        alert("请输入我的宣言");
+                    }else if(v.jieguo=='noname'){
+                        alert("请输入我的姓名");
+                    }else if(v.jieguo=='nophone'){
+                        alert("请输入手机号码");
+                    }else if(v.jieguo=='noxuexiao'){
+                        alert("请选择学校");
+                    }else if(v.jieguo=='nobanji'){
+                        alert("请输入专业班级");
+                    }
+
+                },'JSON');
+            })
+            </script>
+        </div>
+    </div>
+    <!-- 战队名称页面 -->
+    <div class="t-n t-sub" style="left: 100%;display: none;">
+        <div class="c-t-h">
+            <span class="return return-t-n"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>SOLO名称</span>
+            <div class="confirm confirm-t-n">确认</div>
+        </div>
+        <input type="text" name="tn" placeholder="未填写" />
+    </div>
+    <!-- 战队宣言页面 -->
+    <div class="t-w t-sub" style="left: 100%;display: none;">
+        <div class="c-t-h">
+            <span class="return return-t-w"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>我的宣言</span>
+            <div class="confirm confirm-t-w">确认</div>
+        </div>
+        <input type="text" name="tn" placeholder="请保持在15个字以内" />
+    </div>
+    <!-- 队长姓名页面 -->
+    <div class="t-b t-sub" style="left: 100%;display: none;">
+        <div class="c-t-h">
+            <span class="return return-t-b"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>我的姓名</span>
+            <div class="confirm confirm-t-b">确认</div>
+        </div>
+        <input type="text" name="tn" placeholder="未填写" />
+    </div>
+    <!-- 手机号页面 -->
+    <div class="t-t t-sub" style="left: 100%;display: none;">
+        <div class="c-t-h">
+            <span class="return return-t-t"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>手机号</span>
+            <div class="confirm confirm-t-t">确认</div>
+        </div>
+        <input type="text" name="tn" placeholder="未填写" />
+    </div>
+    <!-- 学校 -->
+    <div class="t-s t-sub" style="left: 100%;display: none;">
+        <div class="c-t-h">
+            <span class="return return-t-s"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>学校</span>
+            <div class="confirm confirm-t-s">确认</div>
+        </div>
+        <div class="t-select">
+            <volist name="bs_xuexiao" id="l">
+                <div class="t-e-s t-e-s1 s3" data-id="{$l.id}">{$l.name}
+                    <div><img src="Public/Mobile/new/images/games/danxuan1.png"></div>
+                </div>
+            </volist>
+        </div>
+    </div>
+    <!-- 专业班级 -->
+    <div class="t-c t-sub" style="left: 100%;display: none;">
+        <div class="c-t-h">
+            <span class="return return-t-c"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>专业班级</span>
+            <div class="confirm confirm-t-c">确认</div>
+        </div>
+        <input type="text" name="tn" placeholder="未填写" />
+    </div>
+    <!-- 子页面跳转js -->
+    <script type="text/javascript">
+    //页面跳转函数
+    function rconvert(a, b) {
+        $('.' + b).css("display", "block");
+        $('.' + a).animate({
+                "left": "100%"
+            },
+            300,
+            function() {
+                $('.' + a).css("display", "none");
+            });
+        $('.' + b).animate({
+            left: "0"
+        }, 300)
+    }
+
+    function convert(a, b) {
+        $('.' + b).css("display", "block");
+        $('.' + a).animate({
+                "left": "-100%"
+            },
+            300,
+            function() {
+                $('.' + a).css("display", "none");
+            });
+        $('.' + b).animate({
+            "left": "0"
+        }, 300)
+    }
+    $(".return-btn").click(function() {
+        rconvert('creat-teams', 'teams-index');
+        $(".footerbox").animate({
+            "left": "0"
+        }, 300)
+    });
+    //战队名称点击跳转
+    $(".t-name").click(function() {
+        convert('creat-teams', 't-n');
+    })
+    $(".return-t-n,.confirm-t-n").click(function() {
+            rconvert('t-n', 'creat-teams');
+        })
+        // 比赛项目点击跳转
+    $(".t-event").click(function() {
+        convert('creat-teams', 't-e');
+    })
+    $(".return-t-e,.confirm-t-e").click(function() {
+            rconvert('t-e', 'creat-teams');
+        })
+        // 比赛宣言点击跳转
+    $(".t-word").click(function() {
+        convert('creat-teams', 't-w');
+    })
+    $(".return-t-w,.confirm-t-w").click(function() {
+            rconvert('t-w', 'creat-teams');
+        })
+        // 队长名称点击跳转
+    $(".t-boss").click(function() {
+        convert('creat-teams', 't-b');
+    })
+    $(".return-t-b,.confirm-t-b").click(function() {
+            rconvert('t-b', 'creat-teams');
+        })
+        // 手机号跳转
+    $(".t-tel").click(function() {
+        convert('creat-teams', 't-t');
+    })
+    $(".return-t-t,.confirm-t-t").click(function() {
+            rconvert('t-t', 'creat-teams');
+        })
+        // 学校跳转
+    $(".t-school").click(function() {
+        convert('creat-teams', 't-s');
+    })
+    $(".return-t-s,.confirm-t-s").click(function() {
+            rconvert('t-s', 'creat-teams');
+        })
+        // 专业班级跳转
+    $(".t-class").click(function() {
+        convert('creat-teams', 't-c');
+    })
+    $(".return-t-c,.confirm-t-c").click(function() {
+            rconvert('t-c', 'creat-teams');
+        })
+        // 擅长位置跳转
+    $(".t-lol").click(function() {
+        convert('creat-teams', 't-l');
+    })
+    $(".return-t-l,.confirm-t-l").click(function() {
+            rconvert('t-l', 'creat-teams');
+        })
+        //单选点击更换选中状态
+    $('.t-e-s2').click(function() {
+        console.log($(this).find("img").attr('src'));
+        if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/fuxuan1.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/fuxuan.png');
+        } else if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/fuxuan.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/fuxuan1.png');
+        }
+    })
+    $('.t-e-s1').click(function() {
+        console.log($(this).find("img").attr('src'));
+        $('.t-e-s1 img').attr('src', 'Public/Mobile/new/images/games/danxuan1.png')
+        $(this).find("img").attr('src', 'Public/Mobile/new/images/games/danxuan.png');
+    })
+    </script>
+
+    <!-- 获取输写内容 -->
+    <script type="text/javascript">
+        $('.confirm-t-n').click(function() {
+            var inputc = $('.t-n > input').val();
+            if (inputc == '') {
+                $('.t-name > div > span:nth-of-type(1)').text('未填写');
+            } else {
+                $('.t-name > div > span:nth-of-type(1)').text(inputc);
+            }
+            $("#zd_soloname").val(inputc);
+        })
+        $('.confirm-t-w').click(function() {
+            var inputc = $('.t-w > input').val();
+            if (inputc == '') {
+                $('.t-word > div > span:nth-of-type(1)').text('未填写');
+            } else {
+                $('.t-word > div > span:nth-of-type(1)').text(inputc);
+            }
+            $("#zd_xuanyan").val(inputc);
+        })
+        $('.confirm-t-b').click(function() {
+            var inputc = $('.t-b > input').val();
+            if (inputc == '') {
+                $('.t-boss > div > span:nth-of-type(1)').text('未填写');
+            } else {
+                $('.t-boss > div > span:nth-of-type(1)').text(inputc);
+            }
+            $("#zd_name").val(inputc);
+        })
+
+        $('.confirm-t-t').click(function() {
+            var inputc = $('.t-t > input').val();
+            if (inputc == '') {
+                $('.t-tel > div > span:nth-of-type(1)').text('未填写');
+            } else {
+                $('.t-tel > div > span:nth-of-type(1)').text(inputc);
+            }
+            $("#zd_phone").val(inputc);
+        })
+        $('.confirm-t-s').click(function() {
+            var inputc = '';
+            var inputid = '';
+            for (var i = 0; i < 80; i++) {
+                var j = i + 1;
+                if ($('.s3:nth-of-type(' + j + ') img').attr('src') == 'Public/Mobile/new/images/games/danxuan.png') {
+                    inputc += $('.s3:nth-of-type(' + j + ')').text();
+                    inputid = $('.s3:nth-of-type(' + j + ')').attr("data-id");
+                }
+            }
+            $('.t-school > div > span:nth-of-type(1)').text(inputc);
+            if (inputc == '') {
+                $('.t-school > div > span:nth-of-type(1)').text('未填写');
+            }
+            $("#zd_xuexiao").val(inputid);
+        })
+        $('.confirm-t-c').click(function() {
+            var inputc = $('.t-c > input').val();
+            if (inputc == '') {
+                $('.t-class > div > span:nth-of-type(1)').text('未填写');
+            } else {
+                $('.t-class > div > span:nth-of-type(1)').text(inputc);
+            }
+            $("#zd_banji").val(inputc);
+        })
+
+    </script>
+    <script type="text/javascript" src="./Public/Mobile/js/upload/jquery.form.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            //战队logo照片
+
+            var showimg_fengmian = $('#showimg_fengmian').find("img");
+            var new_img_fengmian = $('#zd_logo');
+            $("#fileupload_fengmian").change(function () {
+                $("#upload_fengmian").ajaxSubmit({
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    uploadProgress: function (event, position, total, percentComplete) {
+                    },
+                    success: function (data) {
+                        var img_fengmian = data.pic_path;
+                        showimg_fengmian.attr("src",img_fengmian);
+                        new_img_fengmian.val(img_fengmian);
+                    },
+                    error: function (xhr) {
+                    }
+                });
+            });
+        });
+    </script>
+<include file="Public:footer" />

@@ -1,0 +1,89 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap margin-top58 about rules-ab tabcont">
+
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">主播竞猜</a></li>
+		<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">赛事竞猜</a></li>
+		<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">英雄猜</a></li>
+	</ul>
+    
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="home">
+			<volist name="list" id="l">
+				<dl>
+					<dd>{$l.ctime|date="Y-m-d H:i:s",###}</dd>
+					<dt>{$l.gamename}</dt><div class="clearfix"></div>
+					<div class="row">
+						<div class="col-md">{$l.cname}</div>
+						<div class="col-md">竞猜：{$l.checkname}（{$l.peilv}）</div>
+						<div class="col-md">结果：{$l.jieguo}</div>
+						<div class="col-md">
+							投注：{$l.changeAmount}金币
+							<eq name="l.jieguoid" value="1">
+								<span class="Gold">{$l.jgolds}</span>
+							</eq>
+							<eq name="l.jieguoid" value="2">
+								<span class="sub-Gold">{$l.jgolds}</span>
+							</eq>
+						</div>
+					</div>
+				</dl>
+			</volist>
+           
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">
+        
+			<volist name="list_bs" id="l">
+				<dl>
+					<dd>{$l.ctime|date="Y-m-d H:i:s",###}</dd>
+					<dt>{$l.gamename}{$l.name}</dt><div class="clearfix"></div>
+					<div class="row">
+						<div class="col-md">{$l.cname}</div>
+						<div class="col-md">竞猜：{$l.checkname}（{$l.peilv}）</div>
+						<div class="col-md">结果：{$l.jieguo}</div>
+						<div class="col-md">
+							投注：{$l.changeAmount}金币
+							<eq name="l.jieguoid" value="1">
+								<span class="Gold">{$l.jgolds}</span>
+							</eq>
+							<eq name="l.jieguoid" value="2">
+								<span class="sub-Gold">{$l.jgolds}</span>
+							</eq>
+						</div>
+					</div>
+				</dl>
+			</volist>
+        
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">
+        
+			<volist name="list_yxc" id="l">
+				<dl>
+					<dd>{$l.ctime|date="Y-m-d H:i:s",###}</dd>
+					<dt>{$l.gamename} {$l.herodayqi}期</dt><div class="clearfix"></div>
+					<div class="row">
+						<div class="col-md">竞猜：{$l.checkname}（{$l.peilv}）</div>
+						<div class="col-md">结果：{$l.jieguo}</div>
+						<div class="col-md">
+							投注：{$l.changeAmount}金币
+							<eq name="l.jieguoid" value="1">
+								<span class="Gold">{$l.jgolds}</span>
+							</eq>
+							<eq name="l.jieguoid" value="2">
+								<span class="sub-Gold">{$l.jgolds}</span>
+							</eq>
+						</div>
+					</div>
+				</dl>
+			</volist>
+        
+        </div>
+      </div>
+
+</div>
+
+<include file="Public:footer"/>

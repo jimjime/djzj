@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{$webtitle}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+<meta name="description" content="">
+<meta name="author" content=""> 
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<link href="__PUBLIC__/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/style.css?201608091347" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/newfooter.css?201608050936" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!--弹出层-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/alert.css" />
+<!--验证信息 js+css -->
+<link rel="stylesheet" href="__PUBLIC__/bootstrap-3.3.5-dist/css/bootstrapValidator.css"/>
+<script type="text/javascript" src="__PUBLIC__/bootstrap-3.3.5-dist/js/bootstrapValidator.js"></script>
+<!--微信js-->
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+
+<body>
+<notempty name='bigmess'>
+	<style type="text/css">
+	.bigmess{width:98%;padding-left:1%;padding-right:1%;height:auto;position:fixed;left:0;top:0;z-index:99999999;background:#1c2930;color:#fff;}
+	.bigmess_span{width:90%;height:auto;display:block;line-height:2rem;font-size:1.3rem;}
+	.bigmess_a{width:10%;height:auto;display:block;position:absolute;right:0;top:0.4rem;z-index:2;text-align:center;}
+	.bigmess_a img{width:60%;}
+	</style>
+	<div class="bigmess">
+		<span class="bigmess_span">
+		{$bigmess.name}
+		</span>
+		<a href="javascript:;" class="bigmess_a" onClick="hide_bigmess({$bigmess.id})">
+			<img src="__PUBLIC__/new/images/close.png" />
+		</a>
+	</div>
+	<script type="text/javascript">
+	function hide_bigmess(t){
+		$.post("{:U('Index/hidebigmess')}", {mid:t}, function(v){
+			$(".bigmess").hide();
+		});
+	}
+	</script>
+</notempty>
+<!--顶部导航-->
+<eq name='Think.ACTION_NAME' value='myqr'>
+<else/>
+	<header class="header">
+		<span class="fl">今日竞猜：{$thisdayzong_ren}人，{$thisdayzong_jinbi}金币</span>
+		<span class="header-r fr">余额：{$user_yue}</span>
+		<php>
+		if(ACTION_NAME=="hero"){
+		</php>
+			<a class="rules" href="{:U('Index/art',array(fid=>4))}"></a>
+		<php>
+		}else if(ACTION_NAME=="recom" || ACTION_NAME=="myqr" || ACTION_NAME=="recoms"){
+		</php>
+			<a class="rules" href="{:U('Index/art',array(aid=>5))}"></a>
+		<php>
+		}else if(ACTION_NAME=="art" && $_GET['aid']==5){
+		</php>
+			<a class="rules" href="{:U('Index/art',array(aid=>5))}"></a>
+		<php>
+		}else{
+		</php>
+			<a class="rules" href="{:U('Index/art',array(fid=>1))}"></a>
+		<php>
+		}
+		</php>
+		
+	</header>
+</eq>

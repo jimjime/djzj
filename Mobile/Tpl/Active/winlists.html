@@ -1,0 +1,50 @@
+<include file="Public:header_active"/>
+<style>
+	.winlists{width:100%;}
+		.winitem{width:100%;height:10rem;background:url('__PUBLIC__/new/images/roll/winbg2.png') no-repeat center;background-size:cover;border-bottom:solid #131c21 10px;}
+	.userHeader{width:25%;padding-left:0.4rem;padding-top:1.8rem;display:block;float:left;}
+		.userHeader_pic{width:80%;height:auto;border-radius:100%;}
+	.details{width:38%;padding-top:3rem;display:block;float:left;color:#fff;text-align:left;font-size:1.5rem;}
+	.prizePic{width:20%;padding-left:2rem;padding-right:2rem;padding-top:1.8rem;display:block;float:right;}
+		.prizePic img{width:100%;height:auto;display:block;float:right;}
+</style>
+	<div class="winlists">
+		<volist name="list" id="l">
+			<div class="winitem">
+				<div class="userHeader">
+					<img class="userHeader_pic" src="{$l.userHeader1}" alt="">
+				</div>
+				<div class="details">
+					<p>{$l.userName1}在{$l.name}获得{$l.prizeName1} 中奖编号：{$l.userRecordid1}</p>
+				</div>
+				<div class="prizePic">
+					<img src="{$l.prizePic1}" alt="">
+				</div>
+			</div>
+			<div class="winitem">
+				<div class="userHeader">
+					<img class="userHeader_pic" src="{$l.userHeader2}" alt="">
+				</div>
+				<div class="details">
+					<p>{$l.userName2}在{$l.name}获得{$l.prizeName2} 中奖编号：{$l.userRecordid2}</p>
+				</div>
+				<div class="prizePic">
+					<img src="{$l.prizePic2}" alt="">
+				</div>
+			</div>
+			<div class="winitem">
+				<div class="userHeader">
+					<img class="userHeader_pic" src="{$l.userHeader3}" alt="">
+				</div>
+				<div class="details">
+					<p>{$l.userName3}在{$l.name}获得{$l.prizeName3} 中奖编号：{$l.userRecordid3}</p>
+				</div>
+				<div class="prizePic">
+					<img src="{$l.prizePic3}" alt="">
+				</div>
+			</div>
+		</volist>
+
+	</div>
+	
+<include file="Public:footer_active"/>

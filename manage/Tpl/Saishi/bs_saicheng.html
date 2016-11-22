@@ -1,0 +1,309 @@
+<include file="Public:header"/>
+
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    赛程管理
+
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    <div class="btn-group">
+						<a href="#addmyModal" data-toggle="modal" >
+							<button class="btn btn-primary ">
+								添加 <i class="fa fa-plus"></i>
+							</button>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>ID</th>
+                    <th>日期</th>
+                    <th>时分</th>
+					<th>比赛项目</th>
+					<th>赛区</th>
+					<th>比赛级别</th>
+					<th>队伍1</th>
+					<th>队伍2</th>
+					<th>地点</th>
+					<th>比赛结果</th>
+					<th>排序</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+					<volist name="list" id="l" key="i">
+						<tr class="">
+							<td>{$i}</td>
+							<td>{$l.id}</td>
+							<td>{$l.dayday}</td>
+							<td>{$l.shifen}</td>
+							<td>{$l.xiangmuname}</td>
+							<td>{$l.quname}</td>
+							<td>{$l.jibie}</td>
+							<td>
+								<php>
+									if($l['team1']<=0){
+								</php>
+								{$l.user1info.soloname}<br>
+								<img src="{$l.user1info.solologo}" height="40" style="border-radius: 50%;" />
+								<php>
+									}else{
+								</php>
+								{$l.team1info.name}<br>
+								<img src="{$l.team1info.logo}" height="40" style="border-radius: 50%;" />
+								<php>
+									}
+								</php>
+							</td>
+							<td>
+								<php>
+									if($l['team2']<=0){
+								</php>
+								{$l.user2info.soloname}<br>
+								<img src="{$l.user2info.solologo}" height="40" style="border-radius: 50%;" />
+								<php>
+									}else{
+								</php>
+								{$l.team2info.name}<br>
+								<img src="{$l.team2info.logo}" height="40" style="border-radius: 50%;" />
+								<php>
+									}
+								</php>
+							</td>
+							<td>{$l.didian}</td>
+							<td>{$l.jieguo}</td>
+							<td>{$l.xu}</td>
+							<td>
+								<a class="tan_edit" data-toggle="modal" href="#bianjibox{$l.id}">编辑</a>
+								|
+								<a href="javascript:;" class="cddel_admin_btn" onclick="cddel_admin({$l.id},'bs_saicheng',this,'id')">彻底删除</a>
+							</td>
+							<!--编辑框 start-->
+							<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="bianjibox{$l.id}" class="modal fade">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title">编辑</h4>
+										</div>
+			
+										<div class="modal-body ">
+											<form enctype="multipart/form-data" action="{:U('Saishi/bs_saicheng_edit')}" method="post">
+												<input type="hidden" name="id" value="{$l.id}">
+												<div class="form-group">
+													<label>日期：</label>
+													<select name="day" class="form-control">
+														<volist name="days" id="d" key="ii">
+															<option value="{$d.id}"  <php>if($d['id']==$l['day']){</php>selected="selected"<php>}</php>>{$d.day}</option>
+														</volist>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>时分：</label>
+													<input name="shifen" value="{$l.shifen}" class="form-control">
+												</div>
+												<div class="form-group">
+													<label>比赛项目：</label>
+													<select name="xiangmu" class="form-control" id="xiangmu">
+														<volist name="xiangmus" id="d" key="ii">
+															<option value="{$d.id}"  <php>if($d['id']==$l['xiangmu']){</php>selected="selected"<php>}</php>>{$d.name}</option>
+														</volist>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>赛区：</label>
+													<select name="qu" class="form-control">
+														<volist name="qus" id="d" key="ii">
+															<option value="{$d.id}"  <php>if($d['id']==$l['qu']){</php>selected="selected"<php>}</php>>{$d.name}</option>
+														</volist>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>级别：</label>
+													<input name="jibie" value="{$l.jibie}" class="form-control">
+												</div>
+												<div class="form-group teamselect">
+													<label>队伍1：</label>
+													<select name="team1" class="form-control">
+														<option value="0">请选择</option>
+														<volist name="teams" id="d" key="ii">
+															<option value="{$d.id}"  <php>if($d['id']==$l['team1']){</php>selected="selected"<php>}</php>>{$d.name}</option>
+														</volist>
+													</select>
+												</div>
+												<div class="form-group teamselect">
+													<label>队伍2：</label>
+													<select name="team2" class="form-control">
+														<option value="0">请选择</option>
+														<volist name="teams" id="d" key="ii">
+															<option value="{$d.id}"  <php>if($d['id']==$l['team2']){</php>selected="selected"<php>}</php>>{$d.name}</option>
+														</volist>
+													</select>
+												</div>
+												<div class="form-group userselect">
+													<label>选手1：</label>
+													<select name="user1" class="form-control">
+														<option value="0">请选择</option>
+														<volist name="users" id="d" key="ii">
+															<option value="{$d.uid}"  <php>if($d['uid']==$l['user1']){</php>selected="selected"<php>}</php>>{$d.soloname}</option>
+														</volist>
+													</select>
+												</div>
+												<div class="form-group userselect">
+													<label>选手2：</label>
+													<select name="user2" class="form-control">
+														<option value="0">请选择</option>
+														<volist name="users" id="d" key="ii">
+															<option value="{$d.uid}"  <php>if($d['uid']==$l['user2']){</php>selected="selected"<php>}</php>>{$d.soloname}</option>
+														</volist>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>比赛地点：</label>
+													<input name="didian" value="{$l.didian}" class="form-control">
+												</div>
+												<div class="form-group">
+													<label>比赛结果：</label>
+													<input name="jieguo" value="{$l.jieguo}" class="form-control">
+												</div>
+												<div class="form-group">
+													<label>排序：</label>
+													<input name="xu" value="{$l.xu}" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">保存</button>
+											</form>
+										</div>
+			
+									</div>
+								</div>
+							</div>
+							<!--编辑框 end-->
+						</tr>
+					</volist>
+
+                </tbody>
+                </table>
+                </div>
+                </div>
+                </section>
+                </div>
+                </div>
+        </div>
+        <!--body wrapper end-->
+		<!--添加框 start-->
+		<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addmyModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+						<h4 class="modal-title">添加</h4>
+					</div>
+					<div class="modal-body">
+
+						<form enctype="multipart/form-data" action="{:U('Saishi/bs_saicheng_edit')}" method="post">
+							<input type="hidden" name="id" value="">
+							<div class="form-group">
+								<label>日期：</label>
+								<select name="day" class="form-control">
+									<volist name="days" id="d" key="ii">
+										<option value="{$d.id}">{$d.day}</option>
+									</volist>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>时分：</label>
+								<input name="shifen" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>比赛项目：</label>
+								<select name="xiangmu" class="form-control" id="xiangmu">
+									<volist name="xiangmus" id="d" key="ii">
+										<option value="{$d.id}">{$d.name}</option>
+									</volist>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>赛区：</label>
+								<select name="qu" class="form-control">
+									<volist name="qus" id="d" key="ii">
+										<option value="{$d.id}">{$d.name}</option>
+									</volist>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>级别：</label>
+								<input name="jibie" value="" class="form-control">
+							</div>
+							<div class="form-group teamselect">
+								<label>队伍1：</label>
+								<select name="team1" class="form-control">
+									<option value="0">请选择</option>
+									<volist name="teams" id="d" key="ii">
+										<option value="{$d.id}">{$d.name}</option>
+									</volist>
+								</select>
+							</div>
+							<div class="form-group teamselect">
+								<label>队伍2：</label>
+								<select name="team2" class="form-control">
+									<option value="0">请选择</option>
+									<volist name="teams" id="d" key="ii">
+										<option value="{$d.id}">{$d.name}</option>
+									</volist>
+								</select>
+							</div>
+							<div class="form-group userselect">
+								<label>选手1：</label>
+								<select name="user1" class="form-control">
+									<option value="0">请选择</option>
+									<volist name="users" id="d" key="ii">
+										<option value="{$d.uid}">{$d.soloname}</option>
+									</volist>
+								</select>
+							</div>
+							<div class="form-group userselect">
+								<label>选手2：</label>
+								<select name="user2" class="form-control">
+									<option value="0">请选择</option>
+									<volist name="users" id="d" key="ii">
+										<option value="{$d.uid}">{$d.soloname}</option>
+									</volist>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>比赛地点：</label>
+								<input name="didian" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>比赛结果：</label>
+								<input name="jieguo" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>排序：</label>
+								<input name="xu" value="" class="form-control">
+							</div>
+							<button type="submit" class="btn btn-primary">保存</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--添加框 end-->
+
+    </div>
+    <!-- main content end-->
+	
+<include file="Public:footer"/>
+

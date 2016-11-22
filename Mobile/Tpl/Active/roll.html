@@ -1,0 +1,329 @@
+<include file="Public:header_active"/>
+<style>
+	body{background-color: #24050b;/*: url('__PUBLIC__/roll/bg4.png');background-size:100% auto;background-attachment: scroll;background-repeat: no-repeat;*/}
+	.tongzhi{width:100%;height:3rem;background-color:#1c2930;position: fixed;top:0;line-height:3rem;font-size: 1.5rem;text-align:center; clear:both;}
+	.logotop{width:100%;height:auto;margin-top:3rem;}
+	.logotoppic{width: 100%;display:block;}
+	.mibao{margin: 0 auto;width:90%;}
+	.mibaopic{width:100%;}
+	.kaer{width: 100%;}
+	.kaerpic{width: 100%;display:block;}
+	.mid{position: absolute;top:40rem;}
+	.midpic{width: 100%;}
+
+	.show{text-align: center;height:20rem;}
+	.show1{text-align: center;height:auto;background: #070714;}
+	.join{width: 100%;}
+	.join_btn{display:block;line-height:3.2rem;margin: 0 auto;width:20rem;height: 3.2rem;color: #fff;text-align: center;background: url('__PUBLIC__/new/images/lcbtn.png') no-repeat;background-size: cover;font-size: 2rem;}
+	.reTimes{font-size: 1rem;}
+	.zhaomu{width: 100%;margin-top: 25px;margin-bottom: 15px;}
+	.zhaomu_btn{display:block;line-height:3.2rem;margin: 0 auto;width:20rem;height: 3.2rem;color: #fff;text-align: center;background: url('__PUBLIC__/new/images/invbtn.png') no-repeat;background-size: cover;font-size: 2rem;}
+	.moreChances{font-size: 1rem;}
+	.remaining{height:5rem;margin-bottom:20px;}
+	.remaining_wz{color:#fff;font-size:2rem;}
+	.remaining_time{color:#fff;font-size:4.4rem;}
+	.btns{width:90%;height:3rem;margin:0 auto;text-align:center;}
+	.btn1{display:inline-block;line-height:3rem;margin: 0 auto;height: 3rem;width:30%;color: #fff;text-align: center;background: url('__PUBLIC__/new/images/roll/btn1.png') no-repeat;background-size: cover;font-size: 1.5rem;}
+	.btn2{display:inline-block;line-height:3rem;margin: 0 auto;height: 3rem;width:30%;color: #fff;text-align: center;background: url('__PUBLIC__/new/images/roll/btn2.png') no-repeat;background-size: cover;font-size: 1.5rem;}
+	.btn3{display:inline-block;line-height:3rem;margin: 0 auto;height: 3rem;width:30%;color: #fff;text-align: center;background: url('__PUBLIC__/new/images/roll/btn3.png') no-repeat;background-size: cover;font-size: 1.5rem;}
+	
+	.principle{width:80%;height:100%;position:fixed;top:0;left:0;padding:10%;background:url(__PUBLIC__/new/images/bg_hei.png) repeat;}
+	.principle_div{background-color: #1d2b32;border-radius:10px 10px 0 0 ;}
+	.principle_title{text-align:center;color:#fff;font-size:2rem;line-height: 2rem;margin: 1rem;padding-top: 1rem;}
+	.principle_detail{padding:2rem;color: #fff;font-size:1.5rem;line-height:2.2rem;}
+	
+	.fuzhu{width:80%;margin:0 auto;}
+	.winlists{width:100%;display:block;}
+	.prevmingdan{width:100%;height:4rem;line-height:4rem;font-size:2rem;color:#fff;text-align:center;padding:1rem 0;padding-top:2rem;}
+	.listbox{width:100%;display:inline-flex;padding:1rem 0;}
+	.fuzhu_header{width:20%;display:block;}
+	.fuzhu_header img{border-radius:50%;width:90%;}
+	.fuzhu_name{width:60%;display:block;color:#fff;font-size:1.5rem;}
+	.fuzhu_top{width:20%;display:block;}
+	.fuzhu_top_img{width:100%;float: right;}
+	.fuzhuspan{width:0%;display: block;}
+	.fuzhupic{width:100%;}
+
+	.logofoot{width: 100%;margin-bottom:5rem;position:relative;}
+	.logofootpic{width: 100%;}
+	
+	/* 提示框 */
+	.layer{width:80%;height:100%;position:fixed;top:0;left:0;padding:10%;background:url(__PUBLIC__/new/images/bg_hei.png) repeat;}
+	.status{width:100%;height:auto;background-color:#1d2b32;border-radius:10px 10px 0 0 ;}
+	.status_icon{width:100%;margin: 0 auto;margin-bottom: 2rem;display: block;padding-top:1rem;text-align:center;}
+	.status_icon_img{width:40%;}
+	.status_detail{width:100%;color: #fff;text-align: center;font-size: 1.8rem;padding-bottom:1rem;}
+	.confirm{width:100%;height:4rem;background-color:#19a2f4;border-radius:0 0 10px 10px;color: #fff;text-align: center;font-size: 2rem;line-height:4rem;}
+	.status_detail_title{font-size: 2.5rem;margin-bottom:1rem;}
+	.mynos{width:80%;height:100%;position:fixed;top:0;left:0;padding:10%;padding-top:30%;background:url(__PUBLIC__/new/images/bg_hei.png) repeat;}
+	.mynos_detail{width:100%;height:auto;background-color:#1d2b32;text-align: center;border-radius:10px 10px 0 0 ;padding:1rem 0;}
+	.mynos_detail_title{color:#fff;font-size:2rem;padding-bottom: 0.5rem;}
+	.mynos_detail_item{color: #fff;font-size: 1.5rem;line-height:2rem;}
+	.gotoindexs{display:block;width:8rem;height:3rem;line-height:3rem;background: url('./Public/Mobile/new/images/roll/btn1.png') no-repeat;background-size:cover;color:#fff;font-size:1.5rem;text-align:center;border-radius:8px;margin:0 auto;position:absolute;right:3rem;top:0.2rem;z-index:2;}
+
+</style>
+	<div class="tongzhi">
+		<span style="float:left;padding-left:1rem;">
+			上期参加人数:{$lastcount}
+		</span>
+		<span style="padding:0 1rem;">
+			{$termInfo.name}
+		</span>
+		<span style="float:right;padding-right:1rem;">
+			本期参加人数:{$thiscount}
+		</span>
+	</div>
+	<div class="logotop">
+		<img class="logotoppic" src="__PUBLIC__/new/images/roll/head{$_SESSION.gametypeid}.png" alt="">
+	</div>
+	<div class="kaer">
+		<img class="kaerpic" src="{$termInfo.background}" alt="">
+	</div>
+	<eq name="_SESSION.gametypeid" value="1">
+	<div class="show1">
+	</eq>
+	<div class="show">
+		
+		<div class="join">
+			<a id="join_btn" class="join_btn" href="javascript:;" >
+				点击参加
+			<span class="reTimes">(剩余<span class="extraChance">{$remainTimes}</span>次)</span>
+			</a>
+		</div>
+		<div class="zhaomu">
+			<a class="zhaomu_btn" href="/index.php?a=myqr&m=index">
+				招募战友
+				<span class="moreChances">(增加一次机会)</span>
+			</a>
+		</div>
+		<div class="remaining">
+			<span class="remaining_wz">剩余：</span>
+			<span id="remaintime" class="remaining_time"></span>
+		</div>
+		<div class="btns">
+			<a class="btn1" href="/index.php?a=winlists&m=active"> 
+				获奖名单
+			</a>
+			<a id="btn2" class="btn2" href="javascript:;">
+				我的编号
+			</a>
+			<a class="btn3" onclick="show_principle()" href="javascript:;">
+				规则说明
+			</a>
+		</div>
+	</div>
+
+	<div class="fuzhu">
+		<div class="winlists">
+			
+			<notempty name="lasttermInfo.userRecordid1">
+				<div class="prevmingdan">
+					上一期获奖名单
+				</div>
+				<div class="listbox">
+					<div class="fuzhu_header">
+						<img class="fuzhu_header_img" src="{$lasttermInfo.userHeader1}" alt="">
+					</div>
+					<div class="fuzhu_name">
+						<p>
+						昵称:{$lasttermInfo.userName1}<br>
+						编号:{$lasttermInfo.userRecordid1}<br>
+						奖品:{$lasttermInfo.prizeName1}
+						</p>
+					</div>
+					<div class="fuzhu_top">
+						<img class="fuzhu_top_img" src="{$lasttermInfo.prizePic1}" alt="">
+					</div>
+				</div>
+			</notempty>
+			<notempty name="lasttermInfo.userRecordid2">
+				<div class="listbox">
+					<div class="fuzhu_header">
+						<img class="fuzhu_header_img" src="{$lasttermInfo.userHeader2}" alt="">
+					</div>
+					<div class="fuzhu_name">
+						<p>
+						昵称:{$lasttermInfo.userName2}<br>
+						编号:{$lasttermInfo.userRecordid2}<br>
+						奖品:{$lasttermInfo.prizeName2}
+						</p>
+					</div>
+					<div class="fuzhu_top">
+						<img class="fuzhu_top_img" src="{$lasttermInfo.prizePic2}" alt="">
+					</div>
+				</div>
+			</notempty>
+			<notempty name="lasttermInfo.userRecordid3">
+				<div class="listbox">
+					<div class="fuzhu_header">
+						<img class="fuzhu_header_img" src="{$lasttermInfo.userHeader3}" alt="">
+					</div>
+					<div class="fuzhu_name">
+						<p>
+						昵称:{$lasttermInfo.userName3}<br>
+						编号:{$lasttermInfo.userRecordid3}<br>
+						奖品:{$lasttermInfo.prizeName3}
+						</p>
+					</div>
+					<div class="fuzhu_top">
+						<img class="fuzhu_top_img" src="{$lasttermInfo.prizePic3}" alt="">
+					</div>
+				</div>
+			</notempty>
+
+		</div>
+		<div class="fuzhuspan">
+			<img class="fuzhupic" src="__PUBLIC__/new/images/roll/foot.png" alt="">
+		</div>
+	</div>
+	<div class="logofoot">
+		<eq name="_SESSION.gametypeid" value="9999">
+			<a href="{:U('Active/indexs')}" class="gotoindexs">大转盘>></a>
+		</eq>
+		<img class="logofootpic" src="__PUBLIC__/new/images/roll/logofoot.png" alt="">
+	</div>
+	<eq name="_SESSION.gametypeid" value="1">
+	</div>
+	</eq>
+
+
+	<!-- 提示框开始 -->
+	<div class="layer" id="join_result" style="display:none;">
+		<div class="status">
+			<div class="status_icon">
+				<img class="status_icon_img" src="__PUBLIC__/new/images/roll/gou.png" alt="">
+			</div>
+			<div class="status_detail">
+				<p class="status_detail_title">参加成功</p>
+				<span>您的编号:</span><span id="userNo"></span><br><span>本期剩余次数:</span><span class="extraChance">0</span>
+			</div>
+		</div>
+		<div class="confirm" onclick="dispear_join_result()">确定</div>
+	</div>
+	<div class="layer" id="join_result_no" style="display:none;">
+		<div class="status">
+			<div class="status_icon">
+				<img class="status_icon_img" src="__PUBLIC__/new/images/roll/cha.png" alt="">
+			</div>
+			<div class="status_detail">
+				<p class="status_detail_title">招募战友次数不足</p>
+			</div>
+		</div>
+		<div class="confirm" onclick="dispear_join_result_no()">确定</div>
+	</div>
+	<!-- 提示框结束 -->
+
+	<!-- 规则说明开始 -->
+		<div id="principle" class="principle" style="display:none">
+			<div class="principle_div">
+				<div class="principle_title">
+					<p>规则说明</p>
+				</div>
+				<div class="principle_detail">
+					<p>
+					1.本活动为免费参与，点击参加后获得编号,就可能中奖。<br />
+					2.成功招募一名战友即增加一次参与机会。<br />
+					3.每期参与次数上限为10次，超过上限，额外机会可在下一期使用。<br />
+					4.剩余时间即为报名截止时间，报名截止6小时后开奖，每名用户每期最多中一次奖。<br />
+					</p>
+				</div>			
+				<div class="principle_detail" style="text-align:center;font-size:1rem;">
+					<p>
+					活动解释权归全民菠菜所有
+					</p>
+				</div>			
+			</div>
+					
+			<div class="confirm" onclick="dispear_principle()">确定</div>
+		</div>
+	<!-- 规则说明结束 -->
+	<!-- 我的编号开始 -->
+		<div class="mynos" id="mynos" style="display:none">
+			<div class="mynos_detail">
+				<p class="mynos_detail_title">我的编号</p>
+				<p class="mynos_detail_item">
+					
+				</p>
+			</div>
+			<div class="confirm" onclick="dispear_mynos()">确定</div>
+		</div>
+	<!-- 我的编号 结束 -->
+	<input type="hidden" id="rollid" value="{$termInfo.id}" />
+<script>
+	$(function(){
+		$('#join_btn').on("click",function() {
+			$.post("{:U('Active/getUserNo')}",{},function(v) {
+				if (v.status == 'success') {
+					$('#userNo').text(v.content);
+					$('.extraChance').text(v.times);
+					$('#join_result').show();
+				}else{
+					$('#join_result_no').show();
+					$('#join_result_no').find("p.status_detail_title").text(v.content);
+					$('.extraChance').text(0);
+				}
+
+			},'json');
+		});
+
+		$('#btn2').on("click",function() {
+			var rollid=$("#rollid").val();
+			$.post("{:U('Active/getnos')}",{rollid:rollid},function(v) {
+				console.log(v);
+				var str = '';
+				for (var i = 0; i < v.length; i++) {
+					str = str + v[i] + ' ';
+					if ((i+1)%3==0) {
+						str = str + '<br />';
+					} 
+				}
+				$('.mynos_detail_item').html(str);
+			},'json');
+			$('#mynos').show();
+		});
+
+
+
+	});
+
+	setInterval(function(){
+			var endTime = {$endTime};
+			var nowTime = new Date();
+			var leftTime = endTime - nowTime.getTime()/1000;
+			// d = parseInt(leftTime/24/60/60);
+			// if (d<9) {d=d+'0'}
+	        h = parseInt((leftTime/(60*60)));
+	    	if (h<=9) {h='0'+h}
+	        m = parseInt(leftTime/60%60);
+	    	if (m<=9) {m='0'+m}
+	        s = parseInt(leftTime%60);
+	    	if (s<=9) {s='0'+s}
+			if(leftTime<=0){
+				$('#remaintime').text('00:00:00');
+			}else{
+				$('#remaintime').text(h+':'+m+':'+s);
+			}
+        	
+    },1000);
+
+	
+	function dispear_join_result(){
+		$('#join_result').css({'display':'none'});
+	}
+	function dispear_join_result_no(){
+		$('#join_result_no').css({'display':'none'});
+	}
+	function show_principle() {
+		$('#principle').show();
+	}
+	function dispear_principle() {
+		$('#principle').css({'display':'none'});
+	}
+	function show_mynos() {
+		$('#mynos').show();
+	}
+	function dispear_mynos() {
+		$('#mynos').css({'display':'none'});
+	}
+</script>
+<include file="Public:footer_active"/>

@@ -1,0 +1,555 @@
+<include file="Public:header"/>
+
+<style>
+	.nav{width:100%;}
+	.jingcai_nav{width:50%;height:auto;display:block;float:left;}
+	.jingcai_nav_pic{width:100%;}
+	.zixun_nav{width:50%;height:auto;display:block;float:left;}
+	.zixun_nav_pic{width:100%;}
+
+	.banner{width:100%;height:auto;position:relative;}
+	.banner_img{width:100%;}
+	.banner_detail{width:100%;position:absolute;z-index:2;bottom:0.5rem;right:0;}
+	.banner_detail p{color: #fff;font-size:1.6rem;text-align:right;padding-right:1rem;}
+	.banner_info{width:100%;height:1.5rem;text-align:right;}
+	.banner_pubtime{float:right;padding-right:1rem;}
+	.pubtime_clock{display:block;float:right;}
+	.pubtime_clock img{height:1.4rem;padding-right:1rem;}
+	.pubtime_detail{display:block;float:right;}
+	.pubtime_detail p{color:#fff;font-size:1rem;line-height:2rem;}
+	.banner_readtimes{float:right;padding-right:1rem;}
+	.readtimes_eye{display:block;float:left;}
+	.readtimes_eye img{height:1.4rem;padding-right:1rem;}
+	.readtimes_detail{height:2rem;display:block;float:left;}
+	.readtimes_detail p{color:#fff;font-size:1rem;line-height:2rem;}
+	
+	.content{width:100%; background:#131c21;}
+	.content_item{width:100%;background:#1c2930;height:8rem;margin-top:0.8rem;}
+	.item_pic{width:35%;display:block;float:left;height:8rem;overflow:hidden;}
+	.item_pic img{width:100%;height:100%;}
+	.item_intro{display:block;float:left;width:65%;padding:0 0;}
+	.item_intro_title{padding-left:1rem;padding-top:0.8rem;padding-right:0.5rem;}
+
+
+	.item_info{width:96%;height:1.5rem;padding-left:1rem;padding-top:0.8rem;}
+	.item_pubtime{width:50%;float:left;padding-right:1rem;}
+	.item_pubtime_detail p{line-height:2rem;}
+	.item_pubtime_clock{display:block;float:left;padding-right:1rem;}
+	.item_pubtime_clock img{height:1.4rem;}
+	.item_detail{display:block;float:left;}
+	.item_detail p{font-size:1rem;line-height:2rem;}
+	.item_readtimes{width:50%;float:right;}
+	.item_readtimes_eye{display:block;float:right;}
+	.item_readtimes_eye img{height:1.4rem;padding-right:1rem;}
+	.item_readtimes_detail{height:2rem;display:block;float:right;word-wrap:break-word;}
+	.item_readtimes_detail p{font-size:1rem;line-height:2rem;}
+</style>
+
+<!--主体-->
+<div class="wrap">
+	<!-- 竞猜/咨询导航栏 -->
+	<div class="nav">
+		<div class="jingcai_nav">
+			<a href="{:U('Index/index')}">
+				<img class="jingcai_nav_pic" src="__PUBLIC__/new/images/zixun/jincai-active.png" alt="">
+			</a>
+		</div>
+		<div class="zixun_nav" >
+			<a href="{:U('News/news')}">
+				<img class="zixun_nav_pic" src="__PUBLIC__/new/images/zixun/zixun2.png" alt="">
+			</a>
+		</div>
+	</div>
+
+	<div class="jingcai">
+		<!--主播 开始-->
+		<div class="title1">
+			<h3 class="toptitle">主播竞猜</h3>
+		</div>
+		<notempty name="list_zhubos">
+			<div class = "zhubopic">
+				<volist name="list_zhubos" id="z">
+					<div class="zhubopic_li">
+						<a href="{:U('Index/indexx',array(gameid=>$z[gameid]))}">
+							<div class="zhubopic_li_img_box">
+								<div class="zhubopic_li_icon">
+									<img src="{$z.pt.avatar}" />
+								</div>
+								<img src="{$z.avatar}" class="zhubopic_li_img" />
+								<div class="zhubopic_li_name">
+									{$z.name}
+								</div>
+							</div>
+						</a>
+					</div>
+				</volist>
+				<div class="clear"></div>
+			</div>
+		<else/>
+			<div class="zhubo_nopic">
+				<eq name="_SESSION.gametypeid" value="1">
+					<img src="__PUBLIC__/new/images/jc/lolno.jpg" />
+				<else/>
+					<img src="__PUBLIC__/new/images/jc/dotano.jpg"  />
+				</eq>
+				<div class="clear"></div>
+			</div>
+		</notempty>
+		<!--主播 结束-->
+		<!--比赛 开始-->
+		<div  class = "title2">
+			<h3 class="toptitle">赛事竞猜</h3>
+		</div>
+
+		<div class="raceBet">
+			
+			<volist name="list_game" id="l">
+				<a href="javascript:;" onclick="show_pan({$l.gameId},this)">
+					<div class="bet1">
+						<div class="logo1">
+							<img src="{$l.team1.avatar}" alt="{$l.team1.name}">
+							<div class="tname">
+								{$l.team1.name}
+							</div>
+						</div>	
+						<div class="logomid">
+							<div class="logomid_li1 logomid_li1_{$l.gameId}">
+								<php>
+								$kaishitime=$l['start_time'];
+								if(time()<=$kaishitime){
+									$shengyutime=$kaishitime-time();
+									$shengyuhour=floor($shengyutime / (60 * 60));
+									$shengyuminute = floor($shengyutime / 60) - ($shengyuhour * 60);
+									$shengyusecond = floor($shengyutime) - ($shengyuhour * 60 * 60) - ($shengyuminute * 60);
+									if ($shengyuminute <= 9) $shengyuminute = '0'.$shengyuminute;
+									if ($shengyusecond <= 9) $shengyusecond = '0'.$shengyusecond;
+									if($shengyuhour>0){
+										$shengyutext=$shengyuhour."小时后";
+									}else{
+										if($shengyuminute>0){
+											$shengyutext=$shengyuminute."分钟后";
+										}else{
+											//$shengyutext=$shengyusecond."秒后";
+											$shengyutext="比赛中";
+										}
+									}
+								}else{
+									$shengyutext="比赛中";
+								}
+								</php>
+								<eq name="l.cstate" value="1">{$shengyutext}</eq> 
+								<eq name="l.cstate" value="2">比赛中</eq> 
+								<eq name="l.cstate" value="1">
+									<script type="text/javascript">
+									
+									var intDiff{$l.gameId} = parseInt({$shengyutime});//倒计时总秒数量
+									function timer{$l.gameId}(intDiff{$l.gameId}){
+										window.setInterval(function(){
+										var hour=0,
+											minute=0,
+											second=0;//时间默认值		
+										if(intDiff{$l.gameId} > 0){
+											hour{$l.gameId} = Math.floor(intDiff{$l.gameId} / (60 * 60));
+											minute{$l.gameId} = Math.floor(intDiff{$l.gameId} / 60) - (hour{$l.gameId} * 60);
+											second{$l.gameId} = Math.floor(intDiff{$l.gameId}) - (hour{$l.gameId} * 60 * 60) - (minute{$l.gameId} * 60);
+										}else{
+											$(".logomid_li1_{$l.gameId}").text("比赛中");
+										}
+										if (minute{$l.gameId} <= 9) minute{$l.gameId} = '0' + minute{$l.gameId};
+										if (second{$l.gameId} <= 9) second{$l.gameId} = '0' + second{$l.gameId};
+										if(hour{$l.gameId}>0){
+											$(".logomid_li1_{$l.gameId}").text(hour{$l.gameId}+"小时后");
+										}else{
+											if(minute{$l.gameId}>0){
+												$(".logomid_li1_{$l.gameId}").text(minute{$l.gameId}+"分钟后");
+											}else{
+												//$(".logomid_li1_{$l.gameId}").text(second{$l.gameId}+"秒后");
+												$(".logomid_li1_{$l.gameId}").text("比赛中");
+											}
+										}
+										intDiff{$l.gameId}--;
+										}, 60000);
+									} 
+									$(function(){
+										timer{$l.gameId}(intDiff{$l.gameId});
+									});	
+									</script>
+								</eq>
+							</div>
+							<div class="logomid_li2">
+								<eq name="l.cstate" value="1">
+									<span class="logomid_li2_zt jczzt ">{$l.cstatename}</span>
+								</eq>
+								<eq name="l.cstate" value="2">
+									<span class="logomid_li2_zt yfpzt ">{$l.cstatename}</span>
+								</eq>
+								<eq name="l.cstate" value="3">
+									<span class="logomid_li2_bf">{$l.bifen}</span>
+								</eq>
+	
+							</div>
+							<div class="logomid_li3">
+							{$l.name}
+							</div>
+						</div>
+						<div class="logo2">
+							<img src="{$l.team2.avatar}" alt="{$l.team2.name}">
+							<div class="tname">
+								{$l.team2.name}
+							</div>
+						</div>
+						
+						<div class="clear"></div>
+					</div>
+				</a>
+				<div class="bet_pan bet_pan{$l.gameId}">
+					<!--二级盘 循环 开始-->
+					<volist name="l.gamejus" id="j">
+						<div class="bet_pan_li">
+							<a href="javascript:;" class="bet_pan_li_a_win <eq name='j.cstate' value='1'>btn-win</eq>" data-id="{$j.id}"></a>
+							<a href="javascript:;" class="bet_pan_li_a_fu <eq name='j.cstate' value='1'>btn-fu</eq>" data-id="{$j.id}"></a>
+							<div class="bet_pan_peilv">
+								<eq name="j.wincheck" value="1">
+									<div class="bet_pan_peilv_win win_icon1">
+									胜
+									</div>
+								</eq>
+								<span class="bet_pan_peilv1_{$j.id}">{$j.peilv1}</span><br />{$j.check1}
+							</div>
+							<div class="bet_pan_zt">
+								<div class="bet_pan_zt_li  <eq name="j.cstate" value="1">jczzt</eq>  <eq name="j.cstate" value="2">yfpzt</eq>  <eq name="j.cstate" value="3">yjszt</eq>  <eq name="j.cstate" value="4">yjszt</eq> ">
+									<div class="bet_pan_zt_li_span1">
+									{$j.cname}
+									</div>
+									<div class="bet_pan_zt_li_span2">
+									{$j.cstatename}
+									</div>
+								</div>
+							</div>
+							<div class="bet_pan_peilv">
+								<eq name="j.wincheck" value="2">
+									<div class="bet_pan_peilv_win win_icon2">
+									胜
+									</div>
+								</eq>
+								<span class="bet_pan_peilv2_{$j.id}">{$j.peilv2}</span><br />{$j.check2}
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="data_box_value pdataid{$j.id}" data-cktime="{$j.ktime|date='H:i:s',###}" data-ccname="{$j.cname}" data-ccheck1="{$j.check1}"  data-ccheck2="{$j.check2}" data-cpeilv1="{$j.peilv1}" data-cpeilv2="{$j.peilv2}" data-uyue="{$user_yue}"></div>
+					</volist>
+					<!--二级盘 循环 结束-->
+				</div>
+			</volist>
+			
+		</div>
+		<!--已结算比赛 开始-->
+		<div class="raceBet" id="game_jie_more_box">
+			
+			<volist name="list_game_jie" id="e">
+				<a href="javascript:;" onclick="show_pan({$e.gameId},this)">
+					<div class="bet1">
+						<div class="logo1">
+							<img src="{$e.team1.avatar}" alt="{$e.team1.name}">
+							<div class="tname">
+								{$e.team1.name}
+							</div>
+						</div>	
+						<div class="logomid">
+							<div class="logomid_li2">
+								<span class="logomid_li2_bf" >{$e.bifen}</span>
+							</div>
+							<div class="logomid_li3">
+							{$e.name}
+							</div>
+						</div>
+						<div class="logo2">
+							<img src="{$e.team2.avatar}" alt="{$e.team2.name}">
+							<div class="tname">
+								{$e.team2.name}
+							</div>
+						</div>
+						
+						<div class="clear"></div>
+					</div>
+				</a>
+				<div class="bet_pan bet_pan{$e.gameId}">
+					<!--二级盘 循环 开始-->
+					<volist name="e.gamejus" id="j">
+						<div class="bet_pan_li">
+							<div class="bet_pan_peilv">
+								<eq name="j.wincheck" value="1">
+									<div class="bet_pan_peilv_win win_icon1">
+									胜
+									</div>
+								</eq>
+								<span class="bet_pan_peilv1_{$j.id}">{$j.peilv1}</span><br />{$j.check1}
+							</div>
+							<div class="bet_pan_zt">
+								<div class="bet_pan_zt_li  <eq name="j.cstate" value="1">jczzt</eq>  <eq name="j.cstate" value="2">yfpzt</eq>  <eq name="j.cstate" value="3">yjszt</eq>  <eq name="j.cstate" value="4">yjszt</eq> ">
+									<div class="bet_pan_zt_li_span1">
+									{$j.cname}
+									</div>
+									<div class="bet_pan_zt_li_span2">
+									{$j.cstatename}
+									</div>
+								</div>
+							</div>
+							<div class="bet_pan_peilv">
+								<eq name="j.wincheck" value="2">
+									<div class="bet_pan_peilv_win win_icon2">
+									胜
+									</div>
+								</eq>
+								<span class="bet_pan_peilv2_{$j.id}">{$j.peilv2}</span><br />{$j.check2}
+							</div>
+							<div class="clear"></div>
+						</div>
+					</volist>
+					<!--二级盘 循环 结束-->
+				</div>
+			</volist>
+			
+		</div>
+		<div class="cp_more" >
+			<input type="hidden" value="1" id="nowpage" />
+			<a href="javascript:;" class="more_btn">点击查看更多</a>
+		</div>
+		<script type="text/javascript">
+			$(".more_btn").click(function(){
+				var nowpage=$("#nowpage").val();
+				$.post("{:U('Index/more_game_jie')}", {nowpage:nowpage}, function(v){
+					$("#game_jie_more_box").append(v.ccc);
+					$("#nowpage").val(v.nextpage);
+
+				},'JSON');
+				
+			})
+		</script>
+		<!--已结算比赛 结束-->
+		<!--比赛 结束-->
+	</div>
+
+
+   
+</div>
+
+
+<div class="box jctz_box"></div>
+<div class="layer jctz_layer">
+	<div class="con-layer">
+        <h4 class="pcname"></h4>
+        <span class="pxiang"></span>
+        <div class="form-group">
+            <div class="input-box">
+             <label>竞猜金额 | </label><input type="number" class="form-control" id="addgoldnum" name="goldname" placeholder="最低投注1金币" />
+			 <input type="hidden" id="jctz_id" />
+            </div>
+        </div>
+        <div class="money maybemoney" data-cpeilv=""><label>可能奖金 ：</label>0.0金币</div>
+        <div class="money nowmoney"><label>当前余额 ：</label>0.0金币</div>
+	</div>
+    <div class="bnt-con"><a class="hint-in1 hint" data-checkid="" href="javascript:;">确  定</a><a class="hint-in2 cancel" href="javascript:;">取消</a></div>
+</div>
+<div class="box jccg_box"></div>
+<div class="layer jccg_layer">
+	<div class="con-layer">
+        <P style=" font-size:18px; padding:20px 0; margin:0">竞猜成功</P>
+	</div>
+    <div class="bnt-con"><a class="hint-in3" href="javascript:;">确  定</a></div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function($){
+	// $.post("{:U('Index/getArticles')}",{}, function(v){
+	// 	console.log(v);
+	// 	console.log(v['content']['0']);
+	// 	$('.banner').css('background','url("'+v['content'][0]['header']+'")');
+	// 	$('.banner').css('background-size','cover');
+	// 	$('#banner_title').text(v['content'][0]['title']);
+	// 	$('#banner_pubtime').text(v['content'][0]['addtime']);
+	// 	$('#banner_readtimes').text(v['content'][0]['readtimes']);
+	// },'JSON');
+
+
+	$(".btn-win").click(function() {
+		var pid=$(this).attr("data-id");
+		var ccname=$(".pdataid"+pid).attr("data-ccname");
+		var cktime=$(".pdataid"+pid).attr("data-cktime");
+		var databc=$(".pdataid"+pid).attr("data-bc");
+		var ccheck1=$(".pdataid"+pid).attr("data-ccheck1");
+		var ccheck2=$(".pdataid"+pid).attr("data-ccheck2");
+		var cpeilv1=$(".pdataid"+pid).attr("data-cpeilv1");
+		var cpeilv2=$(".pdataid"+pid).attr("data-cpeilv2");
+		var uyue=$(".pdataid"+pid).attr("data-uyue");
+		
+		$(".jctz_layer").find("input#jctz_id").val(pid);
+		$(".jctz_layer").find("h4.pcname").text(ccname+" "+cktime);
+		
+		$(".jctz_layer").find("span.pxiang").text("( "+ccheck1+" "+cpeilv1+" )");
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+		$(".jctz_layer").find("div.maybemoney").attr("data-cpeilv",cpeilv1);
+		$(".jctz_layer").find("div.nowmoney").html("<label>当前余额 ：</label>"+uyue+"金币");
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkid",1);
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkname",ccheck1);
+
+		$(".jctz_layer").css({"display":"block"});
+		$(".jctz_box").css({"display":"block"});
+	});
+	$(".btn-fu").click(function() {
+		var pid=$(this).attr("data-id");
+		var ccname=$(".pdataid"+pid).attr("data-ccname");
+		var cktime=$(".pdataid"+pid).attr("data-cktime");
+		var databc=$(".pdataid"+pid).attr("data-bc");
+		var ccheck1=$(".pdataid"+pid).attr("data-ccheck1");
+		var ccheck2=$(".pdataid"+pid).attr("data-ccheck2");
+		var cpeilv1=$(".pdataid"+pid).attr("data-cpeilv1");
+		var cpeilv2=$(".pdataid"+pid).attr("data-cpeilv2");
+		var uyue=$(".pdataid"+pid).attr("data-uyue");
+		
+		$(".jctz_layer").find("input#jctz_id").val(pid);
+		$(".jctz_layer").find("h4.pcname").text(ccname+" "+cktime);
+		
+		$(".jctz_layer").find("span.pxiang").text("( "+ccheck2+" "+cpeilv2+" )");
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+		$(".jctz_layer").find("div.maybemoney").attr("data-cpeilv",cpeilv2);
+		$(".jctz_layer").find("div.nowmoney").html("<label>当前余额 ：</label>"+uyue+"金币");
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkid",2);
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkname",ccheck2);
+
+		$(".jctz_layer").css({"display":"block"});
+		$(".jctz_box").css({"display":"block"});
+	});
+	$('#addgoldnum').bind('input propertychange', function() {
+	
+		var addgoldnum=Number($(this).val());
+		var cpeilv=Number($(".layer").find("div.maybemoney").attr("data-cpeilv"));
+		if(addgoldnum>0){
+			var maybemoney=(addgoldnum*cpeilv).toFixed(2);
+		}else{
+			var maybemoney=0.0;
+		}
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>"+maybemoney+"金币");		
+	});
+
+	$(".hint-in2").click(function(event) {
+		$(".jctz_layer").css({"display":"none"});
+		$(".jctz_box").css({"display":"none"});
+	});
+	
+	$(".hint-in3").click(function(event) {
+		$(".jccg_layer").css({"display":"none"});
+		$(".jccg_box").css({"display":"none"});
+	});
+
+	$(".hint-in1").click(function(event) {
+		var id=$(".jctz_layer").find("input#jctz_id").val();
+		var addgoldnum=$(".jctz_layer").find("input#addgoldnum").val();
+		var checkid=$(this).attr("data-checkid");
+		var checkname=$(this).attr("data-checkname");
+		$.post("{:U('Index/jctz')}", {id:id,addgoldnum:addgoldnum,checkid:checkid}, function(v){
+			if(v.jieguo=="tzcg"){
+				$(".header").find("span.fl").html("今日竞猜："+v.ren+"人，"+v.jinbi+"金币");
+				$(".header").find("span.header-r").html("余额："+v.user_yue+"");
+				
+				$(".bet_pan_peilv1_"+v.pid).text(v.peilv1);
+				$(".bet_pan_peilv2_"+v.pid).text(v.peilv2);
+				
+				$("#jccg_box_xuan").text(checkname);
+				if(checkid==1){
+					$("#jccg_box_peilv").text(v.peilv1);
+				}else{
+					$("#jccg_box_peilv").text(v.peilv2);
+				}
+				$("#jccg_box_golds").text(addgoldnum);
+
+				$("div.pdataid"+v.pid).attr("data-cpeilv1",v.peilv1);
+				$("div.pdataid"+v.pid).attr("data-cpeilv2",v.peilv2);
+				$("div.pdataid"+v.pid).attr("data-uyue",v.user_yue);
+				
+				$(".jctz_layer").css({"display":"none"});
+				$(".jctz_box").css({"display":"none"});
+				
+				show_jccg_box();
+				
+			}else if(v.jieguo=="tzsb"){
+				alert("竞猜失败");
+			}else if(v.jieguo=="nostart"){
+				alert("竞猜未开始");
+			}else if(v.jieguo=="yiend"){
+				alert("竞猜已结束");
+			}else if(v.jieguo=="fengpan"){
+				alert("此竞猜封盘中");
+			}else if(v.jieguo=="jiesuan"){
+				alert("此竞猜结算中");
+			}else if(v.jieguo=="yuebuzu"){
+				var jinbi_cha=addgoldnum-v.user_yue;
+				show_yuebz_box(jinbi_cha);
+			}else if(v.jieguo=="no1"){
+				alert("投注金额不能小于1金币");
+			}
+					   
+		},'JSON');
+	});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#form').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        //group: '.form-group',
+        fields: {            
+            goldname: {
+                validators: {
+                    notEmpty: {
+                        message: '金币不能是空的'
+                    },
+                }
+            },
+           
+			
+	     }
+    });
+});
+</script>
+<script type="text/javascript">
+function show_pan(t,obj){
+	$(".bet_pan").slideUp();
+	var display_zt=$(".bet_pan"+t).css("display");
+	if(display_zt=="none"){
+		$(".bet_pan"+t).slideDown();
+	}
+	//$(".bet_pan"+t).slideDown();
+	//$(obj).attr("onclick","hide_pan("+t+",this)");
+}
+function hide_pan(t,obj){
+	$(".bet_pan"+t).slideUp();
+	$(obj).attr("onclick","show_pan("+t+",this)");
+}
+
+
+
+
+// 资讯
+function show_jingcai() {
+	$('.jingcai_nav_pic').attr('src','__PUBLIC__/new/images/zixun/jincai-active.png');
+	$('.zixun_nav_pic').attr('src','__PUBLIC__/new/images/zixun/zixun2.png');
+	$('.jingcai').show();
+	$('.zixun').hide();
+}
+
+function show_zixun() {
+	$('.jingcai_nav_pic').attr('src','__PUBLIC__/new/images/zixun/jincai.png');
+	$('.zixun_nav_pic').attr('src','__PUBLIC__/new/images/zixun/zixun-active.png');
+	$('.jingcai').hide();
+	$('.zixun').show();
+}
+</script>
+
+<include file="Public:footer"/>

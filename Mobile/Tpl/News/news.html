@@ -1,0 +1,148 @@
+<include file="Public:header"/>
+
+<style>
+	.nav{width:100%;}
+	.jingcai_nav{width:50%;height:auto;display:block;float:left;}
+	.jingcai_nav_pic{width:100%;}
+	.zixun_nav{width:50%;height:auto;display:block;float:left;}
+	.zixun_nav_pic{width:100%;}
+
+	.banner{width:100%;height:auto;position:relative;}
+	.banner_img{width:100%;}
+	.banner_detail{width:100%;position:absolute;z-index:2;bottom:0.5rem;right:0;}
+	.banner_detail p{color: #fff;font-size:1.6rem;text-align:right;padding-right:1rem;}
+	.banner_info{width:100%;height:1.5rem;text-align:right;}
+	.banner_pubtime{float:right;padding-right:1rem;}
+	.pubtime_clock{display:block;float:right;}
+	.pubtime_clock img{height:1.4rem;padding-right:1rem;}
+	.pubtime_detail{display:block;float:right;}
+	.pubtime_detail p{color:#fff;font-size:1rem;line-height:2rem;}
+	.banner_readtimes{float:right;padding-right:1rem;}
+	.readtimes_eye{display:block;float:left;}
+	.readtimes_eye img{height:1.4rem;padding-right:1rem;}
+	.readtimes_detail{height:2rem;display:block;float:left;}
+	.readtimes_detail p{color:#fff;font-size:1rem;line-height:2rem;}
+	
+	.content{width:100%; background:#131c21;}
+	.content_item{width:100%;background:#1c2930;height:8rem;margin-top:0.8rem;}
+	.item_pic{width:35%;display:block;float:left;height:8rem;overflow:hidden;}
+	.item_pic img{width:100%;height:100%;}
+	.item_intro{display:block;float:left;width:65%;padding:0 0;}
+	.item_intro_title{padding-left:1rem;padding-top:0.8rem;padding-right:0.5rem;}
+
+
+	.item_info{width:96%;height:1.5rem;padding-left:1rem;padding-top:0.8rem;}
+	.item_pubtime{width:50%;float:left;padding-right:1rem;}
+	.item_pubtime_detail p{line-height:2rem;}
+	.item_pubtime_clock{display:block;float:left;padding-right:1rem;}
+	.item_pubtime_clock img{height:1.4rem;}
+	.item_detail{display:block;float:left;}
+	.item_detail p{font-size:1rem;line-height:2rem;}
+	.item_readtimes{width:50%;float:right;}
+	.item_readtimes_eye{display:block;float:right;}
+	.item_readtimes_eye img{height:1.4rem;padding-right:1rem;}
+	.item_readtimes_detail{height:2rem;display:block;float:right;word-wrap:break-word;}
+	.item_readtimes_detail p{font-size:1rem;line-height:2rem;}
+</style>
+
+<!--主体-->
+<div class="wrap">
+	<!-- 竞猜/咨询导航栏 -->
+	<div class="nav">
+		<div class="jingcai_nav">
+			<a href="{:U('Index/index')}">
+				<img class="jingcai_nav_pic" src="__PUBLIC__/new/images/zixun/jincai.png" alt="">
+			</a>
+		</div>
+		<div class="zixun_nav" >
+			<a href="{:U('News/news')}">
+				<img class="zixun_nav_pic" src="__PUBLIC__/new/images/zixun/zixun-active.png" alt="">
+			</a>
+		</div>
+	</div>
+
+
+    <div class="zixun" >
+    	<a href="/index.php?a=readArticles&m=news&id={$zixun.content.0.id}">
+    		    	<div class="banner" >
+						<img src="{$zixun.content.0.header}" class="banner_img" />
+    		    		<div class="banner_detail">
+    		    			<p id="banner_title">
+    		    				{$zixun.content.0.title}
+    		    			</p>
+							<div class="banner_info">
+								<div class="banner_pubtime">
+									<div class="pubtime_detail">
+										<p id="banner_pubtime">
+											{$zixun.content.0.ctime}
+										</p>
+									</div>
+									<div class="pubtime_clock">
+										<img class="pubtime_clock_pic" src="__PUBLIC__/new/images/zixun/banner-clock.png" alt="">
+									</div>
+								</div>
+								<!--<div class="banner_readtimes">
+									<div class="readtimes_eye">
+										<img class="readtimes_eye_pic" src="__PUBLIC__/new/images/zixun/banner-eye.png" alt="">
+									</div>
+									<div class="readtimes_detail">
+										<p id="banner_readtimes">
+											{$zixun.content.0.readtimes}
+										</p>
+									</div>
+								</div>-->
+							</div>
+    		    		</div>
+    		    	</div>
+    	</a>
+    	<div class="clear"></div>
+		<div class="content">
+
+		<volist name="zixun.content" id="vo" offset="1" length="5">
+			<a href='/index.php?a=readArticles&m=news&id={$zixun.content.$i.id}'>
+						<div class="content_item">
+							<div class="item_pic">							
+									<img src="{$vo.header}" alt="">
+							</div>
+							<div class="item_intro">
+								<div class="item_intro_title">
+				    				{$vo.title}					
+								</div>
+								<div class="item_info">
+					    			<div class="item_pubtime">
+						    			<div class="item_pubtime_clock">
+						    				<img class="pubtime_clock_pic" src="__PUBLIC__/new/images/zixun/info-clock.png" alt="">
+						    			</div>
+						    			<div class="item_pubtime_detail">
+						    				<p>
+						    					{$vo.ctime}
+						    				</p>
+						    			</div>
+					    			</div>
+						    		<!--<div class="item_readtimes">
+						    			<div class="item_readtimes_detail">
+						    				<p>
+							    				{$vo.readtimes}
+						    				</p>
+						    			</div>
+						    			<div class="item_readtimes_eye">
+						    				<img class="item_readtimes_eye_pic" src="__PUBLIC__/new/images/zixun/info-eye.png" alt="">
+						    			</div>
+						    		</div>-->
+					    		</div>
+							</div>
+						</div>	
+			</a>
+		</volist>
+
+
+
+		</div>
+    </div>
+   
+</div>
+
+
+
+
+<include file="Public:footer"/>

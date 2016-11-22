@@ -1,0 +1,86 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap">
+    <div class="con-layer" style=" padding-top:50px; padding-left:0; padding-right:0;">
+		<div class="form-horizontal">
+			<input type="hidden" name="bnum" value="{$_GET.bnum}" />
+			<div class="form-group">
+				<div class="col-sm-5 inputblwrap ico-user">
+					<empty name="user_info.alipay">
+						<input type="text" class="form-control" name="username" placeholder="请输入支付宝账号" />
+					<else/>
+						<input type="text" class="form-control" name="username" readonly value="{$user_info.alipay}" placeholder="请输入支付宝账号" />
+					</empty>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-5 inputblwrap ico-phone">
+					<empty name="user_info.tel">
+						<input type="text" class="form-control" name="tel" placeholder="联系电话" />
+					<else/>
+						<input type="text" class="form-control" name="tel" readonly value="{$user_info.tel}" placeholder="联系电话" />
+					</empty>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-5 inputblwrap ico-textarea">
+					<input type="text" class="form-control beizhuinput" name="detail" placeholder="备注信息" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-10 inputblwrap pd-left col-sm-offset-2">
+					<a class="submit-btn" href="javascript:;" onClick="dotobuygo()">确认兑换</a>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="box dhcg_box"></div>
+<div class="layer dhcg_layer">
+	<div class="con-layer">
+        <P style=" font-size:18px; padding:20px 0; margin:0">兑换成功</P>
+	</div>
+    <div class="bnt-con"><a class="hint-in3 dhcg_btn" href="javascript:;">确  定</a></div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$(".dhcg_btn").click(function(event) {
+		$(".jccg_layer").css({"display":"none"});
+		$(".jccg_box").css({"display":"none"});
+		location.href = "./index.php?a=mygolds&m=index";
+	});
+	
+});
+function dotobuygo(){
+	var bnum=$("input[name='bnum']").val();
+	var username=$("input[name='username']").val();
+	var tel=$("input[name='tel']").val();
+	var detail=$("input[name='detail']").val();
+	$.post("{:U('Index/dotobuygo')}", {bnum:bnum,username:username,tel:tel,detail:detail}, function(v){
+		if(v=="duihuancg"){
+			$(".dhcg_layer").css({"display":"block"});
+			$(".dhcg_box").css({"display":"block"});
+			
+		}else if(v=="nousername"){
+			alert("请输入支付宝账号");
+		}else if(v=="notel"){
+			alert("请输入电话号");
+		}else if(v=="yuebuzu"){
+			alert("余额不足");
+		}else if(v=="duihuansb"){
+			alert("兑换失败");
+		}
+				   
+	});
+}
+
+</script>
+
+<include file="Public:footer"/>

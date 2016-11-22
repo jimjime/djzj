@@ -1,0 +1,373 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="Public/Mobile/css/gamenav.css">
+<link rel="stylesheet" type="text/css" href="Public/Mobile/css/device.css">
+<link rel="stylesheet" type="text/css" href="Public/Mobile/css/lolteams.css">
+<link rel="stylesheet" type="text/css" href="Public/Mobile/css/teamsindex.css">
+<include file="Public:gheader" />
+
+<!-- 加入战队 -->
+<div class="join-team" style="">
+    <div class="c-t-h">
+        <a href="{:U('Index/teamsindex',array(id=>$geren[tid]))}">
+            <span class="return r-j-t"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+        </a>
+        <span>个人信息</span>
+    </div>
+    <div class="register register1 register-join">
+        <div class="screen1" style="display: none;"></div>
+        <div class="t-boss">
+            <span>姓名</span>
+            <div>
+                <empty name="geren.name">
+                    <span>未填写</span>
+                    <else/>
+                    <span>{$geren.name}</span>
+                </empty>
+                <input type="hidden" id="geren_teamid" value="{$geren.tid}">
+                <input type="hidden" id="geren_name" value="{$geren.name}">
+                <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+            </div>
+        </div>
+        <div class="t-school">
+            <span>学校</span>
+            <div>
+                <empty name="geren.xuexiao">
+                    <span>未填写</span>
+                    <else/>
+                    <span>{$geren.xuexiaoname}</span>
+                </empty>
+                <input type="hidden" id="geren_xuexiao" value="{$geren.xuexiao}">
+                <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+            </div>
+        </div>
+        <div class="t-tel">
+            <span>手机号码</span>
+            <div>
+                <empty name="geren.phone">
+                    <span>未填写</span>
+                    <else/>
+                    <span>{$geren.phone}</span>
+                </empty>
+                <input type="hidden" id="geren_phone" value="{$geren.phone}">
+                <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+            </div>
+        </div>
+        <div class="t-class">
+            <span>专业班级</span>
+            <div>
+                <empty name="geren.banji">
+                    <span>未填写</span>
+                    <else/>
+                    <span>{$geren.banji}</span>
+                </empty>
+                <input type="hidden" id="geren_banji" value="{$geren.banji}">
+                <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+            </div>
+        </div>
+        <div class="t-lol">
+            <span>擅长位置</span>
+            <div>
+                <empty name="geren.weizhi">
+                    <span>未填写</span>
+                    <else/>
+                    <span>{$geren.weizhiname}</span>
+                </empty>
+                <input type="hidden" id="geren_weizhi" value="{$geren.weizhi}">
+                <span><img src="Public\Mobile\new\images\games\xiaojiantou.png"></span>
+            </div>
+        </div>
+    </div>
+    <!-- 完成弹出按钮 -->
+    <div class="screen" style="display: none"></div>
+    <div class="popup-s" style="display: none;">
+        <p>温馨提示</p>
+        <p>个人信息填写完成</p>
+        <div>确定</div>
+    </div>
+    <php>
+        if($_SESSION['user_id']==$_GET['uid']){
+    </php>
+    <div class="complete" style="bottom:5rem;">
+        <a>完成</a>
+        <script type="text/javascript">
+            $('.popup-s div').click(function() {
+                $('.teamsindex').css("display", "block");
+                $('.join-team').animate({
+                            "left": "100%"
+                        },
+                        300,
+                        function() {
+                            $('.join-team,.popup-s,.screen').css("display", "none");
+                            window.location.href="{:U('Index/teamsindex',array(id=>$geren[tid]))}";
+                        });
+                $('.teamsindex').animate({
+                    left: "0"
+                }, 300)
+            })
+            $('.complete a').click(function() {
+                var geren_name=$("#geren_name").val();
+                var geren_phone=$("#geren_phone").val();
+                var geren_xuexiao=$("#geren_xuexiao").val();
+                var geren_banji=$("#geren_banji").val();
+                var geren_weizhi=$("#geren_weizhi").val();
+                var geren_teamid=$("#geren_teamid").val();
+
+                $.post("{:U('Index/jointeam')}", {geren_name:geren_name,geren_phone:geren_phone,geren_xuexiao:geren_xuexiao,geren_banji:geren_banji,geren_weizhi:geren_weizhi,geren_teamid:geren_teamid}, function(v){
+
+                    if(v.jieguo=='cg'){
+                        $(".screen").show();
+                        $(".popup-s").fadeIn(300);
+                    }else if(v.jieguo=='nogerenname'){
+                        alert("请输入姓名");
+                    }else if(v.jieguo=='nogerenphone'){
+                        alert("请输入手机号码");
+                    }else if(v.jieguo=='nogerenxuexiao'){
+                        alert("请选择学校");
+                    }else if(v.jieguo=='nogerenbanji'){
+                        alert("请输入专业班级");
+                    }else if(v.jieguo=='nogerenweizhi'){
+                        alert("请选择擅长位置");
+                    }else if(v.jieguo=='nogerenteamid'){
+                        alert("请刷新页面");
+                    }
+
+                },'JSON');
+            })
+        </script>
+    </div>
+
+    <php>
+        }
+    </php>
+
+</div>
+<!-- 队长姓名页面 -->
+<div class="t-b t-sub" style="left: 100%;display: none;">
+    <div class="c-t-h">
+        <span class="return return-t-b"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+        <span>姓名</span>
+        <div class="confirm confirm-t-b">确认</div>
+    </div>
+    <input type="text" name="tn" placeholder="未填写" />
+</div>
+<!-- 手机号页面 -->
+<div class="t-t t-sub" style="left: 100%;display: none;">
+    <div class="c-t-h">
+        <span class="return return-t-t"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+        <span>手机号</span>
+        <div class="confirm confirm-t-t">确认</div>
+    </div>
+    <input type="text" name="tn" placeholder="未填写" />
+</div>
+<!-- 学校 -->
+<div class="t-s t-sub" style="left: 100%;display: none;">
+    <div class="c-t-h">
+        <span class="return return-t-s"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+        <span>学校</span>
+        <div class="confirm confirm-t-s">确认</div>
+    </div>
+    <div class="t-select">
+        <volist name="bs_xuexiao" id="l">
+            <div class="t-e-s t-e-s1 s3" data-id="{$l.id}">{$l.name}
+                <div><img src="Public/Mobile/new/images/games/danxuan1.png"></div>
+            </div>
+        </volist>
+
+    </div>
+</div>
+<!-- 专业班级 -->
+<div class="t-c t-sub" style="left: 100%;display: none;">
+    <div class="c-t-h">
+        <span class="return return-t-c"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+        <span>专业班级</span>
+        <div class="confirm confirm-t-c">确认</div>
+    </div>
+    <input type="text" name="tn" placeholder="未填写" />
+</div>
+<!-- 擅长位置 -->
+<div class="t-l t-sub" style="left: 100%;display: none;">
+    <div class="c-t-h">
+        <span class="return return-t-l"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+        <span>擅长位置</span>
+        <div class="confirm confirm-t-l">确认</div>
+    </div>
+    <div class="t-select">
+        <volist name="bs_weizhi" id="l">
+            <div class="t-e-s t-e-s1 s4" data-id="{$l.id}">{$l.name}
+                <div><img src="Public/Mobile/new/images/games/danxuan1.png"></div>
+            </div>
+        </volist>
+    </div>
+</div>
+<php>
+    if($_SESSION['user_id']==$_GET['uid']){
+</php>
+<script type="text/javascript">
+    //页面跳转函数
+    function rconvert(a, b) {
+        $('.' + b).css("display", "block");
+        $('.' + a).animate({
+                    "left": "100%"
+                },
+                300,
+                function() {
+                    $('.' + a).css("display", "none");
+                });
+        $('.' + b).animate({
+            left: "0"
+        }, 300)
+    }
+
+    function convert(a, b) {
+        $('.' + b).css("display", "block");
+        $('.' + a).animate({
+                    "left": "-100%"
+                },
+                300,
+                function() {
+                    $('.' + a).css("display", "none");
+                });
+        $('.' + b).animate({
+            "left": "0"
+        }, 300)
+    }
+//    $(".return-btn").click(function() {
+//        rconvert('creat-teams', 'teams-index');
+//        $(".footerbox").animate({
+//            "left": "0"
+//        }, 300)
+//    });
+</script>
+<php>
+    }
+</php>
+<script type="text/javascript">
+    // 战队成员点击跳转
+    //    $(".member").click(function() {
+    //        convert('teamsindex', 'join-team');
+    //        $(".complete").show();
+    //    })
+    $(".join").click(function() {
+        convert('teamsindex', 'join-team');
+        $(".complete").show();
+    })
+    $(".r-j-t").click(function() {
+        rconvert('join-team', 'teamsindex');
+        $(".screen1").hide();
+    })
+    // 队长名称点击跳转
+    $(".t-boss").click(function() {
+        convert('join-team', 't-b');
+    })
+    $(".return-t-b,.confirm-t-b").click(function() {
+        rconvert('t-b', 'join-team');
+    })
+    // 手机号跳转
+    $(".t-tel").click(function() {
+        convert('join-team', 't-t');
+    })
+    $(".return-t-t,.confirm-t-t").click(function() {
+        rconvert('t-t', 'join-team');
+    })
+    // 学校跳转
+    $(".t-school").click(function() {
+        convert('join-team', 't-s');
+    })
+    $(".return-t-s,.confirm-t-s").click(function() {
+        rconvert('t-s', 'join-team');
+    })
+    // 专业班级跳转
+    $(".t-class").click(function() {
+        convert('join-team', 't-c');
+    })
+    $(".return-t-c,.confirm-t-c").click(function() {
+        rconvert('t-c', 'join-team');
+    })
+    // 擅长位置跳转
+    $(".t-lol").click(function() {
+        convert('join-team', 't-l');
+    })
+    $(".return-t-l,.confirm-t-l").click(function() {
+        rconvert('t-l', 'join-team');
+    })
+    //单选点击更换选中状态
+    $('.t-e-s2').click(function() {
+        console.log($(this).find("img").attr('src'));
+        if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/fuxuan1.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/fuxuan.png');
+        } else if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/fuxuan.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/fuxuan1.png');
+        }
+    })
+    $('.t-e-s1').click(function() {
+        console.log($(this).find("img").attr('src'));
+        $('.t-e-s1 img').attr('src', 'Public/Mobile/new/images/games/danxuan1.png')
+        $(this).find("img").attr('src', 'Public/Mobile/new/images/games/danxuan.png');
+    })
+</script>
+<!-- 获取输写内容 -->
+<script type="text/javascript">
+
+    $('.confirm-t-b').click(function() {
+        var inputc = $('.t-b > input').val();
+        if (inputc == '') {
+            $('.t-boss > div > span:nth-of-type(1)').text('未填写');
+        } else {
+            $('.t-boss > div > span:nth-of-type(1)').text(inputc);
+        }
+        $("#geren_name").val(inputc);
+    })
+
+    $('.confirm-t-t').click(function() {
+        var inputc = $('.t-t > input').val();
+        if (inputc == '') {
+            $('.t-tel > div > span:nth-of-type(1)').text('未填写');
+        } else {
+            $('.t-tel > div > span:nth-of-type(1)').text(inputc);
+        }
+        $("#geren_phone").val(inputc);
+    })
+    $('.confirm-t-s').click(function() {
+        var inputc = '';
+        var inputid = '';
+        for (var i = 0; i < 80; i++) {
+            var j = i + 1;
+            if ($('.s3:nth-of-type(' + j + ') img').attr('src') == 'Public/Mobile/new/images/games/danxuan.png') {
+                inputc += $('.s3:nth-of-type(' + j + ')').text();
+                inputid = $('.s3:nth-of-type(' + j + ')').attr("data-id");
+            }
+        }
+        $('.t-school > div > span:nth-of-type(1)').text(inputc);
+        if (inputc == '') {
+            $('.t-school > div > span:nth-of-type(1)').text('未填写');
+        }
+        $("#geren_xuexiao").val(inputid);
+    })
+    $('.confirm-t-c').click(function() {
+        var inputc = $('.t-c > input').val();
+        if (inputc == '') {
+            $('.t-class > div > span:nth-of-type(1)').text('未填写');
+        } else {
+            $('.t-class > div > span:nth-of-type(1)').text(inputc);
+        }
+        $("#geren_banji").val(inputc);
+    })
+    $('.confirm-t-l').click(function() {
+        var inputc = '';
+        var inputid = '';
+        for (var i = 0; i < 8; i++) {
+            var j = i + 1;
+            if ($('.s4:nth-of-type(' + j + ') img').attr('src') == 'Public/Mobile/new/images/games/danxuan.png') {
+                inputc += $('.s4:nth-of-type(' + j + ')').text();
+                inputid = $('.s4:nth-of-type(' + j + ')').attr("data-id");
+            }
+        }
+        //alert(inputc);
+        $('.t-lol > div > span:nth-of-type(1)').text(inputc);
+        if (inputc == '') {
+            $('.t-lol > div > span:nth-of-type(1)').text('未填写');
+        }
+        $("#geren_weizhi").val(inputid);
+    })
+</script>
+<include file="Public:footer" />

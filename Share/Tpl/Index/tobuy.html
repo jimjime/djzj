@@ -1,0 +1,37 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap">
+    <div class="con-layer">
+        <h3 style="margin-bottom:20px;">金币余额：{$user_yue}金币</h3>
+        <table width="90%" border="0" cellspacing="0" cellpadding="0">
+          <tr class="title">
+            <td><a class="active" href="javascript:;" onClick="needgoldsnum(20,this)">20元红包</a></td>
+            <td><a href="javascript:;" onClick="needgoldsnum(50,this)">50元红包</a></td>
+            <td><a href="javascript:;" onClick="needgoldsnum(100,this)">100元红包</a></td>
+          </tr>
+        </table>
+        <p class="margintop">需要：<font class="needgoldsnum">2400</font>金币</p>
+    </div>
+    <a class="btn-dota tobuygo_btn" href="./index.php?a=tobuygo&m=index&bnum=20">立即兑换</a>
+</div>
+<script type="text/javascript">
+function needgoldsnum(t,obj){
+	$(".title a.active").removeClass();
+	$(obj).addClass("active");
+	if(t==20){
+		$(".needgoldsnum").text(2400);
+		$(".tobuygo_btn").attr("href","./index.php?a=tobuygo&m=index&bnum="+20+"");
+	}
+	if(t==50){
+		$(".needgoldsnum").text(5700);
+		$(".tobuygo_btn").attr("href","./index.php?a=tobuygo&m=index&bnum="+50+"");
+	}
+	if(t==100){
+		$(".needgoldsnum").text(11000);
+		$(".tobuygo_btn").attr("href","./index.php?a=tobuygo&m=index&bnum="+100+"");
+	}
+}
+</script>
+
+<include file="Public:footer"/>

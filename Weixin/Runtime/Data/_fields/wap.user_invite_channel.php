@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'user_invite_channelId', 1 => 'name', 2 => 'order', 3 => 'qr_ticket', 4 => 'qr_url', 5 => 'qr_create_time', 6 => 'user_count', 7 => 'ctime', 8 => 'stime', '_autoinc' => true, '_pk' => 'user_invite_channelId', ); ?>

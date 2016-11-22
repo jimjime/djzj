@@ -1,0 +1,172 @@
+<include file="Public:header" />
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/Normalize.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/gamenav.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/cfunding.css?201610141536">
+</head>
+
+<body>
+    <script type="text/javascript">
+    $(function() {
+        var a = document.getElementsByTagName('div');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function() {}, false);
+        }
+    })
+    </script>
+    <div class="wraper">
+        <!-- 加载loading -->
+        <div class="loading" id="loader">
+        </div>
+        <!-- 导航栏 -->
+        <include file="Public:gheader" />
+        <script type="text/javascript"></script>
+        <!-- 主页内容 -->
+        <div class="screen" style="display: none"></div>
+        <div class="popup-s" style="display: none;">
+            <p>温馨提示</p>
+            <p>每一次助力将消耗您100金币</p>
+            <div>确定</div>
+        </div>
+        <div class="content1">
+            <img src="Public\Mobile\new\images\games\beijing.jpg">
+            <div class="personal-i">
+                <div class="personal-logo"><img src="{$user.header}"></div>
+                <div class="user-id">{$user.name}</div>
+                <div class="user-rank">排名：<span>{$user.paiming}</span></div>
+                <div class="help">助力值</div>
+                <div class="help-n" style="right: 10.4%;">{$user.zhulizhi}</div>
+            </div>
+            <a href="{:U('Index/teamsindex',array(id=>$team[id]))}">
+                <div class="reward">
+                    <input id="tid" value="{$team.id}" type="hidden">
+                    <p>{$team.name}</p>
+                    <!-- {$team.name} -->
+                </div>
+                <div class="reward1">
+                    {$team.jiangjin}
+                </div>
+            </a>
+            <script type="text/javascript">
+            // $(".reward").click(function(){
+            //     window.location.href="{:U('Index/cflist1')}";
+            // })
+            $(".content1 a").click(function() {
+                return false;
+            })
+            </script>
+            <div class="plus-one">
+                <div class="cf-btn"></div>
+                <div class="cf-share"></div>
+            </div>
+            <script type="text/javascript">
+            $(function() {
+                var first_click = true;
+            })
+            var first_click = true;
+            $(".cf-btn").click(function() {
+                if (first_click) {
+                    $(".screen,.popup-s").show();
+                    first_click = false;
+                }
+                $(".plus-one").removeClass("ppplus-one");
+                $(".plus-one").addClass("pplus-one");
+            })
+            $(".cf-share").click(function() {
+                $(".plus-one").removeClass("pplus-one");
+                $(".plus-one").addClass("ppplus-one");
+            })
+            $(".popup-s > div").click(function() {
+                $(".screen,.popup-s").hide();
+            })
+            </script>
+            <div class="c-rules"><img src="Public\Mobile\new\images\games\2.png"></div>
+            <div class="c-prize"><img src="Public\Mobile\new\images\games\3.png"></div>
+            <div class="c-rank"><img src="Public\Mobile\new\images\games\6.png"></div>
+            <div class="cfunding-content">
+                <div class="rules-c">①每位粉丝助力，将为战队增加1元获胜现金奖金
+                    <br>②战队获得校赛冠军、总决赛名次后，将为粉丝发放相应的福利，发放依据助力总人数排名兑奖。相同助力人数按达到该人数的先后时间排序。
+                    <br>③战队、粉丝获奖后，请联系主办方QQ857257332，进行奖品发放。
+                    <br>④战队奖金仅在获得校赛冠军、总决赛冠亚季殿军时可以获得，其中50%奖金于校赛冠军发放，50%奖金于总决赛发放。作弊用户直接取消获奖资格，我们保留追究其责任的权利。</div>
+                <div class="prize-c"><img src="Public\Mobile\new\images\games\prize1.jpg"></div>
+                <div class="rank-c">
+                    <volist name="zhulilist" id="l" key="i">
+                        <div class="rank-user"><img src="./Public/Mobile/new/images/games/paihang.png">
+                            <div class="personal-logo-r"><img src="{$l.userinfo.header}"></div>
+                            <div class="user-id-r">{$l.userinfo.name}</div>
+                            <div class="user-rank-r">排名：<span>{$i}</span></div>
+                            <div class="help-n-r" style="right: 23%;">{$l.zhuli}</div>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(".c-rules img").click(function() {
+        $(".c-rules img").attr('src', 'Public/Mobile/new/images/games/1.png');
+        $(".c-prize img").attr('src', 'Public/Mobile/new/images/games/3.png');
+        $(".c-rank img").attr('src', 'Public/Mobile/new/images/games/6.png');
+        $(this).attr('src', 'Public/Mobile/new/images/games/2.png');
+        $(".cfunding-content").animate({
+            left: '0'
+        }, 200);
+    })
+    $(".c-prize img").click(function() {
+        $(".c-rules img").attr('src', 'Public/Mobile/new/images/games/1.png');
+        $(".c-prize img").attr('src', 'Public/Mobile/new/images/games/3.png');
+        $(".c-rank img").attr('src', 'Public/Mobile/new/images/games/6.png');
+        $(this).attr('src', 'Public/Mobile/new/images/games/4.png');
+        $(".cfunding-content").animate({
+            left: '-100%'
+        }, 200);
+    })
+    $(".c-rank img").click(function() {
+        $(".c-rules img").attr('src', 'Public/Mobile/new/images/games/1.png');
+        $(".c-prize img").attr('src', 'Public/Mobile/new/images/games/3.png');
+        $(".c-rank img").attr('src', 'Public/Mobile/new/images/games/6.png');
+        $(this).attr('src', 'Public/Mobile/new/images/games/5.png');
+        $(".cfunding-content").animate({
+            left: '-200%'
+        }, 200);
+    })
+    $(".cf-btn").click(function() {
+            if (!first_click) {
+                var tid = $("#tid").val();
+                var jzl = $(".help-n").text();
+                $.post("{:U('Index/dozhuli')}", {
+                    tid: tid
+                }, function(v) {
+                    if (v.jieguo == 'cg') {
+                        var newzl = Number(jzl) + 1;
+                        $(".help-n").text(newzl);
+                        $(".reward1").text(v.jiangjin);
+
+                    } else if (v.jieguo == 'yuebuzu') {
+                        var jinbi_cha = 110 - v.user_yue;
+                        show_yuebz_box(jinbi_cha);
+                    } else if (v.jieguo == 'sb') {
+                        alert("助力失败");
+                    }
+
+                }, 'JSON');
+            }
+        })
+        // $(".plus-one img").mousedown(function() {
+        //     $(this).attr('src', 'Public/Mobile/new/images/games/plusone1.png');
+        // })
+        // $(".plus-one img").mouseup(function() {
+        //     $(this).attr('src', 'Public/Mobile/new/images/games/plusone.png');
+        // })
+        // $(".plus-one img").on("mousedown", function() {
+        //     $(this).attr('src', 'Public/Mobile/new/images/games/plusone1.png');
+        // }).on("mouseup", function() {
+        //     $(this).attr('src', 'Public/Mobile/new/images/games/plusone.png');
+        // });
+    $(function() {
+        $(".c-prize img").click();
+    })
+    </script>
+</body>
+<include file="Public:footer" />

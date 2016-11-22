@@ -1,0 +1,41 @@
+<include file="Public:header"/>
+
+<div class="top">
+	<eq name="_SESSION.gametypeid" value="1">
+		<img src="__PUBLIC__/images/user-banner.png" />
+	</eq>
+	<eq name="_SESSION.gametypeid" value="2">
+		<img src="__PUBLIC__/images/user-banner2.png" />
+	</eq>
+	<div class="home-user about-user">
+		<div class="user-about">
+			<php>
+			if(empty($header)){
+			</php>
+				<img src="__PUBLIC__/images/user-inco.png">
+			<php>
+			}else{
+			</php>
+				<img src="{$header}">
+			<php>
+			}
+			</php>
+		</div>
+		<span>
+			<h3>{$name}</h3>
+			<p>战友奖励：<font class="color-about">{$recomgolds}</font>金币</p>
+		</span>
+
+	</div>
+</div>
+
+<div class="wrapbody">
+	<div class="linkwrap">
+        <a href="{:U('Index/myqr')}">我的二维码（进入>>截图发给小伙伴）</a>
+        <a href="{:U('Index/recoms')}">我的战友</a>
+        <a href="{:U('Index/art',array(aid=>5))}">战友招募说明</a>
+       
+    </div>
+</div>
+
+<include file="Public:footer"/>

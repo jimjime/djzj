@@ -1,0 +1,31 @@
+<div class="gamenav">
+    <ul>
+        <li>
+            <a <eq name='Think.ACTION_NAME' value='games'> class="active"</eq> href="{:U('Index/games')}">主页</a>
+            <div <eq name='Think.ACTION_NAME' value='games'> class="bluebar"</eq>></div>
+        </li>
+        <li>
+            <a <eq name='Think.ACTION_NAME' value='lolteams'> class="active" </eq>
+            <eq name='Think.ACTION_NAME' value='teamsindex'> class="active" </eq>
+            <eq name='Think.ACTION_NAME' value='soloindex'> class="active" </eq>
+            <eq name='Think.ACTION_NAME' value='teamlist'> class="active" </eq> href="{:U('Index/teamsindex')}">参赛</a>
+            <div <eq name='Think.ACTION_NAME' value='lolteams'> class="bluebar"</eq>
+                <eq name='Think.ACTION_NAME' value='teamsindex'> class="bluebar"</eq>
+                <eq name='Think.ACTION_NAME' value='soloindex'> class="bluebar"</eq>
+                <eq name='Think.ACTION_NAME' value='teamlist'> class="bluebar"</eq>></div>
+        </li>
+        <li>
+            <a <eq name='Think.ACTION_NAME' value='lolrace'> class="active" </eq> href="{:U('Index/lolrace')}">赛程</a>
+            <div <eq name='Think.ACTION_NAME' value='lolrace'> class="bluebar"</eq>></div>
+        </li>
+
+    </ul>
+</div>
+<script type="text/javascript">
+// $(".gamenav a").click(function() {
+//   $(".gamenav a").removeClass("active");
+//   $(".bluebar").remove();  
+//   $(this).addClass("active");
+//   $(this).prepend('<div class="bluebar"></div>');
+// });
+</script>

@@ -1,0 +1,28 @@
+html {
+    font-size : 10px;
+}
+@media only screen and (min-width: 401px){
+    html {
+        font-size: 12.5px !important;
+    }
+}
+@media only screen and (min-width: 428px){
+    html {
+        font-size: 13.37px !important;
+    }
+}
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 15px !important; 
+    }
+}
+@media only screen and (min-width: 569px){
+    html {
+        font-size: 17.5px !important; 
+    }
+}
+@media only screen and (min-width: 641px){
+    html {
+        font-size: 20px !important; 
+    }
+}

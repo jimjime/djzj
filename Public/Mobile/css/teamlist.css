@@ -1,0 +1,141 @@
+input {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin-top: 189px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(198, 198, 198);
+    height: 42px;
+    border-radius: 25px;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+.light-blue {
+    color: #26bff2;
+}
+.dark-gray{
+  color: rgb(136, 136, 153);
+}
+.team-list-content{
+  width: 100%;
+  top: 243px;
+  position: absolute;
+}
+.t-list{
+  position: relative;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid rgba(131, 141, 146, 0.4);
+  padding-bottom: 10px;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 7px;
+}
+.t-l-logo{
+  float: left;
+  width: 58px;
+  height: 58px;
+  border-radius: 40px;
+  background: rgb(29,43,50);
+  margin-right: 10px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+.t-l-content{
+  float: left;
+  width: 60%;
+}
+
+.t-l-content p:nth-of-type(1){
+  font-size: 1.6rem;
+  color: rgb(228, 228, 228);
+}
+.t-l-enter{
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    width: 62px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 20px;
+    border: 1px solid rgb(228, 228, 228);
+    text-align: center;
+    color: rgb(228, 228, 228);
+}
+
+.team-hh li {
+    position: relative;
+    list-style: none;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.team-hh {
+    border-bottom: 1px solid rgba(136, 136, 153, 0.3);
+}
+
+.h-icon {
+    position: absolute;
+    top: 26%;
+    right: 26%;
+    width: 12px;
+    height: 9px;
+}
+
+.h-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.sub-h {
+    width: 100%;
+    height: auto;
+    background: rgb(13, 15, 20);
+    position:fixed;
+    top: 180px;
+    z-index: 910;
+}
+
+.lol-event {
+    width: 24%;
+    float: left;
+    height: 31px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 4.5%;
+    margin-left: 4.5%;
+    border-radius: 10px;
+    background: rgb(13, 15, 20);
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #838d92;
+    color: #838d92;
+}
+
+.lol-event-active{
+  color: rgb(38,191,242);
+  border-color: rgb(38,191,242);
+}
+
+.team-hh {
+    width: 100%;
+    height: 50px;
+    background: rgb(13, 15, 20);
+    position: fixed;
+    top: 130px;
+    left: 0;
+    z-index: 50;
+}
+
+.team-hh a {
+    display: block;
+    color: #838d92;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+}

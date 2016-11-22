@@ -1,0 +1,144 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap">
+    <div class="con-layer">
+        <h3 style="margin-bottom:20px;">金币余额：{$user_yue}金币</h3>
+        <table width="90%" border="0" cellspacing="0" cellpadding="0">
+          <tr class="title">
+            <td width="33.3%"><a <elt name="_GET.rmb" value="10"> class="active" </elt> href="javascript:;" data-paynum="10" onClick="paygoldsnum(10,this)">10元</td>
+            <td width="33.3%"><a <eq name="_GET.rmb" value="20"> class="active" </eq> href="javascript:;" data-paynum="20" onClick="paygoldsnum(20,this)">20元</td>
+            <td width="33.3%"><a <eq name="_GET.rmb" value="50"> class="active" </eq> href="javascript:;" data-paynum="50" onClick="paygoldsnum(50,this)">50元</td>
+          </tr>
+          <tr>
+            <td class="day-color"><a <eq name="_GET.rmb" value="100"> class="active" </eq> href="javascript:;" data-paynum="100" onClick="paygoldsnum(100,this)">100元</a></td>
+            <td><a <eq name="_GET.rmb" value="200"> class="active" </eq> href="javascript:;" data-paynum="200" onClick="paygoldsnum(200,this)">200元</a></td>
+            <td><input class="text-m paymorenum_input" type="number" value="其他金额" /></td>
+          </tr>
+        </table>
+		<elt name="_GET.rmb" value="10">
+			<p class="margintop">1050金币（送50金币）</p>
+		</elt>
+		<eq name="_GET.rmb" value="20">
+			<p class="margintop">2200金币（送200金币）</p>
+		</eq>
+		<eq name="_GET.rmb" value="50">
+			<p class="margintop">5500金币（送500金币）</p>
+		</eq>
+		<eq name="_GET.rmb" value="100">
+			<p class="margintop">11000金币（送1000金币）</p>
+		</eq>
+		<eq name="_GET.rmb" value="200">
+			<p class="margintop">22000金币（送2000金币）</p>
+		</eq>
+    </div>
+	<empty name="sf_sc">
+		<a class="btn-dota topaymoney" href="javascript:;">首充豪礼</a>
+		<div class="con-layer" style="padding:0;">
+			<p class="margintop">首次充值满10元，即可获赠200金币的首充奖励</p>
+		</div>
+		
+	<else/>
+		<a class="btn-dota topaymoney" href="javascript:;">立即充值</a>
+	</empty>
+	<!--支付方式 弹窗 start-->
+	<div class="tc_box_bg" id="zffs_box" >
+		<div class="tc_box">
+			<div class="tc_box_close" onclick="hide_zffs_box()">
+				<img src="__PUBLIC__/new/images/close.png" />
+			</div>
+			<div class="img_icon_text" style="padding-top:3rem;font-size:2rem;">
+				请选择支付方式
+			</div>
+			<div class="img_icon_btn">
+				<a href="javascript:;" class="img_icon_btn1">微信支付</a>
+				<a href="javascript:;" class="img_icon_btn2">支付宝支付</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!--支付方式 弹窗 end-->
+</div>
+<script type="text/javascript">
+function paygoldsnum(t,obj){
+	$("table a.active").removeClass();
+	$(obj).addClass("active");
+	if(t==10){
+		$(".margintop").text("1050金币（送50金币）");
+		//$(".tobuygo_btn").attr("href","./index.php?a=tobuygo&m=index&bnum="+20+"");
+	}
+	if(t==20){
+		$(".margintop").text("2200金币（送200金币）");
+	}
+	if(t==50){
+		$(".margintop").text("5500金币（送500金币）");
+	}
+	if(t==100){
+		$(".margintop").text("11000金币（送1000金币）");
+	}
+	if(t==200){
+		$(".margintop").text("22000金币（送2000金币）");
+	}
+}
+function hide_zffs_box(){
+	$("#zffs_box").hide();
+}
+$(function(){
+	$(".paymorenum_input").focus(function(){
+		var morenum=$(this).val();
+		if(morenum=="其他金额"){
+			$(this).val("");
+			$(".margintop").text("0金币");
+		}
+		$("table a.active").removeClass();
+	});
+	$('.paymorenum_input').bind('input propertychange', function() {
+	
+		var morenum=$(this).val();
+		if(morenum<20 && morenum>=1){
+			var songgolds=Math.floor(morenum*5);
+			var moregolds=Math.floor(songgolds)+Math.floor(morenum*100);
+		}else if(morenum<1 && morenum>0){
+			var songgolds=0;
+			var moregolds=Math.floor(songgolds)+Math.floor(morenum*100);
+		}else{
+			var songgolds=Math.floor(morenum*10);
+			var moregolds=Math.floor(songgolds)+Math.floor(morenum*100);
+		}
+		$(".margintop").text(""+moregolds+"金币（送"+songgolds+"金币）");
+	});
+	$(".topaymoney").click(function(){
+		var topaynum=$("table a.active").attr("data-paynum");
+		if(topaynum>0){
+			var topaymoney=topaynum;
+		}else{
+			var paymorenum_input=$('.paymorenum_input').val();
+			if(paymorenum_input>0){
+				var topaymoney=paymorenum_input;
+			}else{
+				var topaymoney=0;
+			}
+		}
+		//alert(topaymoney);
+		if(topaymoney>0){
+			$.post("{:U('Index/dotopay_session')}", {topaymoney:topaymoney}, function(v){
+				if(v.tpnum>0){
+					$("#zffs_box").show();
+					$(".img_icon_btn1").attr("href","/wxpay/example/jsapi.php");
+					//$(".img_icon_btn2").attr("href","/alipay/alipayapi.php");
+					$(".img_icon_btn2").attr("href","/alipays.php?a=alipayto&m=news&tpnum="+v.tpnum+"&ddid="+v.ddid+"&uid="+v.uid+"");
+					//var payurl="http://wap.esports666.com/wxpay/example/jsapi.php";
+					//var payurl="http://wap.esports666.com/index.php?a=dotowxpay&m=index";
+					//window.location.href=payurl;
+				}		   
+			},'JSON');
+		}
+		
+	});
+
+});
+
+
+</script>
+
+<include file="Public:footer"/>

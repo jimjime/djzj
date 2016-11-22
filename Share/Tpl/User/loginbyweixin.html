@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{$webtitle}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+<meta name="description" content="">
+<meta name="author" content=""> 
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+
+<!--主体-->
+<div class="wrap">
+    
+	<div id="wx_login">
+		
+	</div>
+   
+</div>
+
+
+<style type="text/css">
+
+</style>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+$(function(){
+	var obj = new WxLogin({
+		id:"wx_login", 
+		appid: "wxab899c981736ec18", 
+		scope: "snsapi_login", 
+		redirect_uri: "http%3a%2f%2fwap.esports666.com%2findex.php%3fa%3dwx_login%26m%3duser",
+		state: "",
+		style: "",
+		href: ""
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<include file="Public:header"/>
+<style type="text/css">
+.myqr_bg_lol{width:100%;height:auto;position:relative;}
+.myqr_bg_lol .myqr_bg_img{width:100%;height:auto;}
+.myqr_bg_lol .myqr_img{position:absolute;left:35.63%;top:44.85%;width:28%;height:auto;z-index:2;border:1px solid #999;}
+.myqr_bg_dota{width:100%;height:auto;margin-top:41px;position:relative;}
+.myqr_bg_dota .myqr_bg_img{width:100%;height:auto;}
+.myqr_bg_dota .myqr_img{position:absolute;left:31.73%;top:35.55%;width:33.63%;height:auto;z-index:2;}
+</style>
+<div <eq name="_SESSION.gametypeid" value="1">class="myqr_bg_lol" <else/> class="myqr_bg_dota"</eq>>
+	<eq name="_SESSION.gametypeid" value="1">
+		<img src="__PUBLIC__/new/images/qr/lolzm2.jpg" class="myqr_bg_img" />
+	<else/>
+		<img src="__PUBLIC__/new/images/qr/dotazm.jpg" class="myqr_bg_img" />
+	</eq>
+	<img src="{$user_info.qr_img}" id="myqr" class="myqr_img" />
+</div>
+<include file="Public:footer"/>

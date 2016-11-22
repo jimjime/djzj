@@ -1,0 +1,45 @@
+<include file="Public:header"/>
+
+<div class="top">
+	<eq name="_SESSION.gametypeid" value="1">
+		<img src="__PUBLIC__/images/user-banner.png" />
+	</eq>
+	<eq name="_SESSION.gametypeid" value="2">
+		<img src="__PUBLIC__/images/user-banner2.png" />
+	</eq>
+	<div class="home-user about-user">
+		<div class="user-about">
+			<php>
+			if(empty($header)){
+			</php>
+				<img src="__PUBLIC__/images/user-inco.png">
+			<php>
+			}else{
+			</php>
+				<img src="{$header}">
+			<php>
+			}
+			</php>
+		</div>
+		<span>
+			<h3>{$name}</h3>
+			<p>金币余额：<font class="color-about">{$golds}</font></p>
+			<a class="certification" href="{:U('Index/topay')}">金币充值</a>
+		</span>
+	</div>
+</div>
+
+<div class="wrapbody">
+  <div class="linkwrap">
+        <a href="{:U('Index/mygolds')}"><img src="__PUBLIC__/images/about-ico01.png" />金币明细</a>
+        <a href="{:U('Index/tobuy')}"><img src="__PUBLIC__/images/about-ico02.png" />金币兑换</a>
+        <a href="{:U('Index/myquiz')}"><img src="__PUBLIC__/images/about-ico03.png" />竞猜历史消息<!--<span class="tag bg-red fr">3</span>--></a>
+        <a href="{:U('Index/recom')}"><img src="__PUBLIC__/images/about-ico04.png" />战友招募</a>
+    </div>
+    <div class="linkwrap">
+        <a href="{:U('Index/art',array(fid=>2))}"><img src="__PUBLIC__/images/about-ico05.png" />关于</a>
+        <a href="{:U('Index/chtype')}"><img src="__PUBLIC__/images/about-ico06.png" />切换游戏</a>
+    </div>
+</div>
+
+<include file="Public:footer"/>

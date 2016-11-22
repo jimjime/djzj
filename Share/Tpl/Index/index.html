@@ -1,0 +1,243 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap">
+	<!--可竞猜-->
+	<volist name="list" id="l">
+		
+		<!--主播 开始-->	 
+		<eq name="l.fenlei" value="1">  
+			<div class="row <eq name="l.cstate" value="2">del-item</eq> <eq name="l.cstate" value="3">del-item</eq> game_info_box{$l.id}">
+				<div class="col-md-3 item-user">
+					<a href="javascript:;"><span><img src="{$l.team1.avatar}" ></span>{$l.team1.name}</a>
+					<i class="item-icon"><img src="{$l.ptlogo.avatar}"></i>
+					<eq name="l.cstate" value="1">
+						<span class="live"></span>
+					</eq>
+				</div>
+				<div class="col-md-9 item-con">
+					<dl>
+						<dt><a class=" <eq name="l.cstate" value="1">btn-win</eq> " href="javascript:;" data-id="{$l.id}">{$l.check1}<label class="peilv <eq name="l.cstate" value="1">peilvactive</eq> peilva">{$l.peilv1}</label></a></dt>
+						<dd>
+							<h4>{$l.ktime|date='H:i:s',###}/{$l.cname}</h4>
+							<div class="progress"> 
+							<div class="progress-bar" style="width:{$l.baifenbi}%;" role="progressbar" aria-valuenow="{$l.baifenbi}" aria-valuemin="0" aria-valuemax="100"> <span class="sr-only" style="left:{$l.baifenbi}%;">{$l.baifenbi}%</span> <a class=" <eq name="l.cstate" value="1">btn-win</eq>  btn_add" href="javascript:;" data-id="{$l.id}">+</a> </div>
+							<a class=" <eq name="l.cstate" value="1">btn-fu</eq>  btn_add1" href="javascript:;" data-id="{$l.id}">+</a>
+							</div>
+						</dd>
+						<dt><a class=" <eq name="l.cstate" value="1">btn-fu</eq> " href="javascript:;"  data-id="{$l.id}">{$l.check2}<label class="peilv <eq name="l.cstate" value="1">peilvactive</eq>  peilvb">{$l.peilv2}</label></a></dt>
+					</dl> 
+					<eq name="l.cstate" value="1">
+						<span class="home-alt o-alert">{$l.cstatename}</span>
+					</eq>
+					<eq name="l.cstate" value="2">
+						<span class="home-alt r-alert">{$l.cstatename}</span>
+					</eq>
+					<eq name="l.cstate" value="3">
+						<span class="home-alt d-alert">{$l.cstatename}</span>
+					</eq>
+					<eq name="l.cstate" value="4">
+						<span class="home-alt d-alert">{$l.cstatename}</span>
+					</eq>
+				
+				</div>
+				<div class="data_box_value pdataid{$l.id}" data-cktime="{$l.ktime|date='H:i:s',###}" data-ccname="{$l.cname}" data-ccheck1="{$l.check1}"  data-ccheck2="{$l.check2}" data-cpeilv1="{$l.peilv1}" data-cpeilv2="{$l.peilv2}" data-uyue="{$user_yue}"></div>
+			</div>
+		</eq>
+		<!--主播 结束-->	   
+		<!--比赛 开始-->	   
+		<eq name="l.fenlei" value="2">  
+			<div class="row <eq name="l.cstate" value="2">game</eq> <eq name="l.cstate" value="3">game</eq> game_info_box{$l.id}">
+				<div class="col-lg-2 item"><a class=" <eq name="l.cstate" value="1">btn-win</eq> " href="javascript:;" data-id="{$l.id}"><span><img src="{$l.team1.avatar}" ></span>{$l.check1}(<label class="peilv <eq name="l.cstate" value="1">peilvactive</eq>  peilva">{$l.peilv1}</label>)</a></div>
+				<div class="col-lg-8 game-con">
+					<eq name="l.cstate" value="1">
+						<span class="home-game o-game">{$l.cstatename}</span>
+					</eq>
+					<eq name="l.cstate" value="2">
+						<span class="home-game r-game">{$l.cstatename}</span>
+					</eq>
+					<eq name="l.cstate" value="3">
+						<span class="home-game d-game">{$l.cstatename}</span>
+					</eq>
+					<eq name="l.cstate" value="4">
+						<span class="home-game d-game">{$l.cstatename}</span>
+					</eq>
+					<h4>{$l.ktime|date='H:i:s',###}/{$l.game.name}</h4>
+					<p>{$l.name}</p>
+					<p>{$l.cname}</p>
+					<div class="progress"> 
+						<div class="progress-bar" style="width:{$l.baifenbi}%;" role="progressbar" aria-valuenow="{$l.baifenbi}" aria-valuemin="0" aria-valuemax="100"> <span class="sr-only" style="left:{$l.baifenbi}%;">{$l.baifenbi}%</span> <a class=" <eq name="l.cstate" value="1">btn-win</eq>  btn_add" href="javascript:;" data-id="{$l.id}">+</a> </div>
+						<a class=" <eq name="l.cstate" value="1">btn-fu</eq>  btn_add1" href="javascript:;" data-id="{$l.id}">+</a>
+					</div>
+				</div>
+				<div class="col-lg-2 item item1"><a class=" <eq name="l.cstate" value="1">btn-fu</eq> " href="javascript:;" data-id="{$l.id}"><span><img src="{$l.team2.avatar}" ></span>{$l.check2}(<label class="peilv <eq name="l.cstate" value="1">peilvactive</eq>  peilvb">{$l.peilv2}</label>)</a></div>
+				<div class="data_box_value pdataid{$l.id}" data-cktime="{$l.ktime|date='H:i:s',###}" data-ccname="{$l.cname}" data-ccheck1="{$l.check1}"  data-ccheck2="{$l.check2}" data-cpeilv1="{$l.peilv1}" data-cpeilv2="{$l.peilv2}" data-uyue="{$user_yue}"></div>
+			</div>
+		</eq>
+		<!--比赛 结束-->	   
+	   
+   </volist>
+    
+    
+</div>
+
+
+<div class="box jctz_box"></div>
+<div class="layer jctz_layer">
+	<div class="con-layer">
+        <h4 class="pcname"></h4>
+        <span class="pxiang"></span>
+        <div class="form-group">
+            <div class="input-box">
+             <label>竞猜金额 | </label><input type="text" class="form-control" id="addgoldnum" name="goldname" placeholder="最低投注1金币" />
+			 <input type="hidden" id="jctz_id" />
+            </div>
+        </div>
+        <div class="money maybemoney" data-cpeilv=""><label>可能奖金 ：</label>0.0金币</div>
+        <div class="money nowmoney"><label>当前余额 ：</label>0.0金币</div>
+	</div>
+    <div class="bnt-con"><a class="hint-in1 hint" data-checkid="" href="javascript:;">确  定</a><a class="hint-in2 cancel" href="javascript:;">取消</a></div>
+</div>
+<div class="box jccg_box"></div>
+<div class="layer jccg_layer">
+	<div class="con-layer">
+        <P style=" font-size:18px; padding:20px 0; margin:0">竞猜成功</P>
+	</div>
+    <div class="bnt-con"><a class="hint-in3" href="javascript:;">确  定</a></div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function($){
+	$(".btn-win").click(function() {
+		var pid=$(this).attr("data-id");
+		var ccname=$(".pdataid"+pid).attr("data-ccname");
+		var cktime=$(".pdataid"+pid).attr("data-cktime");
+		var ccheck1=$(".pdataid"+pid).attr("data-ccheck1");
+		var ccheck2=$(".pdataid"+pid).attr("data-ccheck2");
+		var cpeilv1=$(".pdataid"+pid).attr("data-cpeilv1");
+		var cpeilv2=$(".pdataid"+pid).attr("data-cpeilv2");
+		var uyue=$(".pdataid"+pid).attr("data-uyue");
+		
+		$(".jctz_layer").find("input#jctz_id").val(pid);
+		$(".jctz_layer").find("h4.pcname").text(ccname+" "+cktime);
+		$(".jctz_layer").find("span.pxiang").text("( "+ccheck1+" "+cpeilv1+" )");
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+		$(".jctz_layer").find("div.maybemoney").attr("data-cpeilv",cpeilv1);
+		$(".jctz_layer").find("div.nowmoney").html("<label>当前余额 ：</label>"+uyue+"金币");
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkid",1);
+
+		$(".jctz_layer").css({"display":"block"});
+		$(".jctz_box").css({"display":"block"});
+	});
+	$(".btn-fu").click(function() {
+		var pid=$(this).attr("data-id");
+		var ccname=$(".pdataid"+pid).attr("data-ccname");
+		var cktime=$(".pdataid"+pid).attr("data-cktime");
+		var ccheck1=$(".pdataid"+pid).attr("data-ccheck1");
+		var ccheck2=$(".pdataid"+pid).attr("data-ccheck2");
+		var cpeilv1=$(".pdataid"+pid).attr("data-cpeilv1");
+		var cpeilv2=$(".pdataid"+pid).attr("data-cpeilv2");
+		var uyue=$(".pdataid"+pid).attr("data-uyue");
+		
+		$(".jctz_layer").find("input#jctz_id").val(pid);
+		$(".jctz_layer").find("h4.pcname").text(ccname+" "+cktime);
+		$(".jctz_layer").find("span.pxiang").text("( "+ccheck2+" "+cpeilv2+" )");
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+		$(".jctz_layer").find("div.maybemoney").attr("data-cpeilv",cpeilv2);
+		$(".jctz_layer").find("div.nowmoney").html("<label>当前余额 ：</label>"+uyue+"金币");
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkid",2);
+
+		$(".jctz_layer").css({"display":"block"});
+		$(".jctz_box").css({"display":"block"});
+	});
+	$('#addgoldnum').bind('input propertychange', function() {
+	
+		var addgoldnum=Number($(this).val());
+		var cpeilv=Number($(".layer").find("div.maybemoney").attr("data-cpeilv"));
+		if(addgoldnum>0){
+			var maybemoney=(addgoldnum*cpeilv).toFixed(2);
+		}else{
+			var maybemoney=0.0;
+		}
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>"+maybemoney+"金币");		
+	});
+
+	$(".hint-in2").click(function(event) {
+		$(".jctz_layer").css({"display":"none"});
+		$(".jctz_box").css({"display":"none"});
+	});
+	
+	$(".hint-in3").click(function(event) {
+		$(".jccg_layer").css({"display":"none"});
+		$(".jccg_box").css({"display":"none"});
+	});
+
+	$(".hint-in1").click(function(event) {
+		var id=$(".jctz_layer").find("input#jctz_id").val();
+		var addgoldnum=$(".jctz_layer").find("input#addgoldnum").val();
+		var checkid=$(this).attr("data-checkid");
+		$.post("{:U('Index/jctz')}", {id:id,addgoldnum:addgoldnum,checkid:checkid}, function(v){
+			if(v.jieguo=="tzcg"){
+				$(".header").find("span.fl").html("今日竞猜："+v.ren+"人，"+v.jinbi+"金币");
+				$(".header").find("span.header-r").html("余额："+v.user_yue+"");
+				
+				$("div.game_info_box"+v.pid).find("div.progress-bar").css("width",""+v.baifenbi+"%");
+				$("div.game_info_box"+v.pid).find("div.progress-bar").attr("aria-valuenow",v.baifenbi);
+				$("div.game_info_box"+v.pid).find("span.sr-only").css("left",""+v.baifenbi+"%");
+				$("div.game_info_box"+v.pid).find("span.sr-only").text(""+v.baifenbi+"%");
+				$("div.game_info_box"+v.pid).find("label.peilva").text(v.peilv1);
+				$("div.game_info_box"+v.pid).find("label.peilvb").text(v.peilv2);
+				
+				$("div.pdataid"+v.pid).attr("data-cpeilv1",v.peilv1);
+				$("div.pdataid"+v.pid).attr("data-cpeilv2",v.peilv2);
+				$("div.pdataid"+v.pid).attr("data-uyue",v.user_yue);
+				
+				$(".jctz_layer").css({"display":"none"});
+				$(".jctz_box").css({"display":"none"});
+				
+				$(".jccg_layer").css({"display":"block"});
+				$(".jccg_box").css({"display":"block"});
+				
+			}else if(v.jieguo=="tzsb"){
+				alert("竞猜失败");
+			}else if(v.jieguo=="nostart"){
+				alert("竞猜未开始");
+			}else if(v.jieguo=="yiend"){
+				alert("竞猜已结束");
+			}else if(v.jieguo=="fengpan"){
+				alert("此竞猜封盘中");
+			}else if(v.jieguo=="jiesuan"){
+				alert("此竞猜结算中");
+			}
+					   
+		},'JSON');
+	});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#form').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        //group: '.form-group',
+        fields: {            
+            goldname: {
+                validators: {
+                    notEmpty: {
+                        message: '金币不能是空的'
+                    },
+                }
+            },
+           
+			
+	     }
+    });
+});
+</script>
+
+<include file="Public:footer"/>

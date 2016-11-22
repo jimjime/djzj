@@ -1,0 +1,357 @@
+<include file="Public:header"/>
+
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+			<!--主播列表 start-->
+			<div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+					Roll活动列表
+                    <!--<span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+					</span>-->
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    <div class="btn-group">
+						<a href="#addmyModal" data-toggle="modal" >
+							<button class="btn btn-primary ">
+								添加 <i class="fa fa-plus"></i>
+							</button>
+                        </a>
+
+                    </div>
+                    <!--<div class="btn-group pull-right">
+                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="#">Export to Excel</a></li>
+                        </ul>
+                    </div>-->
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>ID</th>
+                    <th>开奖时间</th>
+                    <th>所属游戏</th>
+                    <th>roll名称</th>
+                    <th>活动图</th>
+                    <th>奖品信息</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+					<volist name="list" id="l" key="i">
+						<tr class="">
+							<td>{$i}</td>
+							<td>{$l.id}</td>
+							<td>{$l.endTime|date='Y-m-d H:i',###}</td>
+							<td><eq name="l.gid" value="1">LOL</eq><eq name="l.gid" value="2">DOTA2</eq></td>
+							<td>{$l.name}</td>
+							<td><img src="{$l.background}" width="40" /></td>
+							<td>
+								{$l.prizeName1} <img src="{$l.prizePic1}" width="40" /> <img src="{$l.userHeader1}" width="30" /> {$l.userRecordid1}<br />
+								{$l.prizeName2} <img src="{$l.prizePic2}" width="40" /> <img src="{$l.userHeader2}" width="30" /> {$l.userRecordid2}<br />
+								{$l.prizeName3} <img src="{$l.prizePic3}" width="40" /> <img src="{$l.userHeader3}" width="30" /> {$l.userRecordid3}
+							</td>
+							<td>
+								<a class="tan_edit" data-toggle="modal" href="#bianjibox{$l.id}">编辑</a>
+								|
+								<a class="tan_edit" data-toggle="modal" href="{:U('Roll/active_roll_record',array(tid=>$l[id]))}" target="_blank">编号记录</a>
+								|
+								<php>
+								if($l['state']==1){
+								</php>
+									<a href="javascript:;" onclick="del_admin({$l.id},'active_roll_term',this,'id')">删除</a>
+								<php>
+								}else{
+								</php>
+									<a href="javascript:;" onclick="hui_admin({$l.id},'active_roll_term',this,'id')">恢复</a>
+									|
+									<a href="javascript:;" class="cddel_admin_btn" onclick="cddel_admin({$l.id},'active_roll_term',this,'id')">彻底删除</a>
+								<php>
+								}
+								</php>
+							</td>
+						</tr>
+						<!--编辑框 start-->
+						<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="bianjibox{$l.id}" class="modal fade">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title">编辑</h4>
+									</div>
+		
+									<div class="modal-body ">
+										<form action="{:U('Roll/active_roll_term_edit')}" method="post" enctype="multipart/form-data">
+											<input type="hidden" name="id" value="{$l.id}">
+											
+											<div class="form-group">
+												<label>所属游戏</label>
+												<select name="gid" class="form-control">
+													<option value="1"  <php>if($l['gid']==1){</php>selected="selected"<php>}</php>>LOL</option>
+													<option value="2"  <php>if($l['gid']==2){</php>selected="selected"<php>}</php>>DOTA2</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>名称</label>
+												<input name="name" value="{$l.name}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>开奖时间</label>
+												<input type="text" name="endTime" value="{$l.endTime|date='Y-m-d H:i',###}" readonly class="form_datetime form-control">
+											</div>
+											
+											<div class="form-group">
+												<label for="exampleInputFile">背景图</label>
+												<p>
+													<img src="{$l.background}" width="40" />
+												</p>
+												<input type="file" id="background" name="background">
+												<p class="help-block">大小不超过1MB</p>
+											</div>
+											<div class="form-group">
+												<label>奖品1 名称</label>
+												<input name="prizeName1" value="{$l.prizeName1}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputFile">奖品1 图</label>
+												<p>
+													<img src="{$l.prizePic1}" width="40" />
+												</p>
+												<input type="file" id="prizePic1" name="prizePic1">
+												<p class="help-block">大小不超过1MB</p>
+											</div>
+											<div class="form-group">
+												<label>奖品2 名称</label>
+												<input name="prizeName2" value="{$l.prizeName2}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputFile">奖品2 图</label>
+												<p>
+													<img src="{$l.prizePic2}" width="40" />
+												</p>
+												<input type="file" id="prizePic2" name="prizePic2">
+												<p class="help-block">大小不超过1MB</p>
+											</div>
+											<div class="form-group">
+												<label>奖品3 名称</label>
+												<input name="prizeName3" value="{$l.prizeName3}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputFile">奖品3 图</label>
+												<p>
+													<img src="{$l.prizePic3}" width="40" />
+												</p>
+												<input type="file" id="prizePic3" name="prizePic3">
+												<p class="help-block">大小不超过1MB</p>
+											</div>
+											<div class="form-group">
+												<label>奖品1 中奖用户编号</label>
+												<input name="userRecordid1" value="{$l.userRecordid1}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>奖品1 中奖用户昵称</label>
+												<input name="userName1" value="{$l.userName1}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputFile">奖品1 中奖用户头像</label>
+												<p>
+													<img src="{$l.userHeader1}" width="40" />
+												</p>
+												<input type="file" id="userHeader1" name="userHeader1">
+												<p class="help-block">大小不超过1MB</p>
+											</div>
+											<div class="form-group">
+												<label>奖品2 中奖用户编号</label>
+												<input name="userRecordid2" value="{$l.userRecordid2}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>奖品2 中奖用户昵称</label>
+												<input name="userName2" value="{$l.userName2}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputFile">奖品2 中奖用户头像</label>
+												<p>
+													<img src="{$l.userHeader2}" width="40" />
+												</p>
+												<input type="file" id="userHeader2" name="userHeader2">
+												<p class="help-block">大小不超过1MB</p>
+											</div>
+											<div class="form-group">
+												<label>奖品3 中奖用户编号</label>
+												<input name="userRecordid3" value="{$l.userRecordid3}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>奖品3 中奖用户昵称</label>
+												<input name="userName3" value="{$l.userName3}" class="form-control">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputFile">奖品3 中奖用户头像</label>
+												<p>
+													<img src="{$l.userHeader3}" width="40" />
+												</p>
+												<input type="file" id="userHeader3" name="userHeader3">
+												<p class="help-block">大小不超过1MB</p>
+											</div>
+											<button type="submit" class="btn btn-primary">保存</button>
+										</form>
+									</div>
+		
+								</div>
+							</div>
+						</div>
+						<!--编辑框 end-->
+					</volist>
+
+                </tbody>
+                </table>
+                </div>
+                </div>
+                </section>
+                </div>
+			</div>
+			<!--主播列表 end-->
+		</div>
+        <!--body wrapper end-->
+		<!--添加框 start-->
+		<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addmyModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+						<h4 class="modal-title">添加</h4>
+					</div>
+					<div class="modal-body">
+						<form action="{:U('Roll/active_roll_term_edit')}" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="id" value="">
+							
+							<div class="form-group">
+								<label>所属游戏</label>
+								<select name="gid" class="form-control">
+									<option value="1" selected="selected">LOL</option>
+									<option value="2" >DOTA2</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>名称</label>
+								<input name="name" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>开奖时间</label>
+								<input type="text" name="endTime" value="" readonly class="form_datetime form-control">
+							</div>
+							
+							<div class="form-group">
+								<label for="exampleInputFile">背景图</label>
+								<p>
+									<img src="" width="40" />
+								</p>
+								<input type="file" id="background" name="background">
+								<p class="help-block">大小不超过1MB</p>
+							</div>
+							<div class="form-group">
+								<label>奖品1 名称</label>
+								<input name="prizeName1" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputFile">奖品1 图</label>
+								<p>
+									<img src="" width="40" />
+								</p>
+								<input type="file" id="prizePic1" name="prizePic1">
+								<p class="help-block">大小不超过1MB</p>
+							</div>
+							<div class="form-group">
+								<label>奖品2 名称</label>
+								<input name="prizeName2" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputFile">奖品2 图</label>
+								<p>
+									<img src="" width="40" />
+								</p>
+								<input type="file" id="prizePic2" name="prizePic2">
+								<p class="help-block">大小不超过1MB</p>
+							</div>
+							<div class="form-group">
+								<label>奖品3 名称</label>
+								<input name="prizeName3" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputFile">奖品3 图</label>
+								<p>
+									<img src="" width="40" />
+								</p>
+								<input type="file" id="prizePic3" name="prizePic3">
+								<p class="help-block">大小不超过1MB</p>
+							</div>
+							<div class="form-group">
+								<label>奖品1 中奖用户编号</label>
+								<input name="userRecordid1" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>奖品1 中奖用户昵称</label>
+								<input name="userName1" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputFile">奖品1 中奖用户头像</label>
+								<p>
+									<img src="" width="40" />
+								</p>
+								<input type="file" id="userHeader1" name="userHeader1">
+								<p class="help-block">大小不超过1MB</p>
+							</div>
+							<div class="form-group">
+								<label>奖品2 中奖用户编号</label>
+								<input name="userRecordid2" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>奖品2 中奖用户昵称</label>
+								<input name="userName2" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputFile">奖品2 中奖用户头像</label>
+								<p>
+									<img src="" width="40" />
+								</p>
+								<input type="file" id="userHeader2" name="userHeader2">
+								<p class="help-block">大小不超过1MB</p>
+							</div>
+							<div class="form-group">
+								<label>奖品3 中奖用户编号</label>
+								<input name="userRecordid3" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>奖品3 中奖用户昵称</label>
+								<input name="userName3" value="" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputFile">奖品3 中奖用户头像</label>
+								<p>
+									<img src="" width="40" />
+								</p>
+								<input type="file" id="userHeader3" name="userHeader3">
+								<p class="help-block">大小不超过1MB</p>
+							</div>
+							<button type="submit" class="btn btn-primary">保存</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--添加框 end-->
+
+    </div>
+    <!-- main content end-->
+	
+<include file="Public:footer"/>
+

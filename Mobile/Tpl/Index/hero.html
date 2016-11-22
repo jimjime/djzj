@@ -1,0 +1,701 @@
+<include file="Public:header" />
+<!--主体-->
+<style type="text/css">
+/*	.lolhero li:nth-child(3){
+       transition: all 0.8s linear;
+	}*/
+</style>
+<div class="wrap rules-ab Hero">
+    <style type="text/css">
+        .dld_top{width:100%;height:auto;background:#060606;}
+        .dld_top_li{width:80%;margin:0 auto;}
+        .dld_top_a{width:50%;display:block;float:left;height:auto;text-align:center;}
+        .dld_top_a img{width:auto;max-width:100%;}
+    </style>
+    <!--
+    <div class="dld_top">
+        <div class="dld_top_li">
+            <a href="{:U('Index/hero')}" class="dld_top_a">
+                <img src="__PUBLIC__/new/images/yxc_c.jpg">
+            </a>
+            <a href="{:U('Index/dld')}" class="dld_top_a">
+                <img src="__PUBLIC__/new/images/dld.jpg">
+            </a>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+    -->
+    <div id="jswbox">
+        <h3>距离第<font id="sy_cha_ci">{$now_tou.now_cha_cishu}</font>期幸运英雄出现还有<font id="sy_time_hour"></font><font id="sy_time_minute"></font><font id="sy_time_second"></font></h3>
+        <script type="text/javascript">
+        var intDiff = parseInt({$now_tou.shengyumiao}); //倒计时总秒数量
+        function timer(intDiff) {
+            window.setInterval(function() {
+                if (intDiff <= 0) {
+                    var sy_cha_ci = $("#sy_cha_ci").text();
+                    var sy_cha_ci_new = Number(Number(sy_cha_ci) + Number(1));
+                    $("#sy_cha_ci").text(sy_cha_ci_new);
+                    if (sy_cha_ci_new == 25) {
+                        intDiff = parseInt(28800);
+                    } else if (sy_cha_ci_new > 25 && sy_cha_ci_new <= 96) {
+                        intDiff = parseInt(600);
+                    } else {
+                        intDiff = parseInt(300);
+                    }
+                    $('#sy_time_hour').show();
+                    $('#sy_time_minute').show();
+                }
+                var hour = 0,
+                    minute = 0,
+                    second = 0; //时间默认值		
+                if (intDiff > 0) {
+                    hour = Math.floor(intDiff / (60 * 60));
+                    minute = Math.floor(intDiff / 60) - (hour * 60);
+                    second = Math.floor(intDiff) - (hour * 60 * 60) - (minute * 60);
+                } else {
+
+                }
+                if (minute <= 9) minute = '0' + minute;
+                if (second <= 9) second = '0' + second;
+                if (hour > 0) {
+                    $('#sy_time_hour').html('' + hour + '小时');
+                    $('#sy_time_minute').html('' + minute + '分');
+                    $('#sy_time_second').html('' + second + '秒');
+                } else {
+                    $('#sy_time_hour').hide();
+                    if (minute > 0) {
+                        $('#sy_time_minute').html('' + minute + '分');
+                        $('#sy_time_second').html('' + second + '秒');
+                    } else {
+                        $('#sy_time_minute').hide();
+                        $('#sy_time_second').html('' + second + '秒');
+                    }
+                }
+                intDiff--;
+            }, 1000);
+        }
+        $(function() {
+            timer(intDiff);
+        });
+        </script>
+        <eq name="_SESSION.gametypeid" value="1">
+            <ul class="hero_himg_ul lolhero">
+                <li><img src="__PUBLIC__/lol80/1.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/2.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/3.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/4.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/5.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/6.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/7.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/8.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/9.jpg"></li>
+                <li><img src="__PUBLIC__/lol80/10.jpg"></li>
+            </ul>
+            <script type="text/javascript">
+            function lolhero(heronum) {
+            	var picnum=2
+                window.setInterval(function() {
+                    var w_width = $(window).width();
+                    var c_left = Math.floor(w_width / 15);
+                    var c_top = c_left * 2;
+                    $("#jswbox").height((c_left * 7));
+                    if (heronum >= 2) {
+                        var heronumfu = Number(heronum) - Number(2);
+                        $(".lolhero li:eq(" + heronumfu + ")").css({
+                            'left': "-" + c_left + "px",
+                            'width': '' + (2 * c_left) + 'px',
+                            'top': '' + c_top + 'px',
+                            'z-index': '0',
+                            'list-style-type': 'none'
+                        });
+                    }
+                    if (heronum >= 1) {
+                        var heronumfu = Number(heronum) - Number(1);
+                        $(".lolhero li:eq(" + heronumfu + ")").css({
+                            'left': "-" + c_left + "px",
+                            'width': '' + (2 * c_left) + 'px',
+                            'top': '' + c_top + 'px',
+                            'z-index': '1',
+                            'list-style-type': 'none'
+                        });
+                    }
+                    $(".lolhero li:eq(" + heronum + ")").css({
+                        'left': '' + (1 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '2',
+                        'list-style-type': 'none'
+                    });
+                    var heronum1 = Number(heronum) + Number(1);
+                    $(".lolhero li:eq(" + heronum1 + ")").css({
+                        'left': '' + (2.5 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '3',
+                        'list-style-type': 'none'
+                    });
+                    var heronum2 = Number(heronum) + Number(2);
+                    $(".lolhero li:eq(" + heronum2 + ")").css({
+                        'left': '' + (4 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '4',
+                        'list-style-type': 'none'
+                    });
+                    var heronum3 = Number(heronum) + Number(3);
+                    $(".lolhero li:eq(" + heronum3 + ")").css({
+                        'left': '' + (5.5 * c_left) + 'px',
+                        'width': '' + (4 * c_left) + 'px',
+                        'top': '' + (c_top / 2) + 'px',
+                        'z-index': '10',
+                        'list-style-type': 'none'
+                    });
+                    var heronum4 = Number(heronum) + Number(4);
+                    $(".lolhero li:eq(" + heronum4 + ")").css({
+                        'left': '' + (9 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '9',
+                        'list-style-type': 'none'
+                    });
+                    var heronum5 = Number(heronum) + Number(5);
+                    $(".lolhero li:eq(" + heronum5 + ")").css({
+                        'left': '' + (10.5 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '8',
+                        'list-style-type': 'none'
+                    });
+                    var heronum6 = Number(heronum) + Number(6);
+                    $(".lolhero li:eq(" + heronum6 + ")").css({
+                        'left': '' + (12 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '7',
+                        'list-style-type': 'none'
+                    });
+                    var heronum7 = Number(heronum) + Number(7);
+                    $(".lolhero li:eq(" + heronum7 + ")").css({
+                        'left': '' + (13.5 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '6',
+                        'list-style-type': 'none'
+                    });
+                    var heronum8 = Number(heronum) + Number(8);
+                    $(".lolhero li:eq(" + heronum8 + ")").css({
+                        'left': '' + (15 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '5',
+                        'list-style-type': 'none'
+                    });
+                    if(heronum>=1){
+                    	picnum1=picnum;
+                        for(var i=0;i<9;i++){
+                        	
+                        	// console.log(picnum1);
+                        	console.log(i);
+                        	$(".lolhero li:eq("+i+") img").attr('src','./Public/Mobile/lol80/'+picnum1+'.jpg');
+                        	picnum1++;
+                        }
+                    }
+                    // 当图片摆放达到上限的时候，自动从1开始继续轮番切换
+                    if(picnum<121){
+                    picnum++;
+                    }
+                    else{
+                    	picnum=1;
+                    }
+                    console.log(picnum)
+                }, 200);
+            }
+            $(function() {
+                var heronum = 1;
+                lolhero(heronum);
+            });
+            </script>
+        </eq>
+        <eq name="_SESSION.gametypeid" value="2">
+            <ul class="hero_himg_ul dotahero">
+                <li><img src="__PUBLIC__/dota80/1.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/2.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/3.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/4.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/5.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/6.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/7.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/8.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/9.jpg"></li>
+                <li><img src="__PUBLIC__/dota80/10.jpg"></li>
+            </ul>
+             <script type="text/javascript">
+            function dotahero(heronum) {
+                var picnum=1;
+                window.setInterval(function() {
+                    var w_width = $(window).width();
+                    var c_left = Math.floor(w_width / 15);
+                    var c_top = c_left * 2;
+                    $("#jswbox").height((c_left * 7));
+                    if (heronum >= 2) {
+                        var heronumfu = Number(heronum) - Number(2);
+                        $(".dotahero li:eq(" + heronumfu + ")").css({
+                            'left': "-" + c_left + "px",
+                            'width': '0px',
+                            'top': '' + c_top + 'px',
+                            'z-index': '1',
+                            'list-style-type': 'none'
+                        });
+                    }
+                    if (heronum >= 1) {
+                        var heronumfu = Number(heronum) - Number(1);
+                        $(".dotahero li:eq(" + heronumfu + ")").css({
+                            'left': "-" + c_left + "px",
+                            'width': '' + (2 * c_left) + 'px',
+                            'top': '' + c_top + 'px',
+                            'z-index': '1',
+                            'list-style-type': 'none'
+                        });
+                    }
+                    $(".dotahero li:eq(" + heronum + ")").css({
+                        'left': '' + (1 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '2',
+                        'list-style-type': 'none'
+                    });
+                    var heronum1 = Number(heronum) + Number(1);
+                    $(".dotahero li:eq(" + heronum1 + ")").css({
+                        'left': '' + (2.5 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '3',
+                        'list-style-type': 'none'
+                    });
+                    var heronum2 = Number(heronum) + Number(2);
+                    $(".dotahero li:eq(" + heronum2 + ")").css({
+                        'left': '' + (4 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '4',
+                        'list-style-type': 'none'
+                    });
+                    var heronum3 = Number(heronum) + Number(3);
+                    $(".dotahero li:eq(" + heronum3 + ")").css({
+                        'left': '' + (5.5 * c_left) + 'px',
+                        'width': '' + (4 * c_left) + 'px',
+                        'top': '' + (c_top / 2) + 'px',
+                        'z-index': '10',
+                        'list-style-type': 'none'
+                    });
+                    var heronum4 = Number(heronum) + Number(4);
+                    $(".dotahero li:eq(" + heronum4 + ")").css({
+                        'left': '' + (9 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '9',
+                        'list-style-type': 'none'
+                    });
+                    var heronum5 = Number(heronum) + Number(5);
+                    $(".dotahero li:eq(" + heronum5 + ")").css({
+                        'left': '' + (10.5 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '8',
+                        'list-style-type': 'none'
+                    });
+                    var heronum6 = Number(heronum) + Number(6);
+                    $(".dotahero li:eq(" + heronum6 + ")").css({
+                        'left': '' + (12 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '7',
+                        'list-style-type': 'none'
+                    });
+                    var heronum7 = Number(heronum) + Number(7);
+                    $(".dotahero li:eq(" + heronum7 + ")").css({
+                        'left': '' + (13.5 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '6',
+                        'list-style-type': 'none'
+                    });
+                    var heronum8 = Number(heronum) + Number(8);
+                    $(".dotahero li:eq(" + heronum8 + ")").css({
+                        'left': '' + (15 * c_left) + 'px',
+                        'width': '' + (2 * c_left) + 'px',
+                        'top': '' + c_top + 'px',
+                        'z-index': '5',
+                        'list-style-type': 'none'
+                    });
+                    if(heronum>=1){
+                        picnum1=picnum;
+                        for(var i=0;i<9;i++){
+                            
+                            // console.log(picnum1);
+                            console.log(i);
+                            $(".dotahero li:eq("+i+") img").attr('src','./Public/Mobile/dota80/'+picnum1+'.jpg');
+                            picnum1++;
+                        }
+                    }
+                    // 当图片摆放达到上限的时候，自动从1开始继续轮番切换
+                    if(picnum<104){
+                    picnum++;
+                    }
+                    else{
+                        picnum=1;
+                    }
+                    console.log(picnum)
+
+                }, 200);
+            }
+            $(function() {
+                var heronum = 1;
+                dotahero(heronum);
+            });
+            </script>
+        </eq>
+    </div>
+    <div class="hero-con">
+        <h3>本期幸运英雄是？</h3>
+        <volist name="roulette_property_type" id="r">
+            <h4>{$r.name}</h4>
+            <div class="row">
+                <eq name="r.num" value="2">
+                    <volist name="r.roulette_property" id="p">
+                        <a class="col-md-6 check_btn_yxc" data-checksid="{$p.roulette_propertyId}" data-checkspeilv="{$p.peilv}" data-checksname="{$p.name}">{$p.name}（{$p.peilv}）</a>
+                    </volist>
+                    <else/>
+                    <volist name="r.roulette_property" id="p">
+                        <a class="col-md-4 check_btn_yxc" data-checksid="{$p.roulette_propertyId}" data-checkspeilv="{$p.peilv}" data-checksname="{$p.name}">{$p.name}（{$p.peilv}）</a>
+                    </volist>
+                </eq>
+            </div>
+        </volist>
+        <a class="btn-hero" href="javascript:;">立即投注</a>
+    </div>
+    <div class="write-down">
+        <p class="declare" style="text-align:center;">开奖结果完全取自时时彩，100%公平公正公开</p>
+        <h3>今日开奖记录</h3>
+        <p>
+            <label>时时彩期数</label>
+            <label>开奖号码</label>幸运英雄</p>
+        <p>
+            <label>第{$daikaijiangqi}期：</label>等待时时彩开奖结果(约10s-60s延迟)</p>
+        <volist name="roulette_log" id="l">
+            <p>
+                <label>第{$l.qi}期：</label>
+                <label>{$l.num}</label>{$l.hero_info}</p>
+        </volist>
+    </div>
+</div>
+<div class="box yxctz_box"></div>
+<div class="layer yxctz_layer">
+    <div class="con-layer">
+        <h4 class="pcname">英雄猜</h4>
+        <span class="pxiang">投注：</span>
+        <div class="form-group">
+            <div class="input-box">
+                <label>竞猜金额 | </label>
+                <input type="number" class="form-control" id="addgoldnum" name="goldname" placeholder="最低投注1金币" />
+            </div>
+        </div>
+        <div class="money maybemoney" data-cpeilv="">
+            <label>可能奖金 ：</label>0.0金币</div>
+        <div class="money nowmoney">
+            <label>当前余额 ：</label>{$user_yue}金币</div>
+    </div>
+    <div class="bnt-con"><a class="hint-in1 hint" href="javascript:;">确  定</a><a class="hint-in2 cancel" href="javascript:;">取消</a></div>
+</div>
+<div class="box yxccg_box"></div>
+<div class="layer yxccg_layer">
+    <div class="con-layer">
+        <P style=" font-size:18px; padding:20px 0; margin:0">投注成功</P>
+    </div>
+    <div class="bnt-con"><a class="hint-in3" href="javascript:;">确  定</a></div>
+</div>
+<div style="display:none;" id="all_peilv_box">
+    <volist name="all_peilv" id="a">
+        <input type="hidden" name="all_peilv_num({$a.num})" value="{$a.peilv}" />
+    </volist>
+</div>
+<input type="hidden" name="checkspeilv" value="" />
+<input type="hidden" name="checksids" value="" />
+<input type="hidden" name="checksnames" value="" />
+<script type="text/javascript">
+
+$("a.check_btn_yxc").on("click", function() {
+    //$(this).removeClass("check_btn_yxc");
+    var hasclass_ha = $(this).hasClass("hero-active");
+    if (hasclass_ha >= 1) {
+        $(this).parent().find("a.hero-active").removeClass("hero-active");
+    } else {
+        var this_checksid = $(this).attr("data-checksid");
+        if (this_checksid == 12) {
+            $(this).parent().parent().find("a.hero-active").removeClass("hero-active");
+            $(this).addClass("hero-active");
+        } else {
+            var checksids_jiu = "";
+            $("a.hero-active").each(function() {
+                checksids_jiu = checksids_jiu + "," + $(this).attr("data-checksid");
+                checksids_jiu = checksids_jiu.substr(1);
+            });
+            var checksids_jiu_arr = checksids_jiu.split(",");
+            var inarray12id = $.inArray("12", checksids_jiu_arr);
+            if (inarray12id < 0) {
+                $(this).parent().find("a.hero-active").removeClass("hero-active");
+                $(this).addClass("hero-active");
+            } else {
+                if (this_checksid == 10 || this_checksid == 11) {
+                    $(this).parent().find("a.hero-active").removeClass("hero-active");
+                    $(this).addClass("hero-active");
+                }
+            }
+
+        }
+    }
+
+    var checksids = "";
+    var checksnames = "";
+    //var checkspeilv="1";
+    $("a.hero-active").each(function() {
+
+        checksids = checksids + "," + $(this).attr("data-checksid");
+        //checkspeilv=checkspeilv*$(this).attr("data-checkspeilv");
+        checksnames = checksnames + "," + $(this).attr("data-checksname");
+    });
+    checksids = checksids.substr(1);
+    checksnames = checksnames.substr(1);
+    //checkspeilv=Math.floor(checkspeilv*100)/100;
+    var checkspeilv = $("div#all_peilv_box").find("input[name='all_peilv_num(" + checksids + ")']").val();
+
+    var checksids_arr = checksids.split(",");
+    var checksids_length = checksids_arr.length;
+
+    $("input[name='checksids']").val(checksids);
+    $("input[name='checksnames']").val(checksnames);
+    $("input[name='checkspeilv']").val(checkspeilv);
+    if (checksids == "") {
+        $("a.btn-hero").text("立即投注");
+    } else {
+        if (checksids_length >= 2) {
+            $("a.btn-hero").text("立即投注 组合赔率" + checkspeilv + "");
+        } else if (checksids_length == 1) {
+            $("a.btn-hero").text("立即投注 赔率" + checkspeilv + "");
+        } else {
+            $("a.btn-hero").text("立即投注");
+        }
+    }
+    //alert(checksids);
+});
+$("a.btn-hero").click(function() {
+
+    var checksids = $("input[name='checksids']").val();
+    var checkspeilv = $("input[name='checkspeilv']").val();
+    var checksnames = $("input[name='checksnames']").val();
+    if (checksids == "") {
+        alert("请选择投注项");
+    } else if (checkspeilv == "") {
+        alert("请选择投注项");
+    } else if (checksnames == "") {
+        alert("请选择投注项");
+    } else {
+        $(".pxiang").text("投注：" + checksnames + "(赔率：" + checkspeilv + ")");
+
+        $(".yxctz_layer").css({
+            "display": "block"
+        });
+        $(".yxctz_box").css({
+            "display": "block"
+        });
+    }
+});
+$(".hint-in2").click(function(event) {
+    $(".yxctz_layer").css({
+        "display": "none"
+    });
+    $(".yxctz_box").css({
+        "display": "none"
+    });
+});
+
+$(".hint-in3").click(function(event) {
+    $(".yxccg_layer").css({
+        "display": "none"
+    });
+    $(".yxccg_box").css({
+        "display": "none"
+    });
+});
+$('#addgoldnum').bind('input propertychange', function() {
+
+    var addgoldnum = Number($(this).val());
+    var cpeilv = $("input[name='checkspeilv']").val();
+    if (addgoldnum > 0) {
+        var maybemoney = (addgoldnum * cpeilv).toFixed(2);
+    } else {
+        var maybemoney = 0.0;
+    }
+    $(".yxctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>" + maybemoney + "金币");
+});
+
+function takeToken(){
+    var token="1";
+    //获取令牌
+    $.ajax({
+        type: "POST",
+        url: "{:U('Index/setFormCode')}",
+        datatype: "json",
+        beforeSend: function () {
+            $("#msg").html("logining");
+        },
+        success: function (data) {
+          token=2
+        },
+        //调用执行后调用的函数
+        complete: function () {
+            token=3
+        },
+        error: function () {
+            alert("获取令牌发生错误")
+            window.location.reload();
+        }
+    });
+   return  token;
+}
+$(".hint-in1").click(function() {
+    $(this).removeClass("hint-in1");
+    var checksids = $("input[name='checksids']").val();
+    var goldname = $("input[name='goldname']").val();
+   // var token=takeToken();
+   // alert(token);exit;
+    $.ajax({
+        type: "POST",
+        url: "{:U('Index/hero_tz')}",
+        data: {checksids:checksids,goldname:goldname},
+        //返回数据的格式"  xml", "html", "script", "json", "jsonp", "text".
+        datatype: "json",
+        //在请求之前调用的函数
+        beforeSend: function () {
+            $("#msg").html("logining");
+        },
+        //成功返回之后调用的函数
+        success: function (data) {
+            var v=eval('('+data+')');
+            if (v.jieguo == "cg") {
+                $(".header").find("span.fl").html("今日竞猜：" + v.ren + "人，" + v.jinbi + "金币");
+                $(".header").find("span.header-r").html("余额：" + v.uyue + "");
+
+                $(".nowmoney").html("<label>当前余额 ：</label>" + v.uyue + "金币");
+
+                $(".btn-hero").text("立即投注");
+                $(".pxiang").text("投注：");
+                $("#addgoldnum").val("");
+                $(".maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+                $("a.hero-active").each(function() {
+                    $(this).removeClass("hero-active");
+                });
+                $("input[name='checksids']").val("");
+                $("input[name='checksnames']").val("");
+                $("input[name='checkspeilv']").val("");
+
+                $(".yxctz_layer").css({
+                    "display": "none"
+                });
+                $(".yxctz_box").css({
+                    "display": "none"
+                });
+
+                $(".yxccg_layer").css({
+                    "display": "block"
+                });
+                $(".yxccg_box").css({
+                    "display": "block"
+                });
+
+            } else if (v.jieguo == "yuebuzu") {
+                var jinbi_cha = goldname - v.user_yue;
+                show_yuebz_box(jinbi_cha);
+            } else if (v.jieguo == "no1") {
+                alert("投注金额不能小于1金币");
+            } else if (v.jieguo == "sb") {
+                alert("投注失败");
+            } else if (v.jieguo == "nocheck") {
+                alert("请选择投注项");
+            } else if (v.jieguo == "rsnomore") {
+                alert("肉山不可选择其余属性");
+            }
+            $(this).addClass("hint-in1");
+            // $("#msg").html(decodeURI(data));
+        },
+        //调用出错执行的函数
+        error: function () {
+            //请求出错处理
+            alert("发生错误")
+            window.location.reload();
+        }
+    });
+});_
+/*
+$(".hint-in1").click(function() {
+
+    $(this).removeClass("hint-in1");
+    var checksids = $("input[name='checksids']").val();
+    var goldname = $("input[name='goldname']").val();
+
+    $.post("{:U('Index/hero_tz')}", {
+        checksids: checksids,
+        goldname: goldname
+    },function(v) {
+        alert(12)
+        if (v.jieguo == "cg") {
+            $(".header").find("span.fl").html("今日竞猜：" + v.ren + "人，" + v.jinbi + "金币");
+            $(".header").find("span.header-r").html("余额：" + v.uyue + "");
+
+            $(".nowmoney").html("<label>当前余额 ：</label>" + v.uyue + "金币");
+
+            $(".btn-hero").text("立即投注");
+            $(".pxiang").text("投注：");
+            $("#addgoldnum").val("");
+            $(".maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+            $("a.hero-active").each(function() {
+                $(this).removeClass("hero-active");
+            });
+            $("input[name='checksids']").val("");
+            $("input[name='checksnames']").val("");
+            $("input[name='checkspeilv']").val("");
+
+            $(".yxctz_layer").css({
+                "display": "none"
+            });
+            $(".yxctz_box").css({
+                "display": "none"
+            });
+
+            $(".yxccg_layer").css({
+                "display": "block"
+            });
+            $(".yxccg_box").css({
+                "display": "block"
+            });
+
+        } else if (v.jieguo == "yuebuzu") {
+            var jinbi_cha = goldname - v.user_yue;
+            show_yuebz_box(jinbi_cha);
+        } else if (v.jieguo == "no1") {
+            alert("投注金额不能小于1金币");
+        } else if (v.jieguo == "sb") {
+            alert("投注失败");
+        } else if (v.jieguo == "nocheck") {
+            alert("请选择投注项");
+        } else if (v.jieguo == "rsnomore") {
+            alert("肉山不可选择其余属性");
+        }
+        $(this).addClass("hint-in1");
+
+    }, 'JSON');
+});
+*/
+</script>
+<include file="Public:footer" />

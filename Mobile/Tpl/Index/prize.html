@@ -1,0 +1,90 @@
+<include file="Public:header" />
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/gamenav.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/device.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/lolteams.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/teamsindex.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/teamlist.css?201610121659">
+</head>
+<style type="text/css">
+.content {
+    width: 100%;
+    position: absolute;
+    top: 141px;
+}
+
+.c-t-h {
+    width: 100%;
+    height: 50px;
+    background: rgb(13, 15, 20);
+    position: fixed;
+    text-align: center;
+    top: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+.sub-h {
+    width: 100%;
+    height: auto;
+    background: rgb(13, 15, 20);
+    position: fixed;
+    top: 90px;
+    z-index: 910;
+}
+</style>
+<div class="teamsindex">
+    <div class="join-team">
+        <div class="c-t-h">
+            <span class="return r-j-t"><span><img src="Public\Mobile\new\images\games\return.png"></span></span>
+            <span>奖品详情</span>
+        </div>
+    </div>
+    <!-- 赛程子导航栏 -->
+    <div class="sub-h sub-h1">
+        <div class="lol-event lol-event-active">传统对战</div>
+        <div class="lol-event">大乱斗</div>
+        <div class="lol-event">SOLO</div>
+    </div>
+    <div class="content c1">
+        <img src="./Public/Mobile/new/images/games/main/prize.jpg">
+    </div>
+    <div class="content c2" style="display: none;">
+        <img src="./Public/Mobile/new/images/games/main/daluandouguanjun.jpg">
+    </div>
+    <div class="content c3" style="display: none;">
+        <img src="./Public/Mobile/new/images/games/main/sologuanjun.jpg">
+    </div>
+    <script type="text/javascript">
+    $(".r-j-t").click(function() {
+        $(".join-team,.content").animate({
+                left: "100%"
+            },
+            200,
+            function() {
+                window.location.href = "{:U('Index/games')}";
+            });
+    })
+    $(".lol-event").click(function() {
+        $(".lol-event").removeClass("lol-event-active");
+        $(this).addClass("lol-event-active");
+    })
+    $(".sub-h > div:nth-of-type(1)").click(function() {
+        $(".c1").show();
+        $(".c2").hide();
+        $(".c3").hide();
+    });
+    $(".sub-h > div:nth-of-type(2)").click(function() {
+        $(".c2").show();
+        $(".c1").hide();
+        $(".c3").hide();
+    });
+    $(".sub-h > div:nth-of-type(3)").click(function() {
+        $(".c3").show();
+        $(".c2").hide();
+        $(".c1").hide();
+    });
+    </script>
+</div>
+<include file="Public:footer" />

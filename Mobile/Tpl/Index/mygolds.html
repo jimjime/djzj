@@ -1,0 +1,17 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap margin-top58 about rules-ab">
+	<volist name="list" id="l">
+		<dl>
+			<dd>{$l.detail}</dd>
+			<dt>金币{$l.changeAmount}</dt><div class="clearfix"></div>
+			<div class="row">
+				<div class="col-md-9 rules-list-l">{$l.ctime|date="Y-m-d H:i:s",###}</div>
+				<div class="col-md-3 rules-list-r">金币余额 {$l.amount}</div>
+			</div>
+		</dl>
+	</volist>
+</div>
+
+<include file="Public:footer"/>

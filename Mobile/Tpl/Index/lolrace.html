@@ -1,0 +1,124 @@
+<include file="Public:header" />
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/gamenav.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/device.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/lolteams.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/teamsindex.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/lolrace.css">
+</head>
+
+<body>
+    <include file="Public:gheader" />
+    <!-- 赛程导航栏 -->
+    <div class="team-h">
+        <ul>
+            <li class="l-event"><a>比赛项目</a>
+                <div class="h-icon"><img src="Public/Mobile/new/images/games/jiantou.png"></div>
+            </li>
+            <li class="l-area"><a>战队赛区</a>
+                <div class="h-icon"><img src="Public/Mobile/new/images/games/jiantou.png"></div>
+            </li>
+        </ul>
+    </div>
+    <!-- 赛程子导航栏 -->
+    <div class="sub-h sub-h1" style="display: none;">
+        <volist name="bs_xiangmu" id="l">
+            <a href="{:U('Index/lolrace',array(mid=>$l[id],xid=>$_GET[xid]))}"><div class="lol-event">{$l.name}</div></a>
+        </volist>
+    </div>
+    <div class="sub-h sub-h2" style="display: none;">
+        <volist name="bs_xuexiao" id="l">
+            <a href="{:U('Index/lolrace',array(xid=>$l[id],mid=>$_GET[mid]))}"><div class="lol-event">{$l.name}</div></a>
+        </volist>
+    </div>
+    <script type="text/javascript">
+    var cl = 0;
+    $(".l-event").click(function() {
+        $(".sub-h2").hide();
+        $(".sub-h1").slideToggle(200);
+        $('.l-area').find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou1.png');
+        } else if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou1.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        }
+    })
+    $(".l-area").click(function() {
+        $(".sub-h1").hide();
+        $(".sub-h2").slideToggle(200);
+        $('.l-event').find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou1.png');
+        } else if ($(this).find("img").attr('src') == 'Public/Mobile/new/images/games/jiantou1.png') {
+            $(this).find("img").attr('src', 'Public/Mobile/new/images/games/jiantou.png');
+        }
+    })
+    $(".lol-event").click(function() {
+        $(".lol-event").removeClass("lol-event-active");
+        $(this).addClass("lol-event-active");
+        $(".sub-h").slideUp(200);
+    })
+    </script>
+    <div style="margin-top:130px;">
+        <volist name="days" id="d">
+            <notempty name="d.jilu">
+                <div class="race-s-header">
+                    <span>{$d.day}周{$d.xingqi}</span>
+                    <span>{$bs_xiangmuname.name}/{$bs_xuexiaoname.name}</span>
+                    <span>{$d.jilu.0.didian}</span>
+                </div>
+                <div class="team-list">
+                    <volist name="d.jilu" id="j">
+                        <div class="t-bet1">
+                            <div class="t-logo1">
+                                <eq name="j.team1" value="0">
+                                    <img src="{$j.user1info.solologo}" alt="{$j.user1info.soloname}">
+                                    <div class="t-tname">
+                                        {$j.user1info.soloname}
+                                    </div>
+                                    <else/>
+                                    <img src="{$j.team1info.logo}" alt="{$j.team1info.name}">
+                                    <div class="t-tname">
+                                        {$j.team1info.name}
+                                    </div>
+                                </eq>
+                            </div>
+                            <div class="t-logomid">
+                                <div class="t-logomid_li2">
+                                    <eq name="j.jieguo" value="">
+                                        <span class="t-logomid_li2_bf">{$j.shifen}</span>
+                                        <else/>
+                                        <span class="t-logomid_li2_bf">{$j.jieguo}</span>
+                                    </eq>
+
+                                </div>
+                                <div class="t-logomid_li3">
+                                    {$j.jibie}
+                                </div>
+                            </div>
+                            <div class="t-logo2">
+                                <eq name="j.team2" value="0">
+                                    <img src="{$j.user2info.solologo}" alt="{$j.user2info.soloname}">
+                                    <div class="t-tname">
+                                        {$j.user2info.soloname}
+                                    </div>
+                                    <else/>
+                                    <img src="{$j.team2info.logo}" alt="{$j.team2info.name}">
+                                    <div class="t-tname">
+                                        {$j.team2info.name}
+                                    </div>
+                                </eq>
+                            </div>
+                        </div>
+                    </volist>
+
+                </div>
+            </notempty>
+        </volist>
+    </div>
+
+
+</body>
+<include file="Public:footer" />

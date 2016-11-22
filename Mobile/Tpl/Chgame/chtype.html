@@ -1,0 +1,35 @@
+<include file="Public:header"/>
+
+<div class="wrap margin-top58 login">
+    <h3>选择游戏</h3> 
+    <div class="row choice">
+      <div class="col-md-6 choice-l">
+          <a <eq name="_SESSION.gametypeid" value="2">  class="active" </eq> href="javascript:;" data-gametypeid="2"><!--选中active-->
+             <span><img src="__PUBLIC__/images/logo_dota.png"></span> 
+             Dota2
+          </a>
+      </div>
+      <div class="col-md-6 choice-l" data-gametype="1">
+         <a <eq name="_SESSION.gametypeid" value="1"> class="active" </eq> href="javascript:;" data-gametypeid="1">
+             <span><img src="__PUBLIC__/images/hero_logo.png"></span> 
+             英雄联盟
+          </a>
+      </div>
+    </div>
+	<a class="dota-ch gametypeid1" href="{:U('Index/index',array(gtypeid=>1))}" <eq name="_SESSION.gametypeid" value="2"> style="display:none;" </eq> >进入英雄联盟</a>
+	<a class="dota-ch gametypeid2" href="{:U('Index/index',array(gtypeid=>2))}" <eq name="_SESSION.gametypeid" value="1"> style="display:none;" </eq> <eq name="_SESSION.gametypeid" value=""> style="display:none;" </eq> >进入Dota2</a>
+	
+<script type="text/javascript">
+$(".choice-l a").click(function(){
+	$(".choice-l a").removeClass();
+	$(this).addClass("active");
+	var gametypeid=$(this).attr("data-gametypeid");
+	$("a.dota-ch").hide();
+	$("a.gametypeid"+gametypeid).show();
+});
+</script>
+</div>
+<style type="text/css">
+body{background:url(__PUBLIC__/images/bg01.jpg);}
+</style>
+<include file="Public:footer"/>

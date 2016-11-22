@@ -1,0 +1,132 @@
+<include file="Public:header"/>
+
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    分类列表
+                    <!--<span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+					</span>-->
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    <div class="btn-group">
+						<a href="#addmyModal" data-toggle="modal" >
+							<button class="btn btn-primary ">
+								添加 <i class="fa fa-plus"></i>
+							</button>
+                        </a>
+
+                    </div>
+                    <!--<div class="btn-group pull-right">
+                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="#">Export to Excel</a></li>
+                        </ul>
+                    </div>-->
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                <tr>
+					<th>序号</th>
+					<th>ID</th>
+					<th>标题</th>
+					<th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+					<volist name="list" id="l" key="i">
+						<tr class="">
+							<td>{$i}</td>
+							<td>{$l.id}</td>
+							<td>{$l.name}</td>
+							<td>
+								<a class="tan_edit" data-toggle="modal" href="#bianjibox{$l.id}">编辑</a>
+								|
+								<php>
+								if($l['state']==1){
+								</php>
+									<a href="javascript:;" onclick="del_admin({$l.id},'article_class',this,'id')">删除</a>
+								<php>
+								}else{
+								</php>
+									<a href="javascript:;" onclick="hui_admin({$l.id},'article_class',this,'id')">恢复</a>
+									|
+									<a href="javascript:;" class="cddel_admin_btn" onclick="cddel_admin({$l.id},'article_class',this,'id')">彻底删除</a>
+								<php>
+								}
+								</php>
+							</td>
+							<!--编辑框 start-->
+							<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="bianjibox{$l.id}" class="modal fade">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title">编辑</h4>
+										</div>
+			
+										<div class="modal-body ">
+											<form action="{:U('News/getArticleClasses_edit')}" method="post">
+												<input type="hidden" name="id" value="{$l.id}">
+												<div class="form-group">
+													<label>标题：</label>
+													<input id="name" name="name" value="{$l.name}" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">保存</button>
+											</form>
+										</div>
+			
+									</div>
+								</div>
+							</div>
+							<!--编辑框 end-->
+						</tr>
+					</volist>
+
+                </tbody>
+                </table>
+                </div>
+                </div>
+                </section>
+                </div>
+                </div>
+        </div>
+        <!--body wrapper end-->
+		<!--添加框 start-->
+		<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addmyModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+						<h4 class="modal-title">添加</h4>
+					</div>
+					<div class="modal-body">
+
+						<form role="form" action="{:U('News/getArticleClasses_edit')}" method="post" >
+							<input type="hidden" name="id" value="">
+							<div class="form-group">
+								<label>标题：</label>
+								<input id="name" name="name" value="" class="form-control">
+							</div>
+							<button type="submit" class="btn btn-primary">保存</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--添加框 end-->
+
+    </div>
+    <!-- main content end-->
+	
+<include file="Public:footer"/>
+

@@ -1,0 +1,492 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+span {
+    color: rgb(228, 228, 228);
+}
+
+* {
+    font-weight: 500;
+}
+
+
+/*幕布*/
+
+.screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 90;
+}
+
+
+/*幕布前的按钮*/
+
+.screen a {
+    display: block;
+    width: 48%;
+    height: 3.7rem;
+    border-radius: 23px;
+    background: #26bff2;
+    margin-top: 216px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    line-height: 3.7rem;
+    color: rgb(2,34,53);
+    font-weight: 800;
+    font-family: 幼圆;
+}
+
+
+/*赛事弹出框*/
+
+.game-rules {
+    position: absolute;
+    width: 80%;
+    height: 375px;
+    border-radius: 12px;
+    background-color: rgb(29, 43, 50);
+    top: 119px;
+    left: 10%;
+    z-index: 900;
+    overflow: hidden;
+}
+
+.rules-title {
+    float: left;
+    width: 100%;
+    height: 50px;
+    background: rgb(20, 31, 36);
+    text-align: center;
+    line-height: 50px;
+}
+
+.rules-title p {
+    color: rgb(181, 182, 183);
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 幼圆;
+}
+
+
+/*赛事规则内容及按钮*/
+
+.rule-content {
+    width: 100%;
+    height: 256px;
+    margin-top: 55px;
+    padding: 0 10px;
+    overflow: scroll;
+}
+
+.rules-close {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+}
+
+.rules-close img {
+    width: 40%;
+    height: 40%;
+}
+
+.game-rules a {
+    display: block;
+    width: 53%;
+    height: 38px;
+    border-radius: 23px;
+    background: #26bff2;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 38px;
+    color: rgb(2,34,53);
+    font-weight: 800;
+    font-family: 幼圆;
+}
+
+
+/*战队导航栏*/
+
+.team-h {
+    width: 100%;
+    height: 50px;
+    background: rgb(13, 15, 20);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    z-index: 50;
+}
+
+.team-h li {
+    list-style: none;
+    float: left;
+    width: 33.333%;
+    height: 100%;
+}
+
+.team-h a {
+    display: block;
+    color: #838d92;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+}
+
+.team-h .active {
+    width: 67%;
+    height: 27px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    line-height: 23px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #26bff2;
+    color: #26bff2;
+}
+
+
+/*底部图案*/
+
+.bac-pic {
+    width: 80px;
+    height: 100px;
+    margin-top: 172px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bac-pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*底部文字*/
+
+.bac-words {
+    width: 220px;
+    height: 36px;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: rgb(43, 47, 57);
+}
+
+
+/*选择模块*/
+
+.start-select {
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.start-select a {
+    display: block;
+    width: 100%;
+    height: 3.7rem;
+    border-radius: 23px;
+    background: #26bff2;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 3.7rem;
+    color: rgb(2,34,53);
+    font-weight: 800;
+    font-family: 幼圆;
+}
+
+
+/*滚动条样式*/
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 2px;
+    background-color: #1d2b32;
+    ;
+}
+
+*::-webkit-scrollbar-button {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgb(13, 15, 20);
+    -webkit-box-shadow: inset 0 0 6px transparent;
+    ;
+    ;
+}
+
+
+/*赛事初始主页*/
+
+.teams-index {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*创建战队*/
+
+.creat-teams {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+.c-t-h {
+    width: 100%;
+    height: 50px;
+    background: rgb(13, 15, 20);
+    position: absolute;
+    text-align: center;
+    top: 80px;
+    left: 0;
+    z-index: 50;
+}
+
+.c-t-h span {
+    color: rgb(228, 228, 228);
+    line-height: 50px;
+    font-size: 1.6rem;
+}
+
+
+/*返回*/
+
+.return {
+    display: block;
+    position: absolute;
+    float: left;
+    height: 50px;
+    margin-left: 14px;
+}
+
+.c-t-h span img {
+    width: 16px;
+    height: 19px;
+}
+
+
+/**战队注册**/
+
+.t-logo,
+.t-name,
+.t-event,
+.t-word,
+.t-boss,
+.t-tel,
+.t-school,
+.t-class,
+.t-lol,
+.t-allow {
+    float: left;
+    width: 100%;
+    background: #1d2b32;
+    color: rgb(228, 228, 228);
+    font-size: 1.6rem;
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+.register1 {
+    width: 100%;
+    margin-top: 27px;
+    float: left;
+}
+
+.register1 > div > div,
+.t-allow > div,
+.t-logo > div {
+    float: right;
+}
+
+.register1 > div > div > span,
+.t-allow > div > span,
+.t-logo > div > span {
+    color: rgb(136, 136, 153);
+}
+
+.t-logo {
+    height: 11rem;
+    margin-top: 130px;
+    line-height: 11rem;
+}
+
+.register img {
+    width: 10px;
+}
+
+.t-logo .logo-pic img {
+    width: 75px;
+    height: auto;
+}
+
+.t-allow {
+    margin-top: 10px;
+}
+
+.t-name,
+.t-event,
+.t-word,
+.t-boss,
+.t-tel,
+.t-school,
+.t-class,
+.t-lol,
+.t-allow {
+    height: 5rem;
+    border-bottom: 1px solid rgba(131, 141, 146, 0.2);
+    line-height: 5rem;
+}
+/*注册完成按钮*/
+.complete{
+    width: 100%;
+    position: fixed;
+    background: rgba(13, 15, 20,0.7);
+    bottom: 0;
+}
+.complete a {
+    display: block;
+    width: 53%;
+    height: 4.2rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    border-radius: 23px;
+    background: #26bff2;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 4.2rem;
+    color: black;
+    font-weight: 800;
+    font-family: 幼圆;
+}
+
+
+/*战队名称子页面*/
+
+.t-sub {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.t-e{
+    margin-bottom: 60px;
+}
+input {
+    width: 100%;
+    height: 43px;
+    margin-top: 156px;
+    background: #1d2b32;
+    border-style: none;
+    padding-left: 15px;
+    outline: medium;
+}
+
+
+/*确认按钮*/
+
+.confirm {
+    position: absolute;
+    height: 50px;
+    line-height: 50px;
+    right: 14px;
+    color: rgb(228, 228, 228);
+    top: 0;
+    font-size: 1.6rem;
+}
+
+.t-select {
+    width: 100%;
+    margin-top: 140px;
+}
+
+.t-e-s {
+    height: 5rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(131, 141, 146, 0.2);
+    line-height: 5rem;
+    padding: 0 20px 0 20px;
+    text-align: left;
+    color: white;
+}
+
+.t-e-s div {
+    float: right;
+    height: auto;
+}
+
+.t-e-s img {
+    width: 15px;
+    height: auto;
+    background: url(Public/Mobile/new/images/games/danxuan1.png);
+}
+p{
+    margin-bottom: 0;
+}
+/*完成弹出按钮*/
+.popup-s{
+    position: fixed;
+    width: 82%;
+    height: 200px;
+    left: 9%;
+    top: 224px;
+    background: rgb(19, 28, 33);
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 900;
+}
+.popup-s > p{
+    font-size: 1.6rem;
+}
+.popup-s > p:nth-of-type(1){
+    line-height: 36px;
+    color:rgb(180,180,180);
+}
+.popup-s > p:nth-of-type(2){
+    line-height: 126px;
+    color:rgb(228, 228, 228);
+}
+
+.popup-s div{
+    position: absolute;
+    width: 100%;
+    height: 38px;
+    font-size: 1.6rem;
+    bottom: 0;
+    line-height: 38px;
+    text-align: center;
+    background: rgb(9,112,174);
+    color: rgb(2,34,53);
+}
+
+.rule-content p:nth-of-type(1){
+    font-size: 1.8rem;
+    color: white;
+}

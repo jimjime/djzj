@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{$webtitle}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+<meta name="description" content="">
+<meta name="author" content=""> 
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+
+<link href="__PUBLIC__/new/css/style.css?201608050041" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/new/js/jquery-1.10.2.min.js"></script>
+<!--微信js-->
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+
+<body>
+<notempty name='bigmess'>
+	<style type="text/css">
+	.bigmess{width:98%;padding-left:1%;padding-right:1%;height:auto;position:fixed;left:0;top:0;z-index:99999999;background:#1c2930;color:#fff;}
+	.bigmess_span{width:90%;height:auto;display:block;line-height:2rem;font-size:1.3rem;}
+	.bigmess_a{width:10%;height:auto;display:block;position:absolute;right:0;top:0.4rem;z-index:2;text-align:center;}
+	.bigmess_a img{width:60%;}
+	</style>
+	<div class="bigmess">
+		<span class="bigmess_span">
+		{$bigmess.name}
+		</span>
+		<a href="javascript:;" class="bigmess_a" onClick="hide_bigmess({$bigmess.id})">
+			<img src="__PUBLIC__/new/images/close.png" />
+		</a>
+	</div>
+	<script type="text/javascript">
+	function hide_bigmess(t){
+		$.post("{:U('Index/hidebigmess')}", {mid:t}, function(v){
+			$(".bigmess").hide();
+		});
+	}
+	</script>
+</notempty>

@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'roulette_propertyId', 1 => 'name', 2 => 'peilv', 3 => 'displayOrder', 4 => 'roulette_property_typeId', 5 => 'IsDeleted', '_autoinc' => true, '_pk' => 'roulette_propertyId', ); ?>

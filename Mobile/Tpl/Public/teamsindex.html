@@ -1,0 +1,21 @@
+<include file="Public:header" />
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/lolteams.css">
+    <link rel="stylesheet" type="text/css" href="Public/Mobile/css/teamsindex.css">
+</head>
+
+<body>
+    <include file="Public:gheader" />
+    <!-- 战队导航栏 -->
+    <div class="team-h">
+        <ul>
+            <li><a <eq name='Think.ACTION_NAME' value='teamsindex'> class="active" </eq> href="{:U('Index/lolteams')}">战队</a></li>
+            <li><a href="#">列表</a></li>
+            <li><a href="#">SOLO</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

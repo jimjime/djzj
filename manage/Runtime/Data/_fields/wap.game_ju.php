@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'id', 1 => 'name', 2 => 'displayOrder', 3 => 'ctime', 4 => 'stime', 5 => 'state', 6 => 'fenlei', 7 => 'adminid', 8 => 'ktime', 9 => 'cname', 10 => 'check1', 11 => 'check2', 12 => 'cren1', 13 => 'cren2', 14 => 'cjinbi1', 15 => 'cjinbi2', 16 => 'cstate', 17 => 'starttime', 18 => 'endtime', 19 => 'gameid', 20 => 'gid', 21 => 'wincheck', 22 => 'lpyin', '_autoinc' => true, '_pk' => 'id', ); ?>

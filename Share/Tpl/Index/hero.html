@@ -1,0 +1,432 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap rules-ab Hero">
+    <div id="jswbox">
+        <h3>距离第<font id="sy_cha_ci">{$now_tou.now_cha_cishu}</font>期幸运英雄出现还有<font id="sy_time_hour"></font><font id="sy_time_minute"></font><font id="sy_time_second"></font></h3>
+		<script type="text/javascript">
+		
+		var intDiff = parseInt({$now_tou.shengyumiao});//倒计时总秒数量
+		function timer(intDiff){
+			window.setInterval(function(){
+				if(intDiff<=0){
+					var sy_cha_ci=$("#sy_cha_ci").text();
+					var sy_cha_ci_new=Number(Number(sy_cha_ci)+Number(1));
+					$("#sy_cha_ci").text(sy_cha_ci_new);
+					if(sy_cha_ci_new==25){
+						intDiff=parseInt(28800);
+					}else if(sy_cha_ci_new>25 && sy_cha_ci_new<=96 ){
+						intDiff=parseInt(600);
+					}else{
+						intDiff=parseInt(300);
+					}
+					$('#sy_time_hour').show();
+					$('#sy_time_minute').show();
+				}
+				var hour=0,
+					minute=0,
+					second=0;//时间默认值		
+				if(intDiff > 0){
+					hour = Math.floor(intDiff / (60 * 60));
+					minute = Math.floor(intDiff / 60) - (hour * 60);
+					second = Math.floor(intDiff) - (hour * 60 * 60) - (minute * 60);
+				}else{
+	
+				}
+				if (minute <= 9) minute = '0' + minute;
+				if (second <= 9) second = '0' + second;
+				if(hour>0){
+					$('#sy_time_hour').html(''+hour+'小时');
+					$('#sy_time_minute').html(''+minute+'分');
+					$('#sy_time_second').html(''+second+'秒');
+				}else{
+					$('#sy_time_hour').hide();
+					if(minute>0){
+						$('#sy_time_minute').html(''+minute+'分');
+						$('#sy_time_second').html(''+second+'秒');
+					}else{
+						$('#sy_time_minute').hide();
+						$('#sy_time_second').html(''+second+'秒');
+					}
+				}
+				intDiff--;
+			}, 1000);
+		} 
+		$(function(){
+			timer(intDiff);
+		});	
+		</script>
+		<eq name="_SESSION.gametypeid" value="1">
+			<ul class="hero_himg_ul lolhero">
+				<li><img src="__PUBLIC__/lolhero/1.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/2.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/3.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/4.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/5.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/6.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/7.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/8.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/9.jpg" ></li>
+				<li><img src="__PUBLIC__/lolhero/10.jpg" ></li>
+			</ul>
+ 			<script type="text/javascript">
+			function lolhero(heronum){
+				window.setInterval(function(){
+					var w_width=$(".main_box").width();
+					var c_left=Math.floor(w_width/9);
+					$(".lolhero").height((c_left*4));
+					if(heronum>=2){
+						var heronumfu=Number(heronum)-Number(2);
+						$(".lolhero li:eq("+heronumfu+")").animate({
+							'left':"-"+c_left+"px",
+							'width':'0px',
+							'top':''+c_left+'px',
+							'z-index':'1'
+						});
+					}
+					if(heronum>=1){
+						var heronumfu=Number(heronum)-Number(1);
+						$(".lolhero li:eq("+heronumfu+")").animate({
+							'left':"-"+c_left+"px",
+							'width':''+(2*c_left)+'px',
+							'top':''+c_left+'px',
+							'z-index':'1'
+						});
+					}
+					$(".lolhero li:eq("+heronum+")").animate({
+						'left':''+(0*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'2'
+					});
+					var heronum1=Number(heronum)+Number(1);
+					$(".lolhero li:eq("+heronum1+")").animate({
+						'left':''+(1*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'3'
+					});
+					var heronum2=Number(heronum)+Number(2);
+					$(".lolhero li:eq("+heronum2+")").animate({
+						'left':''+(2*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'4'
+					});
+					var heronum3=Number(heronum)+Number(3);
+					$(".lolhero li:eq("+heronum3+")").animate({
+						'left':''+(2.5*c_left)+'px',
+						'width':''+(4*c_left)+'px',
+						'top':''+(c_left/2)+'px',
+						'z-index':'10'
+					});
+					var heronum4=Number(heronum)+Number(4);
+					$(".lolhero li:eq("+heronum4+")").animate({
+						'left':''+(5*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'9'
+					});
+					var heronum5=Number(heronum)+Number(5);
+					$(".lolhero li:eq("+heronum5+")").animate({
+						'left':''+(6*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'8'
+					});
+					var heronum6=Number(heronum)+Number(6);
+					$(".lolhero li:eq("+heronum6+")").animate({
+						'left':''+(7*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'7'
+					});
+					var heronum7=Number(heronum)+Number(7);
+					$(".lolhero li:eq("+heronum7+")").animate({
+						'left':''+(8*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'6'
+					});
+					var heronum8=Number(heronum)+Number(8);
+					$(".lolhero li:eq("+heronum8+")").animate({
+						'left':''+(9*c_left)+'px',
+						'width':''+(2*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'5'
+					});
+					if(heronum>1){
+						var heronum9=Number(heronum)+Number(9);
+						if(heronum9>128){
+							var pagenum=Math.floor(heronum9/128);
+							$(".lolhero").append("<li><img src='./Public/Mobile/lolhero/"+(heronum9-(128*pagenum)+1)+".jpg'></li>");
+						}else{
+							$(".lolhero").append("<li><img src='./Public/Mobile/lolhero/"+heronum9+".jpg'></li>");
+						}
+					}
+					heronum++;
+					
+				}, 500);
+			}
+			$(function(){
+				var heronum=0;
+				lolhero(heronum);
+			});	
+			</script>
+		</eq>
+		<eq name="_SESSION.gametypeid" value="2">
+			<ul class="hero_himg_ul dotahero">
+				<li><img src="__PUBLIC__/dotahero/1.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/2.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/3.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/4.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/5.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/6.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/7.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/8.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/9.jpg" ></li>
+				<li><img src="__PUBLIC__/dotahero/10.jpg" ></li>
+			</ul>
+ 			<script type="text/javascript">
+			function lolhero(heronum){
+				window.setInterval(function(){
+					var w_width=$(".main_box").width();
+					var c_left=Math.floor(w_width/8);
+					$("#jswbox").height((c_left*5));
+					var width_beinum=2;
+					var width_beinum_b=3;
+					if(heronum>=2){
+						var heronumfu=Number(heronum)-Number(2);
+						$(".dotahero li:eq("+heronumfu+")").animate({
+							'left':"-"+c_left+"px",
+							'width':'0px',
+							'top':''+c_left+'px',
+							'z-index':'1'
+						});
+					}
+					if(heronum>=1){
+						var heronumfu=Number(heronum)-Number(1);
+						$(".dotahero li:eq("+heronumfu+")").animate({
+							'left':"-"+c_left+"px",
+							'width':''+(width_beinum*c_left)+'px',
+							'top':''+c_left+'px',
+							'z-index':'1'
+						});
+					}
+					$(".dotahero li:eq("+heronum+")").animate({
+						'left':''+(0*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'2'
+					});
+					var heronum1=Number(heronum)+Number(1);
+					$(".dotahero li:eq("+heronum1+")").animate({
+						'left':''+(1*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'3'
+					});
+					var heronum2=Number(heronum)+Number(2);
+					$(".dotahero li:eq("+heronum2+")").animate({
+						'left':''+(2*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'4'
+					});
+					var heronum3=Number(heronum)+Number(3);
+					$(".dotahero li:eq("+heronum3+")").animate({
+						'left':''+(2.5*c_left)+'px',
+						'width':''+(width_beinum_b*c_left)+'px',
+						'top':''+(c_left/2)+'px',
+						'z-index':'10'
+					});
+					var heronum4=Number(heronum)+Number(4);
+					$(".dotahero li:eq("+heronum4+")").animate({
+						'left':''+(5*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'9'
+					});
+					var heronum5=Number(heronum)+Number(5);
+					$(".dotahero li:eq("+heronum5+")").animate({
+						'left':''+(6*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'8'
+					});
+					var heronum6=Number(heronum)+Number(6);
+					$(".dotahero li:eq("+heronum6+")").animate({
+						'left':''+(7*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'7'
+					});
+					var heronum7=Number(heronum)+Number(7);
+					$(".dotahero li:eq("+heronum7+")").animate({
+						'left':''+(8*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'6'
+					});
+					var heronum8=Number(heronum)+Number(8);
+					$(".dotahero li:eq("+heronum8+")").animate({
+						'left':''+(9*c_left)+'px',
+						'width':''+(width_beinum*c_left)+'px',
+						'top':''+c_left+'px',
+						'z-index':'5'
+					});
+					if(heronum>1){
+						var heronum9=Number(heronum)+Number(9);
+						if(heronum9>111){
+							var pagenum=Math.floor(heronum9/111);
+							$(".dotahero").append("<li><img src='./Public/Mobile/dotahero/"+(heronum9-(111*pagenum)+1)+".jpg'></li>");
+						}else{
+							$(".dotahero").append("<li><img src='./Public/Mobile/dotahero/"+heronum9+".jpg'></li>");
+						}
+					}
+					heronum++;
+					
+				}, 500);
+			}
+			$(function(){
+				var heronum=0;
+				lolhero(heronum);
+			});	
+			</script>
+		</eq>
+    </div>
+   <div class="hero-con">
+		<h3>本期幸运英雄是？</h3>
+		<volist name="roulette_property_type" id="r">
+		<h4>{$r.name}</h4>
+			<div class="row">
+				<eq name="r.num" value="2">
+					<volist name="r.roulette_property" id="p">
+						<a class="col-md-6 check_btn_yxc" data-checksid="{$p.roulette_propertyId}" data-checkspeilv="{$p.peilv}" data-checksname="{$p.name}">{$p.name}（{$p.peilv}）</a>
+					</volist>
+				<else/>
+					<volist name="r.roulette_property" id="p">
+						<a class="col-md-4 check_btn_yxc" data-checksid="{$p.roulette_propertyId}" data-checkspeilv="{$p.peilv}" data-checksname="{$p.name}">{$p.name}（{$p.peilv}）</a>
+					</volist>
+				</eq>
+			</div>
+		</volist>
+	   
+       <a class="btn-hero" href="javascript:;">立即兑换</a>
+    </div>
+    <div class="write-down">
+       <h3>今日开奖记录</h3>
+	   <p><label>时时彩期数</label><label>开奖号码</label>幸运英雄</p>
+	   <p><label>第{$daikaijiangqi}期：</label>待开奖</p>
+	   <volist name="roulette_log" id="l">
+		   <p><label>第{$l.qi}期：</label><label>{$l.num}</label>{$l.hero_info}</p>
+	   </volist>
+    </div>
+</div>
+<div class="box yxctz_box"></div>
+<div class="layer yxctz_layer">
+	<div class="con-layer">
+        <h4 class="pcname">英雄猜</h4>
+        <span class="pxiang">投注：</span>
+        <div class="form-group">
+            <div class="input-box">
+             <label>竞猜金额 | </label><input type="text" class="form-control" id="addgoldnum" name="goldname" placeholder="最低投注1金币" />
+            </div>
+        </div>
+        <div class="money maybemoney" data-cpeilv=""><label>可能奖金 ：</label>0.0金币</div>
+        <div class="money nowmoney"><label>当前余额 ：</label>{$user_yue}金币</div>
+	</div>
+    <div class="bnt-con"><a class="hint-in1 hint" href="javascript:;">确  定</a><a class="hint-in2 cancel" href="javascript:;">取消</a></div>
+</div>
+<div class="box yxccg_box"></div>
+<div class="layer yxccg_layer">
+	<div class="con-layer">
+        <P style=" font-size:18px; padding:20px 0; margin:0">竞猜成功</P>
+	</div>
+    <div class="bnt-con"><a class="hint-in3" href="javascript:;">确  定</a></div>
+</div>
+<input type="hidden" name="checkspeilv" value="" />
+<input type="hidden" name="checksids" value="" />
+<input type="hidden" name="checksnames" value="" />
+<script type="text/javascript">
+$("a.check_btn_yxc").click(function(){
+	$(this).parent().find("a.hero-active").removeClass("hero-active");
+	$(this).addClass("hero-active");
+	var this_checksid=$(this).attr("data-checksid");
+	var checksids="";
+	var checksnames="";
+	var checkspeilv="1";
+	$("a.hero-active").each(function(){
+		
+		checksids=checksids+","+$(this).attr("data-checksid");
+		checkspeilv=checkspeilv*$(this).attr("data-checkspeilv");
+		checksnames=checksnames+","+$(this).attr("data-checksname");
+	});
+	checksids=checksids.substr(1);
+	checksnames=checksnames.substr(1);
+	checkspeilv=Math.floor(checkspeilv*100)/100;
+	$("input[name='checksids']").val(checksids);
+	$("input[name='checksnames']").val(checksnames);
+	$("input[name='checkspeilv']").val(checkspeilv);
+	if(checksids.indexOf(",")){
+		$("a.btn-hero").text("立即兑换 组合赔率"+checkspeilv+"");
+	}else{
+		$("a.btn-hero").text("立即兑换 赔率"+checkspeilv+"");
+	}
+	//alert(checksids);
+});
+$("a.btn-hero").click(function(){
+
+	var checkspeilv=$("input[name='checkspeilv']").val();
+	var checksnames=$("input[name='checksnames']").val();
+	$(".pxiang").text("投注："+checksnames+"(赔率："+checkspeilv+")");
+	
+	$(".yxctz_layer").css({"display":"block"});
+	$(".yxctz_box").css({"display":"block"});
+});
+$(".hint-in2").click(function(event) {
+	$(".yxctz_layer").css({"display":"none"});
+	$(".yxctz_box").css({"display":"none"});
+});
+
+$(".hint-in3").click(function(event) {
+	$(".yxccg_layer").css({"display":"none"});
+	$(".yxccg_box").css({"display":"none"});
+});
+$('#addgoldnum').bind('input propertychange', function() {
+
+	var addgoldnum=Number($(this).val());
+	var cpeilv=$("input[name='checkspeilv']").val();
+	if(addgoldnum>0){
+		var maybemoney=(addgoldnum*cpeilv).toFixed(2);
+	}else{
+		var maybemoney=0.0;
+	}
+	$(".yxctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>"+maybemoney+"金币");		
+});
+
+$(".hint-in1").click(function(){
+	var checksids=$("input[name='checksids']").val();
+	var goldname=$("input[name='goldname']").val();
+	$.post("{:U('Index/hero_tz')}", {checksids:checksids,goldname:goldname}, function(v){
+		if(v.jieguo=="cg"){
+			$(".header").find("span.fl").html("今日竞猜："+v.ren+"人，"+v.jinbi+"金币");
+			$(".header").find("span.header-r").html("余额："+v.uyue+"");
+			
+			$(".nowmoney").html("<label>当前余额 ：</label>"+v.uyue+"金币");
+						
+			$(".yxctz_layer").css({"display":"none"});
+			$(".yxctz_box").css({"display":"none"});
+			
+			$(".yxccg_layer").css({"display":"block"});
+			$(".yxccg_box").css({"display":"block"});
+			
+		}else if(v.jieguo=="sb"){
+			alert("投注失败");
+		}
+				   
+	},'JSON');
+});
+</script>
+
+<include file="Public:footer"/>

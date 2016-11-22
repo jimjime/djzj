@@ -1,0 +1,220 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap">
+	<!--主播 开始-->
+	<div class = "zhuboxxpic">
+		<div class="zhuboxxpic_li">
+			<div class="zhuboxxpic_li_img_box">
+				<div class="zhuboxxpic_li_icon">
+					<img src="{$list_zhubo_game.pt.avatar}" />
+				</div>
+				<img src="{$list_zhubo_game.zhubo_info.avatar}" class="zhuboxxpic_li_img" />
+			</div>
+			<div class="zhuboxxpic_li_name">
+				{$list_zhubo_game.name}
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="zhuboxx">
+		<volist name="list" id="l">
+			<div class="zhuboxx_li">
+				<div class="zhuboxx_li_name">
+				{$l.cname}
+				</div>
+				<div class="zhuboxx_li_xuan">
+					<div class="zhuboxx_li_xuan_li <eq name="l.cstate" value="1">jczzt</eq>  <eq name="l.cstate" value="2">yfpzt</eq>  <eq name="l.cstate" value="3">yjszt</eq>  <eq name="l.cstate" value="4">yjszt</eq>  <eq name="l.cstate" value="1">btn-win</eq>" data-id="{$l.id}" >
+						{$l.check1}（<span class="xuan_peilv xuan_peilv1_{$l.id}">{$l.peilv1}</span>）
+						<eq name="l.cstate" value="3">
+							<eq name="l.wincheck" value="1"><div class="zhuboxx_li_xuan_li_win">胜</div></eq>
+						</eq>
+					</div>
+					<div class="zhuboxx_li_xuan_li <eq name="l.cstate" value="1">jczzt</eq>  <eq name="l.cstate" value="2">yfpzt</eq>  <eq name="l.cstate" value="3">yjszt</eq>  <eq name="l.cstate" value="4">yjszt</eq>   <eq name="l.cstate" value="1">btn-fu</eq>" data-id="{$l.id}">
+						{$l.check2}（<span class="xuan_peilv xuan_peilv2_{$l.id}">{$l.peilv2}</span>）
+						<eq name="l.cstate" value="3">
+							<eq name="l.wincheck" value="2"><div class="zhuboxx_li_xuan_li_win">胜</div></eq>
+						</eq>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="zhuboxx_li_zt <eq name="l.cstate" value="1">jczzt</eq>  <eq name="l.cstate" value="2">yfpzt</eq>  <eq name="l.cstate" value="3">yjszt</eq>  <eq name="l.cstate" value="4">yjszt</eq> ">
+				{$l.cstatename}
+				</div>
+			</div>
+			<div class="data_box_value pdataid{$l.id}" data-cktime="{$l.ktime|date='H:i:s',###}" data-ccname="{$l.cname}" data-ccheck1="{$l.check1}"  data-ccheck2="{$l.check2}" data-cpeilv1="{$l.peilv1}" data-cpeilv2="{$l.peilv2}" data-uyue="{$user_yue}"></div>
+		</volist>
+	</div>
+	<!--主播 结束-->
+    
+    
+</div>
+
+
+<div class="box jctz_box"></div>
+<div class="layer jctz_layer">
+	<div class="con-layer">
+        <h4 class="pcname"></h4>
+        <span class="pxiang"></span>
+        <div class="form-group">
+            <div class="input-box">
+             <label>竞猜金额 | </label><input type="number" class="form-control" id="addgoldnum" name="goldname" placeholder="最低投注1金币" />
+			 <input type="hidden" id="jctz_id" />
+            </div>
+        </div>
+        <div class="money maybemoney" data-cpeilv=""><label>可能奖金 ：</label>0.0金币</div>
+        <div class="money nowmoney"><label>当前余额 ：</label>0.0金币</div>
+	</div>
+    <div class="bnt-con"><a class="hint-in1 hint" data-checkid="" data-checkname="" href="javascript:;">确  定</a><a class="hint-in2 cancel" href="javascript:;">取消</a></div>
+</div>
+<div class="box jccg_box"></div>
+<div class="layer jccg_layer">
+	<div class="con-layer">
+        <P style=" font-size:18px; padding:20px 0; margin:0">竞猜成功</P>
+	</div>
+    <div class="bnt-con"><a class="hint-in3" href="javascript:;">确  定</a></div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function($){
+	$(".btn-win").click(function() {
+		var pid=$(this).attr("data-id");
+		var ccname=$(".pdataid"+pid).attr("data-ccname");
+		var cktime=$(".pdataid"+pid).attr("data-cktime");
+		var ccheck1=$(".pdataid"+pid).attr("data-ccheck1");
+		var ccheck2=$(".pdataid"+pid).attr("data-ccheck2");
+		var cpeilv1=$(".pdataid"+pid).attr("data-cpeilv1");
+		var cpeilv2=$(".pdataid"+pid).attr("data-cpeilv2");
+		var uyue=$(".pdataid"+pid).attr("data-uyue");
+		
+		$(".jctz_layer").find("input#jctz_id").val(pid);
+		$(".jctz_layer").find("h4.pcname").text(ccname);
+		
+		$(".jctz_layer").find("span.pxiang").text("( "+ccheck1+" "+cpeilv1+" )");
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+		$(".jctz_layer").find("div.maybemoney").attr("data-cpeilv",cpeilv1);
+		$(".jctz_layer").find("div.nowmoney").html("<label>当前余额 ：</label>"+uyue+"金币");
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkid",1);
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkname",ccheck1);
+
+		$(".jctz_layer").css({"display":"block"});
+		$(".jctz_box").css({"display":"block"});
+	});
+	$(".btn-fu").click(function() {
+		var pid=$(this).attr("data-id");
+		var ccname=$(".pdataid"+pid).attr("data-ccname");
+		var cktime=$(".pdataid"+pid).attr("data-cktime");
+		var ccheck1=$(".pdataid"+pid).attr("data-ccheck1");
+		var ccheck2=$(".pdataid"+pid).attr("data-ccheck2");
+		var cpeilv1=$(".pdataid"+pid).attr("data-cpeilv1");
+		var cpeilv2=$(".pdataid"+pid).attr("data-cpeilv2");
+		var uyue=$(".pdataid"+pid).attr("data-uyue");
+		
+		$(".jctz_layer").find("input#jctz_id").val(pid);
+		$(".jctz_layer").find("h4.pcname").text(ccname);
+		$(".jctz_layer").find("span.pxiang").text("( "+ccheck2+" "+cpeilv2+" )");
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>0.0金币");
+		$(".jctz_layer").find("div.maybemoney").attr("data-cpeilv",cpeilv2);
+		$(".jctz_layer").find("div.nowmoney").html("<label>当前余额 ：</label>"+uyue+"金币");
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkid",2);
+		$(".jctz_layer").find("a.hint-in1").attr("data-checkname",ccheck2);
+
+		$(".jctz_layer").css({"display":"block"});
+		$(".jctz_box").css({"display":"block"});
+	});
+	$('#addgoldnum').bind('input propertychange', function() {
+	
+		var addgoldnum=Number($(this).val());
+		var cpeilv=Number($(".layer").find("div.maybemoney").attr("data-cpeilv"));
+		if(addgoldnum>0){
+			var maybemoney=(addgoldnum*cpeilv).toFixed(2);
+		}else{
+			var maybemoney=0.0;
+		}
+		$(".jctz_layer").find("div.maybemoney").html("<label>可能奖金 ：</label>"+maybemoney+"金币");		
+	});
+
+	$(".hint-in2").click(function(event) {
+		$(".jctz_layer").css({"display":"none"});
+		$(".jctz_box").css({"display":"none"});
+	});
+	
+	$(".hint-in3").click(function(event) {
+		$(".jccg_layer").css({"display":"none"});
+		$(".jccg_box").css({"display":"none"});
+	});
+
+	$(".hint-in1").click(function(event) {
+		var id=$(".jctz_layer").find("input#jctz_id").val();
+		var addgoldnum=$(".jctz_layer").find("input#addgoldnum").val();
+		var checkid=$(this).attr("data-checkid");
+		var checkname=$(this).attr("data-checkname");
+
+		$.ajax({
+			type: "POST",
+			url: "{:U('Index/jctz')}",
+			data: {id:id,addgoldnum:addgoldnum,checkid:checkid},
+			//返回数据的格式"  xml", "html", "script", "json", "jsonp", "text".
+			datatype: "json",
+			//在请求之前调用的函数
+			beforeSend: function () {
+				$("#msg").html("logining");
+			},
+			//成功返回之后调用的函数
+			success: function (data) {
+				var v=eval('('+data+')');
+				if(v.jieguo=="tzcg"){
+					$(".header").find("span.fl").html("今日竞猜："+v.ren+"人，"+v.jinbi+"金币");
+					$(".header").find("span.header-r").html("余额："+v.user_yue+"");
+
+					$(".xuan_peilv1_"+v.pid).text(v.peilv1);
+					$(".xuan_peilv2_"+v.pid).text(v.peilv2);
+
+					$("#jccg_box_xuan").text(checkname);
+					if(checkid==1){
+						$("#jccg_box_peilv").text(v.peilv1);
+					}else{
+						$("#jccg_box_peilv").text(v.peilv2);
+					}
+					$("#jccg_box_golds").text(addgoldnum);
+
+					$("div.pdataid"+v.pid).attr("data-cpeilv1",v.peilv1);
+					$("div.pdataid"+v.pid).attr("data-cpeilv2",v.peilv2);
+					$("div.pdataid"+v.pid).attr("data-uyue",v.user_yue);
+
+					$(".jctz_layer").css({"display":"none"});
+					$(".jctz_box").css({"display":"none"});
+
+					show_jccg_box();
+
+				}else if(v.jieguo=="tzsb"){
+					alert("竞猜失败");
+				}else if(v.jieguo=="nostart"){
+					alert("竞猜未开始");
+				}else if(v.jieguo=="yiend"){
+					alert("竞猜已结束");
+				}else if(v.jieguo=="fengpan"){
+					alert("此竞猜封盘中");
+				}else if(v.jieguo=="jiesuan"){
+					alert("此竞猜结算中");
+				}else if(v.jieguo=="yuebuzu"){
+					var jinbi_cha=addgoldnum-v.user_yue;
+					show_yuebz_box(jinbi_cha);
+				}else if(v.jieguo=="no1"){
+					alert("投注金额不能小于1金币");
+				}
+
+			},
+			//调用出错执行的函数
+			error: function () {
+				//请求出错处理
+				alert("发生错误")
+				window.location.reload();
+			}
+		});
+	});
+});
+</script>
+
+<include file="Public:footer"/>

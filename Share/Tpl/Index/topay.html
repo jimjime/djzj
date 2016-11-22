@@ -1,0 +1,68 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap">
+    <div class="con-layer">
+        <h3 style="margin-bottom:20px;">金币余额：{$user_yue}金币</h3>
+        <table width="90%" border="0" cellspacing="0" cellpadding="0">
+          <tr class="title">
+            <td width="33.3%"><a class="active" href="javascript:;" onClick="paygoldsnum(10,this)">10元</td>
+            <td width="33.3%"><a  href="javascript:;" onClick="paygoldsnum(20,this)">20元</td>
+            <td width="33.3%"><a  href="javascript:;" onClick="paygoldsnum(50,this)">50元</td>
+          </tr>
+          <tr>
+            <td class="day-color"><a  href="javascript:;" onClick="paygoldsnum(100,this)">100元</a></td>
+            <td><a  href="javascript:;" onClick="paygoldsnum(200,this)">200元</a></td>
+            <td><input class="text-m paymorenum_input" type="text" value="其他金额" /></td>
+          </tr>
+        </table>
+        <p class="margintop">1050金币（送50金币）</p>
+    </div>
+    <a class="btn-dota" href="javascript:;">立即充值</a>
+</div>
+<script type="text/javascript">
+function paygoldsnum(t,obj){
+	$("table a.active").removeClass();
+	$(obj).addClass("active");
+	if(t==10){
+		$(".margintop").text("1050金币（送50金币）");
+		//$(".tobuygo_btn").attr("href","./index.php?a=tobuygo&m=index&bnum="+20+"");
+	}
+	if(t==20){
+		$(".margintop").text("2200金币（送200金币）");
+	}
+	if(t==50){
+		$(".margintop").text("5500金币（送500金币）");
+	}
+	if(t==100){
+		$(".margintop").text("11000金币（送1000金币）");
+	}
+	if(t==200){
+		$(".margintop").text("22000金币（送2000金币）");
+	}
+}
+$(function(){
+	$(".paymorenum_input").focus(function(){
+		var morenum=$(this).val();
+		if(morenum=="其他金额"){
+			$(this).val("");
+			$(".margintop").text("0金币");
+		}
+		$("table a.active").removeClass();
+	});
+	$('.paymorenum_input').bind('input propertychange', function() {
+	
+		var morenum=Math.floor($(this).val());
+		if(morenum<20 && morenum>0){
+			var songgolds=Math.floor(morenum*5);
+			var moregolds=Math.floor(songgolds)+Math.floor(morenum*100);
+		}else{
+			var songgolds=Math.floor(morenum*10);
+			var moregolds=Math.floor(songgolds)+Math.floor(morenum*100);
+		}
+		$(".margintop").text(""+moregolds+"金币（送"+songgolds+"金币）");
+	});
+});
+</script>
+
+<include file="Public:footer"/>

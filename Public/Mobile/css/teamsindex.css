@@ -1,0 +1,270 @@
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.white {
+    color: rgb(228, 228, 228);
+}
+
+.light-blue {
+    color: #26bff2;
+}
+
+.teamsindex {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.team-intro,
+.team-member,
+.team-record {
+    width: 100%;
+    background: #1c2930;
+}
+
+.team-intro {
+    margin-top: 130px;
+    height: 130px;
+    position: relative;
+}
+
+.team-member {
+    height: auto;
+    float: left;
+}
+
+.team-record {
+    height: 100px;
+}
+
+.ht {
+    line-height: 25px;
+    color: rgb(228, 228, 228);
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+.ticf-btn{
+    position: absolute;
+    width: 20%;
+    height: 22%;
+    right: 1%;
+    top: 70%;
+}
+
+/*战队头像*/
+
+.index-logo {
+    position: absolute;
+    height: 97px;
+    width: 112px;
+    left: 20px;
+    top: 15px;
+    border-right: 1px solid rgba(131, 141, 146, 0.4);
+}
+
+.index-logo-pic {
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    border-radius: 38px;
+    background: #131c21;
+    border: 2px solid #838d92;
+    overflow: hidden;
+}
+
+.screen1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    background: transparent;
+}
+
+
+/*帮助以及内容修改*/
+
+.icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.help,
+.modify {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-left: 10px;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*战队介绍*/
+
+.index-intro {
+    position: absolute;
+    top: 10px;
+    left: 150px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.index-intro > p {
+    font-size: 13px;
+}
+
+.index-intro > p:nth-of-type(1) {
+    color: rgb(228, 228, 228);
+    font-size: 20px;
+}
+
+.index-intro > p:nth-of-type(5) a {
+    color: #26bff2;
+    font-size: 20px;
+}
+
+
+/*参赛成员*/
+
+.team-member-content {
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.member,
+.join {
+    width: 33.33%;
+    height: 50%;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+.member-logo {
+    width: 68px;
+    height: 68px;
+    border-radius: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #838d92;
+    overflow: hidden;
+}
+
+.leader-icon {
+    position: absolute;
+    top: -1px;
+    right: 6px;
+    width: 32px;
+    height: 16px;
+}
+
+.leader-icon img {
+    height: 100%;
+    width: 100%;
+}
+
+.join-btn img {
+    margin-top: 15px;
+    width: 55px;
+    height: 55px;
+}
+
+.join > p {
+    margin-top: 19px;
+}
+
+
+/*参赛记录*/
+
+.t-bet1 {
+    border-bottom: solid #3d3e3f 1px;
+    padding: 0.8rem 0;
+    height: 100px;
+}
+
+.t-logo1 {
+    height: auto;
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+.t-logo1 img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+}
+
+.t-logo2 img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.t-tname {
+    color: #d5d6d6;
+    line-height: 2rem;
+}
+
+.t-logomid {
+    width: 40%;
+    float: left;
+    text-align: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+}
+
+.t-logomid_li2 {
+    width: 100%;
+    text-align: center;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    color: #fff;
+}
+
+.t-logomid_li3 {
+    width: 100%;
+    text-align: center;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    color: #d5d6d6;
+}
+
+.t-logo2 {
+    height: auto;
+    width: 30%;
+    float: right;
+    text-align: center;
+}
+
+
+/*加入战队子页面*/
+
+.join-team {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.register-join {
+    position: relative;
+    margin-top: 130px;
+}

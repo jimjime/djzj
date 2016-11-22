@@ -1,0 +1,48 @@
+<div class="footerbox">
+    <ul>
+		<li
+			<eq name='Think.ACTION_NAME' value='index'> class="active" </eq>
+		>
+			<eq name="_SESSION.gametypeid" value="1">
+				<a class="menu05" href="{:U('Index/index')}">竞猜</a>
+			<else/>
+				<a class="menu01" href="{:U('Index/index')}">竞猜</a>
+			</eq>
+		</li>
+		<li
+			<eq name='Think.ACTION_NAME' value='hero'> class="active" </eq>
+		>
+			<a class="menu02" href="{:U('Index/hero')}">英雄猜</a>
+		</li>
+		<li
+			<eq name='Think.ACTION_NAME' value='indexs'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='ck'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='roll'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='winlists'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='dld'> class="active" </eq>
+		>
+			<eq name="_SESSION.gametypeid" value="1">
+				<a class="menu04" href="{:U('Index/dld')}">大乱斗</a>
+			<else/>
+				<a class="menu06" href="{:U('Index/dld')}">大乱斗</a>
+			</eq>
+		</li>
+		<li
+			<eq name='Think.ACTION_NAME' value='mycenter'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='art'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='chtype'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='mygolds'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='myquiz'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='tobuy'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='tobuygo'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='topay'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='recom'> class="active" </eq>
+			<eq name='Think.ACTION_NAME' value='recoms'> class="active" </eq>
+		>
+			<a class="menu03" href="{:U('Index/mycenter')}">个人</a>
+		</li>
+    </ul>
+</div>
+
+</body>
+</html>

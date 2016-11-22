@@ -1,0 +1,35 @@
+<include file="Public:header"/>
+
+<!--主体-->
+<div class="wrap">
+	<volist name="user_recoms" id="u">
+		<div class="row Comrades">
+			<div class="col-md-3 item-user">
+				<a href="{:U('Index/index')}">
+					<span>
+						<empty name="u.header">
+							<img src="__PUBLIC__/images/user-inco.png">
+						<else/>
+							<img src="{$u.header}" >
+						</empty>
+					</span>
+				</a>
+			</div>
+			<div class="col-md-9 ">
+				<dl>
+					<dt>{$u.name}</dt>
+					<div class="clearfix"></div>
+					<dd><label>招募时间：</label>{$u.ctime|date='Y-m-d H:i:s',###}</dd>
+					<dd><label>已奖励：</label>{$u.recomgolds}金币</dd>
+				</dl> 
+			</div>
+		</div>
+	</volist>
+	<empty name="user_recoms">
+		<p style=" margin:100px auto; text-align:center; font-size:16px;">你还没有战友，赶快邀请你的小伙伴吧！</p>
+	</empty>
+</div>
+<style type="text/css">
+.Comrades dl dd{width:100% !important;}
+</style>
+<include file="Public:footer"/>
